@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CoachController;
 use App\Http\Controllers\MangerController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\RegController;
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -35,7 +36,7 @@ Route::controller(PlayerController::class)->group(function () {
     Route::get('player/balding_body_team', 'balding_body_team')->name('player.balding_body_team');
     Route::get('player/fitness-team', 'fitness_team')->name('player.fitness_team');
     Route::get('player/athart_rachel', 'athartrachel')->name('player.athart_rachel');
-    Route::get('player/exsersize', 'exsersize')->name('player.exsersize');
+    Route::get('player/exsersize', 'exsersize')->name('player.exsersize')->middleware('check.player');
   
     Route::get('Mselftraining', function (){
         return view('player.tutorial.Mselftraining');
@@ -52,21 +53,20 @@ Route::controller(PlayerController::class)->group(function () {
 /////////////////////////////////////////////////////////////////////////////
 ////////////////////////////Coach///////////////////////////////////////////
 
-Route::controller(CoachController::class)->group(function () {
-
-    Route::get('coach/addadvice', 'addadvice')->name('addadvice');
-    Route::get('coach/addtrainingplanning','addtrainingplanning')->name('addtrainingplanning');
-    Route::get('coach/index','index')->name('index');
-    Route::get('coach/update_trainer','update_trainer')->name('update_trainer');
-    Route::get('coach/updatecontent','updatecontent')->name('updatecontent');
-    Route::get('coach/updateplanning','updateplanning')->name('updateplanning');
-    Route::get('coach/viewcontent','viewcontent')->name('viewcontent');
-    Route::get('coach/viewplayers','viewplayers')->name('viewplayers');
-    Route::get('coach/viewviolations','viewviolations')->name('viewviolations');
-    Route::get('coach/violation','violation')->name('violation');
-
+Route::middleware(['auth','check.coach'])->group(function () {
+    Route::controller(CoachController::class)->group(function () {
+        Route::get('coach/addadvice', 'addadvice')->name('addadvice');
+        Route::get('coach/addtrainingplanning','addtrainingplanning')->name('addtrainingplanning');
+        Route::get('coach/index','index')->name('coach.index');
+        Route::get('coach/update_trainer','update_trainer')->name('update_trainer');
+        Route::get('coach/updatecontent','updatecontent')->name('updatecontent');
+        Route::get('coach/updateplanning','updateplanning')->name('updateplanning');
+        Route::get('coach/viewcontent','viewcontent')->name('viewcontent');
+        Route::get('coach/viewplayers','viewplayers')->name('viewplayers');
+        Route::get('coach/viewviolations','viewviolations')->name('viewviolations');
+        Route::get('coach/violation','violation')->name('violation');
+    });
 });
-
 /////////////////////////////////////////////////////////////////////////////
 ///////////////////////////Manger///////////////////////////////////////////
 
@@ -93,15 +93,6 @@ Route::controller(MangerController::class)->group(function () {
 
 /////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
-
-
-
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -111,3 +102,8 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+///////////////////////////////////////////////////////////////////////////////
+Route::get('/registered1', [RegController::class, 'showRegistrationForm'])->name('register1');
+Route::post('/registered1', [RegController::class, 'store']);
+///////////////////////////////////////////////////////////////
+Route::get('Check',[RegController::class,'check']);

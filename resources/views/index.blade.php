@@ -65,7 +65,7 @@
           </a>
         </li>
         <li>
-            <a href="register">
+            <a href="registered1">
             <button type="button" class="btn btn-outline-warning" style="color: white;">Sing Up</button>
           </a>
         </li>

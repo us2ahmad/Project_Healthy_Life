@@ -11,18 +11,20 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('coaches', function (Blueprint $table) {
+        Schema::create('articles', function (Blueprint $table) {
             $table->id();
-            $table->string('certificate');
-            $table->string('experience');
-            $table->integer('approved')->default(0);
+            $table->string('title');
+            $table->string('description');
+            $table->text('content');
             $table->timestamps();
         });
     }
 
-
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('coaches');
+        Schema::dropIfExists('articles');
     }
 };

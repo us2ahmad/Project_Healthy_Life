@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('coaches', function (Blueprint $table)
          {
 
-            $table->foreignId('id_user')->constrained('users')->cascadeOnDelete();
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
 
         });
     }

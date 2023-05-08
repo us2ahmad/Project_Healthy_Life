@@ -10,6 +10,12 @@ class Coach extends Model
     use HasFactory;
 
 
+    protected $fillable = [
+        'certificate',
+        'experience',
+        'approved',
+    ];
+
     public function User(){
 
         return $this->belongsTo(User::class);
@@ -38,6 +44,10 @@ class Coach extends Model
     public function Training_Plan ()
     {
         return $this->hasmany(Training_Plan::class,'id_coach');
+    }
+    public function Article ()
+    {
+        return $this->hasmany(Article::class);
     }
 
 }

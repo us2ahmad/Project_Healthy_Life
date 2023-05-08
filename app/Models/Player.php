@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Player extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'height',
+        'weight',
+    ];
     public function User(){
 
         return $this->belongsTo(User::class);
@@ -48,7 +52,7 @@ class Player extends Model
 
     public function Coach(){
 
-        return $this->belongsTo(Coach::class,id_coach);
+        return $this->belongsTo(Coach::class);
 
     }
 

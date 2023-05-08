@@ -11,18 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('coaches', function (Blueprint $table) {
-            $table->id();
-            $table->string('certificate');
-            $table->string('experience');
-            $table->integer('approved')->default(0);
-            $table->timestamps();
+        Schema::table('articles', function (Blueprint $table) {
+            $table->foreignId('id_coache')->constrained('coaches')->cascadeOnDelete();
         });
     }
 
-
+    /**
+     * Reverse the migrations.
+     */
     public function down(): void
     {
-        Schema::dropIfExists('coaches');
+        Schema::table('articles', function (Blueprint $table) {
+            //
+        });
     }
 };

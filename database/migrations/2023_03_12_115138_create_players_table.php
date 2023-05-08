@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->double('height');
             $table->double('weight');
-            $table->boolean('gender');
-            $table->foreignId('id_user')->constrained('users')->cascadeOnDelete();
+            
+            $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
         });
     }
