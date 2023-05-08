@@ -27,23 +27,8 @@
 
 <body style="background-color: #fdfaf6;">
   
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top header-transparent">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <a href="/player/index.html" class="logo"><img src="{{asset('/assets/img/Logo.png')}}" alt="" class="img-fluid"></a>
-
-      <nav id="navbar" class="navbar">
-          <ul>
-            <li><a class="nav-link scrollto active" href="/player/index.html">Home</a></li>
-            <a href="logout.html">
-              <button type="button" class="btn btn-outline-warning" style="color: white;">Log Out</button>
-            </a>
-          </ul>
-      </nav>
-    </div>
-  </header>
-  
+ <!--========= NavBar ========-->
+@extends('player.faction of articl.nav_art')
   <!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
@@ -76,7 +61,7 @@
           This publication contains the collective views of an independent international commission and does not neccessarily represent the decisions or the stated policy of the World Health Organization.
          </p>
 
-<a href="/player/faction of articl/health/health1.html" class="btn-single read-more">Read More</a>
+<a href="{{route('player.health1')}}" class="btn-single read-more">Read More</a>
 
         </div>
       </div>
@@ -92,7 +77,7 @@
           Staffed indoor fitness studios, individual sports and fitness training, group fitness, gyms, and multi-use indoor fitness facilities providing private instruction and access to personal fitness training and/or specialized equipment.
          </p>
 
-<a href="/player/faction of articl/health/health2.html" class="btn-single read-more">Read More</a>
+<a href="{{route('player.health2')}}" class="btn-single read-more">Read More</a>
 
         </div>
       </div>
@@ -108,7 +93,7 @@
            This paper describes the approach taken by the Canadian Institutes of Health Research (CIHR) to develop a framework and indicators to measure the impact of health research.
          </p>
 
-<a href="/player/faction of articl/health/health3.html" class="btn-single read-more">Read More</a>
+<a href="{{route('player.health2')}}" class="btn-single read-more">Read More</a>
 
         </div>
       </div>
@@ -124,7 +109,7 @@
           This study examines the relative contributions of giving versus receiving support to longevity in a sample of older married adults. Baseline indicators of giving and receiving support were used to predict mortality status over a 5-year period in the Changing Lives of Older Couples sample
          </p>
 
-<a href="/player/faction of articl/health/health4.html" class="btn-single read-more">Read More</a>
+<a href="{{route('player.health4')}}" class="btn-single read-more">Read More</a>
 
         </div>
       </div>
@@ -140,7 +125,7 @@
            When I wrote the first edition of Health Psychology over 30 years ago, the task was simpler than it is now. Health psychology was a new field and was relatively small. 
          </p>
 
-<a href="/player/faction of articl/health/health5.html" class="btn-single read-more">Read More</a>
+<a href="{{route('player.health5')}}" class="btn-single read-more">Read More</a>
 
         </div>
       </div>
@@ -160,9 +145,9 @@
         <div class="section topics">
         <h2 class="section-title">Topics</h2>
         <ul>
-          <li><a href="/player/faction of articl/health.html" style="color:grey"><strong>Health</strong></a></li>
-          <li><a href="/player/faction of articl/nutrition.html" style="color:grey"><strong>Nutrition</strong></a></li>
-          <li><a href="/player/faction of articl/training.html" style="color:grey"><strong>Training</strong></a></li>
+          <li><a href="#" style="color:grey"><strong>Health</strong></a></li>
+          <li><a href="{{route('player.nutrition')}}" style="color:grey"><strong>Nutrition</strong></a></li>
+          <li><a href="{{route('player.training')}}" style="color:grey"><strong>Training</strong></a></li>
         </ul>
 
         </div>

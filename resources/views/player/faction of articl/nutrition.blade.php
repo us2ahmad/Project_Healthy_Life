@@ -28,21 +28,8 @@
 
 <body style="background-color: #fdfaf6;" >
   
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top header-transparent" >
-    <div class="container d-flex align-items-center justify-content-between" >
-      <a href="/player/index.html" class="logo"><img src="{{asset('/assets/img/Logo.png')}}" alt="" class="img-fluid"></a>
-      <nav id="navbar" class="navbar">
-          <ul>
-            <li><a class="nav-link scrollto active" href="/player/index.html">Home</a></li>
-            <a href="logout.html">
-              <button type="button" class="btn btn-outline-warning" style="color: white;">Log out</button>
-            </a>
-          </ul>
-      </nav>
-    </div>
-  </header>
-  <!-- End Header -->
+ <!--========= NavBar ========-->
+@extends('player.faction of articl.nav_art')
 
   <!-- ======= Hero Section ======= -->
   <section id="home" class="d-flex align-items-center justify-content-center">
@@ -71,7 +58,7 @@
           It is the position of the Society for Nutrition Education and Behavior that environmental sustainability should be inherent in dietary guidance.
          </p>
 
-<a href="/player/faction of articl/nutriting/article1.html" class="btn-single read-more">Read More</a>
+<a href="{{route('player.article1')}}" class="btn-single read-more">Read More</a>
 
         </div>
       </div>
@@ -87,7 +74,7 @@
           Nutrition is the quantity and quality of food that the body receives. The body breaks down the food to get the molecules that it actually needs: proteins, fats, carbohydrates, vitamins, and minerals. 
          </p>
 
-<a href="/player/faction of articl/nutriting/article2.html" class="btn-single read-more">Read More</a>
+<a href="{{route('player.article2')}}" class="btn-single read-more">Read More</a>
 
         </div>
       </div>
@@ -103,7 +90,7 @@
           Bone undergoes continuous remodeling; therefore, an adequate supply of amino acid and mineral substrate is needed to support the formation and maintenance of bone across the life span. 
          </p>
 
-<a href="/player/faction of articl/nutriting/article3.html" class="btn-single read-more">Read More</a>
+<a href="{{route('player.article3')}}" class="btn-single read-more">Read More</a>
 
         </div>
       </div>
@@ -119,7 +106,7 @@
           Nutrition is the quantity and quality of food that the body receives. The body breaks down the food to get the molecules that it actually needs: proteins, fats, carbohydrates, vitamins, and minerals. 
          </p>
 
-<a href="/player/faction of articl/nutriting/article4.html" class="btn-single read-more">Read More</a>
+<a href="{{route('player.article4')}}" class="btn-single read-more">Read More</a>
 
         </div>
       </div>
@@ -135,7 +122,7 @@
           Mycoprotein is derived from the filamentous fungus Fusarium venenatum, first discovered in the 1960s. Mycoprotein is high in protein and fiber and low in energy and saturated fat and contains no trans-fat or cholesterol.
          </p>
 
-<a href="/player/faction of articl/nutriting/article5.html" class="btn-single read-more">Read More</a>
+<a href="{{route('player.article5')}}" class="btn-single read-more">Read More</a>
 
         </div>
       </div>
@@ -157,9 +144,9 @@
 
         <h2 class="section-title">Topics</h2>
         <ul>
-          <li><a href="/player/faction of articl/health.html" style="color:grey"><strong>Health</strong></a></li>
-          <li><a href="/player/faction of articl/nutrition.html" style="color:grey"><strong>Nutrition</strong></a></li>
-          <li><a href="/player/faction of articl/training.html" style="color:grey"><strong>Training</strong></a></li>
+          <li><a href="{{route('player.health')}}" style="color:grey"><strong>Health</strong></a></li>
+          <li><a href="#" style="color:grey"><strong>Nutrition</strong></a></li>
+          <li><a href="{{route('player.training')}}" style="color:grey"><strong>Training</strong></a></li>
         </div>
 
 

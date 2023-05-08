@@ -10,13 +10,13 @@ use App\Http\Controllers\PlayerController;
 
 //صفحات ال player
 Route::controller(PlayerController::class)->group(function () {
-    Route::get('/','index');
+    Route::get('/','index')->name('player.index');
     Route::post('player/create', 'create')->name('player.create');
     Route::get('player/health1',  'health1' )->name('player.health1');
     Route::get('player/health2',  'health2' )->name('player.health2');
     Route::get('player/health3',  'health3' )->name('player.health3');
     Route::get('player/health4',  'health4' )->name('player.health4');
-    Route::get('player/health5',  'health5' )->name('player.health5ر');
+    Route::get('player/health5',  'health5' )->name('player.health5');
     Route::get('player/article1', 'article1')->name('player.article1');
     Route::get('player/article2', 'article2')->name('player.article2');
     Route::get('player/article3', 'article3')->name('player.article3');
@@ -111,4 +111,3 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
-

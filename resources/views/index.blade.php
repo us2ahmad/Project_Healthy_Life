@@ -25,8 +25,6 @@
   <link href="{{asset('/assets/css/style.css')}}" rel="stylesheet">
 </head>
 <body>
-
-  @extends('navigation-menu')
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top header-transparent">
     <div class="container d-flex align-items-center justify-content-between">
@@ -34,6 +32,9 @@
       <a href="#" class="logo">
         <img src="{{asset('/assets/img/Logo.png')}}" alt="" class="img-fluid">
       </a>
+
+
+
 
       <nav id="navbar" class="navbar">
       <ul>
@@ -47,9 +48,15 @@
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         @if(auth()->check())
         <li>
-            <a href="login">
-            <button type="button" class="btn btn-outline-warning" style="color: white;">Log Out</button>
+            <a href="{{ route('profile.show') }}">
+            <button type="button" class="btn btn-outline-warning" style="color: white;">Profile</button>
           </a>
+        </li>
+        <li>
+           <form id="logout-form" action="{{ route('logout') }}" method="POST">
+    @csrf
+    <button type="submit" class="btn btn-outline-warning" style="color: white;">Log Out</button>
+</form>
         </li>
         @else
         <li>
@@ -63,17 +70,7 @@
           </a>
         </li>
         @endif
-          <!-- <li>
-            <a href="login">
-            <button type="button" class="btn btn-outline-warning" style="color: white;">Log In</button>
-          </a>
-        </li>
-        <li>
-            <a href="register">
-            <button type="button" class="btn btn-outline-warning" style="color: white;">Sing Up</button>
-          </a>
-        </li> -->
-        
+      
           <a href="/dashboard">
 
           </a>

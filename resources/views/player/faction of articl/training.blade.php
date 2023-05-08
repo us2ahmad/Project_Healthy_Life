@@ -29,29 +29,8 @@
 
 <body style="background-color: #fdfaf6;">
   
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top header-transparent">
-    <div class="container d-flex align-items-center justify-content-between">
-
-      <a href="index.html" class="logo"><img src="{{asset('assets/img/Logo.png')}}" alt="" class="img-fluid"></a>
-
-      <nav id="navbar" class="navbar">
-          <ul>
-            <li><a class="nav-link scrollto active" href="/index.html">Home</a></li>
-            
-            <a href="update.html" class="btn-get-started scrollto">
-				
-			</a>
-
-            <a href="logout.html">
-              <button type="button" class="btn btn-outline-warning" style="color: white;">Log Out</button>
-            </a>
-          </ul>
-      </nav>
-    </div>
-  </header>
-  
-  <!-- End Header -->
+  <!--========= NavBar ========-->
+@extends('player.faction of articl.nav_art')
 
   <!-- ======= Hero Section ======= -->
   <section id="home" class="d-flex align-items-center justify-content-center">
@@ -83,7 +62,7 @@
           This publication contains the collective views of an independent international commission and does not neccessarily represent the decisions or the stated policy of the World Health Organization.
          </p>
 
-<a href="yogatraining.html" class="btn-single read-more">Read More</a>
+<a href="{{route('player.tarticle1')}}" class="btn-single read-more">Read More</a>
 
         </div>
       </div>
@@ -99,7 +78,7 @@
           Staffed indoor fitness studios, individual sports and fitness training, group fitness, gyms, and multi-use indoor fitness facilities providing private instruction and access to personal fitness training and/or specialized equipment.
          </p>
 
-<a href="power_liftingtraining.html" class="btn-single read-more">Read More</a>
+<a href="{{route('player.tarticle2')}}" class="btn-single read-more">Read More</a>
 
         </div>
       </div>
@@ -115,7 +94,7 @@
            This paper describes the approach taken by the Canadian Institutes of Health Research (CIHR) to develop a framework and indicators to measure the impact of health research.
          </p>
 
-<a href="body_buildingtraining.html" class="btn-single read-more">Read More</a>
+<a href="{{route('player.tarticle3')}}" class="btn-single read-more">Read More</a>
 
         </div>
       </div>
@@ -133,9 +112,9 @@
         <div class="section topics">
         <h2 class="section-title">Topics</h2>
         <ul>
-          <li><a href="health.html" style="color:grey"><strong>Health</strong></a></li>
-          <li><a href="nutrition.html" style="color:grey"><strong>Nutrition</strong></a></li>
-          <li><a href="training.html" style="color:grey"><strong>Training</strong></a></li>
+          <li><a href="{{route('player.health')}}" style="color:grey"><strong>Health</strong></a></li>
+          <li><a href="{{route('player.nutrition')}}" style="color:grey"><strong>Nutrition</strong></a></li>
+          <li><a href="#" style="color:grey"><strong>Training</strong></a></li>
         </ul>
 
         </div>

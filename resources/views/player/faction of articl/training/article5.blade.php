@@ -31,30 +31,8 @@
 
 <body style="background-color: #fdfaf6;" >
   
-	<!-- ======= Header ======= -->
-	<header id="header" class="fixed-top header-transparent">
-		<div class="container d-flex align-items-center justify-content-between">
-
-		<a href="indexutama.html" class="logo"><img src="{{asset('assets/img/Logo.png')}}" alt="" class="img-fluid"></a>
-
-		<nav id="navbar" class="navbar">
-			<ul>
-				<li><a class="nav-link scrollto" href="indexutama.html">Home</a></li>
-				
-				<li><a class="nav-link scrollto" href="nutrition.html">Nutrition</a></li>
-        
-            <a href="update.html" class="btn-get-started scrollto">
-			</a>
-
-            <a href="\backend\logout.html">
-              <button type="button" class="btn btn-outline-warning" style="color: white;">Log Out</button>
-            </a>
-				
-			</ul>
-		</nav>
-		</div>
-	</header>
-	<!-- End Header -->
+	<!--========= NavBar ========-->
+@extends('player.faction of articl.nav_art')
 	
   <!-- ======= Hero Section ======= -->
   <section id="home" class="d-flex align-items-center justify-content-center">

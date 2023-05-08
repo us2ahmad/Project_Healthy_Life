@@ -29,29 +29,8 @@
 
 <body style="background-color: #fdfaf6;" >
   
-	<!-- ======= Header ======= -->
-	<header id="header" class="fixed-top header-transparent">
-		<div class="container d-flex align-items-center justify-content-between">
-
-		<a href="/player/index.html" class="logo"><img src="{{asset('/assets/img/Logo.png')}}" alt="" class="img-fluid"></a>
-
-		<nav id="navbar" class="navbar">
-			<ul>
-				<li><a class="nav-link scrollto" href="/player/index.html">Home</a></li>
-				
-				<li><a class="nav-link scrollto" href="/player/faction of articl/nutrition.html">Nutrition</a></li>
-        
-			</a>
-
-            <a href="logout.html">
-              <button type="button" class="btn btn-outline-warning" style="color: white;">Log Out</button>
-            </a>
-				
-			</ul>
-		</nav>
-		</div>
-	</header>
-	<!-- End Header -->
+	<!--========= NavBar ========-->
+@extends('player.faction of articl.nav_art')
 	
   <!-- ======= Hero Section ======= -->
   <section id="home" class="d-flex align-items-center justify-content-center">
