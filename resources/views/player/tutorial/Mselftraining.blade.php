@@ -34,26 +34,8 @@
 </head>
 
 <body>
-<!-- ======= Header ======= -->
-<header id="header" class="fixed-top header-transparent">
-    <div class="container d-flex align-items-center justify-content-between">
 
-      <a href="/player/index.html" class="logo">
-        <img src="{{asset('/assets/img/Logo.png')}}" alt="" class="img-fluid">
-      </a>
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto" href="/player/index.html">Home</a></li>
-          <a href="/login.html">
-            <button type="button" class="btn btn-outline-warning" style="color: white;">Log In</button>
-          </a>
-        </ul>
-      </nav>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-    </div>
-  </header>
-  <!-- ======= Home Section ======= -->
+@extends('player.faction of articl.nav_art')
   <section id="home" class="d-flex align-items-center justify-content-center">
     <div class="container position-relative">
       <h1>Training Ground</h1>

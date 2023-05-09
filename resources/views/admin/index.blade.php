@@ -1,5 +1,4 @@
-20833cssلون الخلفية
-11155لون المحتوى
+
 <!DOCTYPE html>
 <html lang="en">
   <head>

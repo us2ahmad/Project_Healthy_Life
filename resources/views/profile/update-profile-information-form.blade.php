@@ -51,6 +51,7 @@
                 <x-input-error for="photo" class="mt-2" />
             </div>
         @endif
+                                    
 
         <!-- First Name -->
         <div class="col-span-6 sm:col-span-4">
@@ -64,6 +65,38 @@
             <x-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.last_name" autocomplete="name" />
             <x-input-error for="name" class="mt-2" />
         </div>
+        <!-- Gendr -->
+        <div class="col-span-6 sm:col-span-4">
+                <x-label for="gender" value="{{ __('Gender') }}" />
+                <select name="gender" id="gender" class="block mt-1 w-full" wire:model.defer="state.gender" autocomplete="gender" >
+                    <option value="male" >Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div id="player_fields" style="display: none">
+                <div class="col-span-6 sm:col-span-4">
+                    <x-label for="height" value="{{ __('Height') }}" />
+                    <x-input id="height" class="block mt-1 w-full" type="text" name="height" :value="old('height')"   />
+                </div>
+
+                <div class="col-span-6 sm:col-span-4">
+                    <x-label for="weight" value="{{ __('Weight') }}" />
+                    <x-input id="weight" class="block mt-1 w-full" type="text" name="weight" :value="old('weight')"  />
+                </div>
+            </div>
+
+            <div id="coach_fields" style="display: none">
+            <div class="col-span-6 sm:col-span-4">
+                    <x-label for="certificate" value="{{ __('Certificate') }}" />
+                    <x-input id="certificate" class="block mt-1 w-full" type="text" name="certificate" :value="old('certificate')"   />
+                </div>
+
+                <div class="col-span-6 sm:col-span-4">
+                    <x-label for="experience" value="{{ __('Experience') }}" />
+                    <x-input id="experience" class="block mt-1 w-full" type="text" name="experience" :value="old('experience')"   />
+                </div>
+            </div>
+
 
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
@@ -99,3 +132,14 @@
         </x-button>
     </x-slot>
 </x-form-section>
+<script>
+    const userType = "{{ auth()->user()->account_type }}";
+    const playerFields = document.getElementById('player_fields');
+    const coachFields = document.getElementById('coach_fields');
+
+    if (userType === 'player') {
+        playerFields.style.display = 'block';
+    } else if (userType === 'coach') {
+        coachFields.style.display = 'block';
+    }
+</script>

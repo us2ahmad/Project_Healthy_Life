@@ -107,3 +107,5 @@ Route::get('/registered1', [RegController::class, 'showRegistrationForm'])->name
 Route::post('/registered1', [RegController::class, 'store']);
 ///////////////////////////////////////////////////////////////
 Route::get('Check',[RegController::class,'check']);
+
+

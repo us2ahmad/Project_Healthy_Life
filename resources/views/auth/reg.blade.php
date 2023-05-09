@@ -22,8 +22,8 @@
             <div class="mt-4">
                 <x-label for="gender" value="{{ __('Gender') }}" />
                 <select name="gender" id="gender" class="block mt-1 w-full">
-                    <option value="1">Male</option>
-                    <option value="0">Female</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
                 </select>
             </div>
 
@@ -53,24 +53,24 @@
             <div id="player_fields" style="display: none">
                 <div class="mt-4">
                     <x-label for="height" value="{{ __('Height') }}" />
-                    <x-input id="height" class="block mt-1 w-full" type="text" name="height" :value="old('height')" />
+                    <x-input id="height" class="block mt-1 w-full" type="text" name="height" :value="old('height')"   />
                 </div>
 
                 <div class="mt-4">
                     <x-label for="weight" value="{{ __('Weight') }}" />
-                    <x-input id="weight" class="block mt-1 w-full" type="text" name="weight" :value="old('weight')" />
+                    <x-input id="weight" class="block mt-1 w-full" type="text" name="weight" :value="old('weight')"  />
                 </div>
             </div>
 
             <div id="coach_fields" style="display: none">
                 <div class="mt-4">
                     <x-label for="certificate" value="{{ __('Certificate') }}" />
-                    <x-input id="certificate" class="block mt-1 w-full" type="text" name="certificate" :value="old('certificate')" />
+                    <x-input id="certificate" class="block mt-1 w-full" type="text" name="certificate" :value="old('certificate')"   />
                 </div>
 
                 <div class="mt-4">
                     <x-label for="experience" value="{{ __('Experience') }}" />
-                    <x-input id="experience" class="block mt-1 w-full" type="text" name="experience" :value="old('experience')" />
+                    <x-input id="experience" class="block mt-1 w-full" type="text" name="experience" :value="old('experience')"   />
                 </div>
             </div>
 

@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('coaches', function (Blueprint $table) {
             $table->id();
-            $table->string('certificate');
-            $table->string('experience');
+            $table->string('certificate')->nullable();
+            $table->string('experience')->nullable();
             $table->integer('approved')->default(0);
             $table->timestamps();
         });

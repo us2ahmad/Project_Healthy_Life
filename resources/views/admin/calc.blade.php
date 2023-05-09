@@ -78,7 +78,7 @@
           </li>
        
           <li class="nav-item menu-items">
-            <a class="nav-link" href="addtrainer.html">
+            <a class="nav-link" href="{{route('addtrainer')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-account-multiple-plus"></i>
               </span>
@@ -86,7 +86,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="viewtrainer.html">
+            <a class="nav-link" href="{{route('viewtrainer')}}">
               <span class="menu-icon">
                 <i class="
                 mdi mdi-account-multiple"></i>

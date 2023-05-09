@@ -47,6 +47,7 @@
           <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         @if(auth()->check())
+       
         <li>
             <a href="{{ route('profile.show') }}">
             <button type="button" class="btn btn-outline-warning" style="color: white;">Profile</button>
@@ -58,6 +59,10 @@
     <button type="submit" class="btn btn-outline-warning" style="color: white;">Log Out</button>
 </form>
         </li>
+        @if(auth()->user()->account_type=='coach')
+        
+        <li><a class="nav-link scrollto" href="{{ route('coach.index')}}">DashBoard</a></li>
+        @endif
         @else
         <li>
             <a href="login">

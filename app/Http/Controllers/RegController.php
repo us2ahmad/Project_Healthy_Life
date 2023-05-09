@@ -41,7 +41,7 @@ class RegController extends Controller
        $request->validate([
            'first_name' => 'required|string|max:255',
            'last_name' => 'required|string|max:255',
-           'gender' => 'required|in:0,1',
+           'gender' => 'required|string',
            'email' => 'required|string|email|max:255|unique:users',
            'password' => 'required|string|min:8|confirmed',
            'account_type' => 'required|string|in:player,coach',
