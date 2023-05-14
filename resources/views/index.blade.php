@@ -126,7 +126,7 @@
         </div>
         <div class="row" style="display: flex; justify-content: center;">
           <div class="col-lg-4 col-md-4 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
-            <a href="{{route('player.training')}}">
+            <a href="{{route('training')}}">
             <div class="icon-box iconbox-blue">
               <div class="icon">
                 <i class="bx bxl-dribbble"></i>
@@ -140,7 +140,7 @@
           <div class="col-lg-4 col-md-4 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
           </div>
           <div class="col-lg-4 col-md-4 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="200">
-            <a href="{{route('player.nutrition')}}">
+            <a href="{{route('nutrition')}}">
             <div class="icon-box iconbox-orange">
               <div class="icon">
                 <i class="bi bi-egg"></i>
@@ -152,7 +152,7 @@
             </div>
           </div>
           <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="300">
-            <a href="{{route('player.health')}}">
+            <a href="{{route('health')}}">
             <div class="icon-box iconbox-green">
               <div class="icon">
                 <i class="bi bi-clipboard-plus"></i>

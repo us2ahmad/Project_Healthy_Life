@@ -4,6 +4,7 @@ use App\Http\Controllers\CoachController;
 use App\Http\Controllers\MangerController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\RegController;
+use App\Http\Controllers\ArticleController;
 
 
 /////////////////////////////////////////////////////////////////////////////
@@ -12,32 +13,11 @@ use App\Http\Controllers\RegController;
 //صفحات ال player
 Route::controller(PlayerController::class)->group(function () {
     Route::get('/','index')->name('player.index');
-    Route::post('player/create', 'create')->name('player.create');
-    Route::get('player/health1',  'health1' )->name('player.health1');
-    Route::get('player/health2',  'health2' )->name('player.health2');
-    Route::get('player/health3',  'health3' )->name('player.health3');
-    Route::get('player/health4',  'health4' )->name('player.health4');
-    Route::get('player/health5',  'health5' )->name('player.health5');
-    Route::get('player/article1', 'article1')->name('player.article1');
-    Route::get('player/article2', 'article2')->name('player.article2');
-    Route::get('player/article3', 'article3')->name('player.article3');
-    Route::get('player/article4', 'article4')->name('player.article4');
-    Route::get('player/article5', 'article5')->name('player.article5');
-    Route::get('player/tarticle1', 'tarticle1')->name('player.tarticle1');
-    Route::get('player/tarticle2', 'tarticle2')->name('player.tarticle2');
-    Route::get('player/tarticle3', 'tarticle3')->name('player.tarticle3');
-    Route::get('player/tarticle4', 'tarticle4')->name('player.tarticle4');
-    Route::get('player/tarticle5', 'tarticle5')->name('player.tarticle5');
-    //صفحات الفيو لهي الراوتات غير  
-    Route::get('player/health', 'health')->name('player.health');
-    Route::get('player/training', 'training')->name('player.training');
-    Route::get('player/nutrition', 'nutrition')->name('player.nutrition');
     Route::get('player/plans', 'plans')->name('player.plans');
     Route::get('player/balding_body_team', 'balding_body_team')->name('player.balding_body_team');
     Route::get('player/fitness-team', 'fitness_team')->name('player.fitness_team');
     Route::get('player/athart_rachel', 'athartrachel')->name('player.athart_rachel');
     Route::get('player/exsersize', 'exsersize')->name('player.exsersize')->middleware('check.player');
-  
     Route::get('Mselftraining', function (){
         return view('player.tutorial.Mselftraining');
     })->name('Mselftraining');
@@ -46,8 +26,6 @@ Route::controller(PlayerController::class)->group(function () {
         return view('player.tutorial.Feselftraining');
     })->name('Feselftraining');
     
-  
-
 });
 
 /////////////////////////////////////////////////////////////////////////////
@@ -108,4 +86,14 @@ Route::post('/registered1', [RegController::class, 'store']);
 ///////////////////////////////////////////////////////////////
 Route::get('Check',[RegController::class,'check']);
 
-
+///////////////////////////////////////////////////////////////////////////////
+/////////////////////Article//////////////////////////////////////////////////
+Route::controller(ArticleController::class)->group(function () {
+  
+    Route::get('art/health', 'Health')->name('health');
+    Route::get('art/training', 'Training')->name('training');
+    Route::get('art/nutrition', 'Nutrition')->name('nutrition');
+    Route::get('ShowArticle/{type}/{id}', 'ShowArticle')->name('ShowArticle');
+    Route::get('show', 'show')->name('art.show');
+    Route::POST('art/create', 'create')->name('art.create');
+});

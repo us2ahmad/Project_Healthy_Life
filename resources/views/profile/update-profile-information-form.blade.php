@@ -73,19 +73,23 @@
                     <option value="female">Female</option>
                 </select>
             </div>
-            <div id="player_fields" style="display: none">
-                <div class="col-span-6 sm:col-span-4">
+          
+            <!-- @if (auth()->user()->account_type==='player')
+                
+             
+            <div class="col-span-6 sm:col-span-4">
                     <x-label for="height" value="{{ __('Height') }}" />
-                    <x-input id="height" class="block mt-1 w-full" type="text" name="height" :value="old('height')"   />
+                    <x-input id="height" class="block mt-1 w-full" type="number" name="height" :value="old('height')"   />
                 </div>
 
                 <div class="col-span-6 sm:col-span-4">
                     <x-label for="weight" value="{{ __('Weight') }}" />
-                    <x-input id="weight" class="block mt-1 w-full" type="text" name="weight" :value="old('weight')"  />
+                    <x-input id="weight" class="block mt-1 w-full" type="number" name="weight" :value="old('weight')"  />
                 </div>
-            </div>
+                @endif 
+          
 
-            <div id="coach_fields" style="display: none">
+                @if (auth()->user()->account_type==='coach')
             <div class="col-span-6 sm:col-span-4">
                     <x-label for="certificate" value="{{ __('Certificate') }}" />
                     <x-input id="certificate" class="block mt-1 w-full" type="text" name="certificate" :value="old('certificate')"   />
@@ -95,8 +99,8 @@
                     <x-label for="experience" value="{{ __('Experience') }}" />
                     <x-input id="experience" class="block mt-1 w-full" type="text" name="experience" :value="old('experience')"   />
                 </div>
-            </div>
-
+        
+                @endif  -->
 
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
@@ -132,14 +136,3 @@
         </x-button>
     </x-slot>
 </x-form-section>
-<script>
-    const userType = "{{ auth()->user()->account_type }}";
-    const playerFields = document.getElementById('player_fields');
-    const coachFields = document.getElementById('coach_fields');
-
-    if (userType === 'player') {
-        playerFields.style.display = 'block';
-    } else if (userType === 'coach') {
-        coachFields.style.display = 'block';
-    }
-</script>

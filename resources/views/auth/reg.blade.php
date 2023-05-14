@@ -53,12 +53,12 @@
             <div id="player_fields" style="display: none">
                 <div class="mt-4">
                     <x-label for="height" value="{{ __('Height') }}" />
-                    <x-input id="height" class="block mt-1 w-full" type="text" name="height" :value="old('height')"   />
+                    <x-input id="height" class="block mt-1 w-full" type="number" name="height" :value="old('height')"   />
                 </div>
 
                 <div class="mt-4">
                     <x-label for="weight" value="{{ __('Weight') }}" />
-                    <x-input id="weight" class="block mt-1 w-full" type="text" name="weight" :value="old('weight')"  />
+                    <x-input id="weight" class="block mt-1 w-full" type="number" name="weight" :value="old('weight')"  />
                 </div>
             </div>
 

@@ -15,10 +15,8 @@
   <meta name="author" content="freehtml5.co"></path></a>
   <link href="/static/main-de153736ecdb121a7748.css" rel="stylesheet">
   <link rel="stylesheet" href="/static/css/index.css">
- 
-  <!-- Favicons -->
-  <link href="{{asset('/assets/img/Logo.png')}}" rel="icon">
-  <link href="{{asset('/assets/img/apple-touch-icon.png')}}" rel="apple-touch-icon">
+
+
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
@@ -33,18 +31,8 @@
 
 <body>
 
-@extends('player.faction of articl.nav_art')
-	  <!-- ======= Home Section ======= -->
-	  <section id="home" class="d-flex align-items-center justify-content-center">
-		<div class="container position-relative">
-		  <h1>Training Ground</h1>
-		  <h2><i>- "Your Body Can Stand Almost Anything, It's Your Mind That You Have To Convience."
-		  </i></h2>
-	
-		</div>
-	  </section>
-	
-  <!-- ======= End Home Section ======= -->
+<!-- Nav Bar -->
+@include('player.nav_bar')
 
 <!-- ======= Training Content Section ======= -->
 

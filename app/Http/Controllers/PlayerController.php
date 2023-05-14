@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Player;
 use Illuminate\Http\Request;
 
@@ -66,78 +67,20 @@ class PlayerController extends Controller
     // {
     //     return view('player');
     // }
-    public function health1 ()
-    {
-        return view('player.faction of articl.health.health1');
-    }
-    public function health2 ()
-    {
-        return view('player.faction of articl.health.health2');
-    }
-    public function health3 ()
-    {
-        return view('player.faction of articl.health.health3');
-    }
-    public function health4 ()
-    {
-        return view('player.faction of articl.health.health4');
-    }
-    public function health5 ()
-    {
-        return view('player.faction of articl.health.health5');
-    }
-    public function article1 ()
-    {
-      return view('player.faction of articl.nutriting.article1');
-    }
-    public function article2 ()
-    {
-      return view('player.faction of articl.nutriting.article2');
-    }
-    public function article3 ()
-    {
-      return view('player.faction of articl.nutriting.article3');
-    }
-    public function article4 ()
-    {
-      return view('player.faction of articl.nutriting.article4');
-    }
-    public function article5 ()
-    {
-      return view('player.faction of articl.nutriting.article5');
-    }
-    public function tarticle2 ()
-    {
-      return view('player.faction of articl.training.article2');
-    }
-    public function tarticle1 ()
-    {
-      return view('player.faction of articl.training.article1');
-    }
-    public function tarticle3 ()
-    {
-      return view('player.faction of articl.training.article3');
-    }
-    public function tarticle4 ()
-    {
-      return view('player.faction of articl.training.article4');
-    }
-    public function tarticle5 ()
-    {
-      return view('player.faction of articl.training.article5');
-    }
-    public function health ()
-    {
-      return view('player.faction of articl.health');
-    }
-    public function nutrition ()
-    {
-      return view('player.faction of articl.nutrition');
-    }
-    public function training ()
-    {
-      return view('player.faction of articl.training');
-    }
+    // public function prof(Request $request){
+    //   if ( auth()->user()->player->user_id == auth()->user()->id){
+    //     $player = Player::find(auth()->user()->id);
+    //       // تحديد قيمة العمود "user_id"
+    //       // $player->user_id=auth()->user()->id;
+    //        $player->height = $request->height;
+    //        $player->weight = $request->weight;
+    //        $player->save();
+    //        return view('player.aa',compact('player'));
+    //   }
+    //   else return 0;
+    // }
+   
+  
     public function plans ()
     {
       return view('player.fcation.plans.plan1.plan');

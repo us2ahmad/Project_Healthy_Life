@@ -35,16 +35,8 @@
 
 <body>
 
-@extends('player.faction of articl.nav_art')
-  <section id="home" class="d-flex align-items-center justify-content-center">
-    <div class="container position-relative">
-      <h1>Training Ground</h1>
-      <h2><i>- "Your Body Can Stand Almost Anything, It's Your Mind That You Have To Convience."
-	  </i></h2>
-
-    </div>
-  </section>
-  <!-- ======= End Home Section ======= -->
+<!-- Nav Bar -->
+@include('player.nav_bar')
 
 <!-- ======= Training Content Section ======= -->
 
