@@ -61,7 +61,7 @@
         </li>
         @if(auth()->user()->account_type=='coach')
         
-        <li><a class="nav-link scrollto" href="{{ route('coach.index')}}">DashBoard</a></li>
+        <li><a class="nav-link scrollto" href="{{ route('home')}}">DashBoard</a></li>
         @endif
         @else
         <li>
@@ -245,29 +245,29 @@
         <div class="row section-title m-2 w-100">
           <h2>Team</h2>
           <div class="col-lg-4 py-5">
-            <a href="{{route('player.athart_rachel')}}">
+            <a href="{{route('team',['type'=>'bodypower'])}}">
               <div class="ts-item set-bg">
                 <img src="{{asset('/assets/img/faction/blabla.jpg')}}" class="w-100 h-100" alt="">
                   <div class="ts_text">
-                      <h4>Athart Rachel</h4>
+                      <h4>Body Power</h4>
                       <span>Gym Trainer</span>
                   </div>
               </div>
             </a>
           </div>
           <div class="col-lg-4 py-5">
-            <a href="{{route('player.fitness_team')}}">
+          <a href="{{route('team',['type'=>'fetness'])}}">
               <div class="ts-item set-bg">
                 <img src="{{asset('/assets/img/faction/fitness.png')}}" class="w-100 h-100"  alt="">
                 <div class="ts_text">
-                    <h4>fetness</h4>
+                    <h4>Fetness</h4>
                     <span>Gym Trainer</span>
                 </div>
               </div>
             </a>
           </div>
           <div class="col-lg-4 py-5">
-            <a href="{{route('player.balding_body_team')}}">
+            <a href="{{route('team',['type'=>'bodybuilding'])}}">
               <div class="ts-item set-bg">
                 <img src="{{asset('/assets/img/faction/body-building.jpg')}}" class="w-100 h-100" alt="">
                   <div class="ts_text">

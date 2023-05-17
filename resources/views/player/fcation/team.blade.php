@@ -46,42 +46,43 @@
 <body>
 <!-- Nav Bar -->
 @include('player.nav_bar')
-@section('title', 'Homepage Title')
-@section('desc', 'Homepage Description')
 
 
         
     <div class="container py-5">
         <div class="row align-items-center">
+        @foreach ( $coach as $coache )
+    
+
             <div class="col-lg-6">
-                <img class="img-fluid mb-4 mb-lg-0" src="{{asset('/assets/img/fitfit.jpg')}}" alt="Image">
-            </div>
+            <img class="img-fluid mb-4 mb-lg-0" src="{{ asset( $coache->user->profile_photo_path) }}" alt="Image">            </div>
             <div class="col-lg-6">
-                <h2 class="display-4 font-weight-bold mb-4">name</h2>
+                <h2 class="display-4 font-weight-bold mb-4">Name : {{$coache->user->first_name}}</h2>
                 <p>شغلة ما بعرف لشو          Labore vero lorem eos sed aliquy ipsum aliquy sed. Vero dolore dolore takima ipsum lorem rebum</p>
                 <div class="row py-2">
                     <div class="col-sm-6">
                         <i class="flaticon-barbell display-2 text-primary"></i>
                         <h4 class="font-weight-bold">شهادات</h4>
-                        <p>Ipsum sanctu dolor ipsum dolore sit et kasd duo</p>
+                        <p>{{$coache->certificate}}</p>
                     </div>
                     <div class="col-sm-6">
                         <i class="flaticon-medal display-2 text-primary"></i>
-                        <h4 class="font-weight-bold">عدد المشتركين</h4>
-                        <p>Ipsum sanctu dolor ipsum dolore sit et kasd duo</p>
+                        <h4 class="font-weight-bold">Years of Experience</h4>
+                        <p>{{$coache->experience}}</p>
                     </div>
                 </div>
                 <button class="create px-3 py-1" onclick="display()">create</button>
             </div>
+            @endforeach
         </div>
     </div>
    
-    <form id="window" action="" class="position-fixed info-box">
+    <form id="window" action="{{route('player.plans')}}"  method="GET" class="position-fixed info-box">
         <fieldset class="d-flex align-items-center justify-content-center flex-column">
-            <h1>ادخل معلوماتك</h1>
-            <input type="number" placeholder="ادخل وزنك">
-            <input type="number" placeholder="ادخل طولك">
-            <a href="/player/fcation/plans/plan1/plan.html" class="btn-ok px-3 py-1">ok</a>
+            <h3>Enter your information</h3>
+            <input type="number" name="weight" placeholder="Enter Your Weight">
+            <input type="number" name="height" placeholder="Enter Your Height">
+            <input type="submit" value="OK"  class="btn-ok px-3 py-1">
         </fieldset>
     </form>
     <script>

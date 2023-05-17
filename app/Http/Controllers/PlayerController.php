@@ -3,8 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use App\Models\Coach;
 use App\Models\Player;
+use App\Models\User;
+use Illuminate\Auth\Events\Validated;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class PlayerController extends Controller
 {
@@ -63,49 +67,38 @@ class PlayerController extends Controller
     {
         //
     }
-    // public function balding_body_team ()
-    // {
-    //     return view('player');
-    // }
-    // public function prof(Request $request){
-    //   if ( auth()->user()->player->user_id == auth()->user()->id){
-    //     $player = Player::find(auth()->user()->id);
-    //       // تحديد قيمة العمود "user_id"
-    //       // $player->user_id=auth()->user()->id;
-    //        $player->height = $request->height;
-    //        $player->weight = $request->weight;
-    //        $player->save();
-    //        return view('player.aa',compact('player'));
-    //   }
-    //   else return 0;
-    // }
    
-  
-    public function plans ()
-    {
-      return view('player.fcation.plans.plan1.plan');
+    // public function plans(Request $request)
+    // {
+    //     $validator = Validator::make($request->all(), [
+    //         'weight' => 'required|numeric|min:1|max:500',
+    //         'height' => 'required|numeric|min:1|max:300',
+    //     ]);
+    
+    //     if ($validator->fails()) {
+    //         return redirect()->back()->withErrors($validator)->withInput();
+    //     }
+    
+    //     // Do something with the weight and height values, such as storing them in the database or calculating a plan based on them
+    
+    //     return view();
+    // }
+    public function plans(){
+        return view('player.fcation.plans.plan1.plan');
     }
-    public function balding_body_team ()
-    {
-      return view('player.fcation.balding-body-team');
-    }
-    public function blabla ()
-    {
-      return view('player.fcation.blabla');
-    }
-    public function fitness_team ()
-    {
-      return view('player.fcation.fitness-team');
-    }
+
     public function exsersize ()
     {
       return view('player.fcation.plans.plan1.exsersize.exsersize');
     }
 
-    public function athartrachel(){
-      return view('player.fcation.blabla');
-    }
+   
+public function team($type){
+  $coach=Coach::where('type',$type)->where('approved','unlook')->get();
+    
 
+  return view('player.fcation.team',compact('coach'));
+}
 
 
 }

@@ -42,7 +42,6 @@
 	<!-- End Header -->
 	
   
-  
  <!-- ======= Home Section ======= -->
  <section id="home" class="d-flex align-items-center justify-content-center">
     <div class="container position-relative">
@@ -51,8 +50,4 @@
     </div>
   </section>
   <!-- End Home -->
-
-
-
-
   

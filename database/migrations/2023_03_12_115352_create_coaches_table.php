@@ -15,7 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('certificate')->nullable();
             $table->string('experience')->nullable();
-            $table->integer('approved')->default(0);
+            $table->string('type')->nullable();
+            $table->string('approved')->default('look');
             $table->timestamps();
         });
     }

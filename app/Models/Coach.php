@@ -14,6 +14,7 @@ class Coach extends Model
         'certificate',
         'experience',
         'approved',
+        'type',
     ];
 
     public function User(){
@@ -29,7 +30,7 @@ class Coach extends Model
 
     public function Players()
     {
-        return $this->hasmany(Player::class,'id_coach');
+        return $this->hasMany(Player::class,'id_coach');
     }
     public function Evaluation ()
     {

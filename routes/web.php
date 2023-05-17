@@ -5,7 +5,7 @@ use App\Http\Controllers\MangerController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\RegController;
 use App\Http\Controllers\ArticleController;
-
+use Chatify\Http\Controllers\MessagesController;
 
 /////////////////////////////////////////////////////////////////////////////
 ///////////////////////////Player///////////////////////////////////////////
@@ -14,10 +14,8 @@ use App\Http\Controllers\ArticleController;
 Route::controller(PlayerController::class)->group(function () {
     Route::get('/','index')->name('player.index');
     Route::get('player/plans', 'plans')->name('player.plans');
-    Route::get('player/balding_body_team', 'balding_body_team')->name('player.balding_body_team');
-    Route::get('player/fitness-team', 'fitness_team')->name('player.fitness_team');
-    Route::get('player/athart_rachel', 'athartrachel')->name('player.athart_rachel');
-    Route::get('player/exsersize', 'exsersize')->name('player.exsersize')->middleware('check.player');
+    Route::get('team/{type}', 'team')->name('team');
+    Route::get('player/exsersize', 'exsersize')->name('player.exsersize');//->middleware('check.player');
     Route::get('Mselftraining', function (){
         return view('player.tutorial.Mselftraining');
     })->name('Mselftraining');
@@ -33,16 +31,20 @@ Route::controller(PlayerController::class)->group(function () {
 
 Route::middleware(['auth','check.coach'])->group(function () {
     Route::controller(CoachController::class)->group(function () {
-        Route::get('coach/addadvice', 'addadvice')->name('addadvice');
-        Route::get('coach/addtrainingplanning','addtrainingplanning')->name('addtrainingplanning');
-        Route::get('coach/index','index')->name('coach.index');
-        Route::get('coach/update_trainer','update_trainer')->name('update_trainer');
-        Route::get('coach/updatecontent','updatecontent')->name('updatecontent');
-        Route::get('coach/updateplanning','updateplanning')->name('updateplanning');
-        Route::get('coach/viewcontent','viewcontent')->name('viewcontent');
-        Route::get('coach/viewplayers','viewplayers')->name('viewplayers');
-        Route::get('coach/viewviolations','viewviolations')->name('viewviolations');
+        Route::get('home','index')->name('home');      //Dashboard
+        Route::get('article', 'pagearticle')->name('page.article');      //Add Articles
+        Route::post('addarticle', 'addarticle')->name('add.article');
+      
+        Route::get('coach/addadvice', 'addadvice')->name('add.advice');
+        Route::get('addplan','addplans')->name('add.plan');
+        Route::get('coach/update_trainer','update_trainer')->name('update.trainer');
+        Route::get('coach/updatecontent','updatecontent')->name('update.content');
+        Route::get('coach/updateplanning','updateplanning')->name('update.planning');
+        Route::get('coach/viewcontent','viewcontent')->name('view.content');
+        Route::get('coach/viewplayers','viewplayers')->name('view.players');
+        Route::get('coach/viewviolations','viewviolations')->name('view.violations');
         Route::get('coach/violation','violation')->name('violation');
+        Route::get('coach/viewplan','viewplan')->name('view.plan');
     });
 });
 /////////////////////////////////////////////////////////////////////////////
@@ -94,6 +96,8 @@ Route::controller(ArticleController::class)->group(function () {
     Route::get('art/training', 'Training')->name('training');
     Route::get('art/nutrition', 'Nutrition')->name('nutrition');
     Route::get('ShowArticle/{type}/{id}', 'ShowArticle')->name('ShowArticle');
-    Route::get('show', 'show')->name('art.show');
-    Route::POST('art/create', 'create')->name('art.create');
+});
+
+Route::get('aaa',function(){
+    return view('coach.index');
 });

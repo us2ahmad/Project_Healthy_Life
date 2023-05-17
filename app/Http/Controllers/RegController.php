@@ -18,7 +18,7 @@ class RegController extends Controller
             return redirect()->route('player.index');    
             }
         elseif($user === 'coach'){
-            return redirect()->route('coach.index');
+            return redirect()->route('home');
         }
         else{
             return redirect()->route('player.index');
@@ -44,11 +44,12 @@ class RegController extends Controller
            'gender' => 'required|string',
            'email' => 'required|string|email|max:255|unique:users',
            'password' => 'required|string|min:8|confirmed',
-           'account_type' => 'required|string|in:player,coach',
+           'account_type' => '|string|in:player,coach',
            'height' => 'nullable|numeric',
            'weight' => 'nullable|numeric',
-           'certificate' => 'nullable|string|max:255',
-           'experience' => 'nullable|string|max:255',
+           'certificate' => 'nullable|string',
+           'experience' => 'nullable|numeric',
+           'type'=>'required|string'
           
        ]);
 
@@ -72,6 +73,7 @@ class RegController extends Controller
            $coach->user_id = $user->id;
            $coach->certificate = $request->certificate;
            $coach->experience = $request->experience;
+           $coach->type= $request->type;
            $coach->save();
        }
        

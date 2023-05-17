@@ -12,7 +12,7 @@ class Violation extends Model
 public function Plaeyr ()
 {
 
-return $this->belongsto(Plaeyr::class,id_plaeyr);
+return $this->belongsto(Plaeyr::class);
 
 }
 

@@ -18,7 +18,7 @@ class CheckCoach
         if(!(auth()->user()->account_type=='coach')){
                 return response('ليس لديك حق الوصول......');
         }
-        if (auth()->user()->coach->approved ==0) {
+        if (auth()->user()->coach->approved =='look') {
             return response('لم يتم الموافقة بعد .....');
         }
             // 

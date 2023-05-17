@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Coach;
 use Illuminate\Http\Request;
 
@@ -64,7 +65,31 @@ class CoachController extends Controller
         //
     }
 
-    public function addtrainingplanning(){
+    public function pagearticle( )
+    {
+      return view('coach.addarticle');
+    }
+    public function addarticle(Request $request)
+    {
+        // $request->validate([
+        //     'title' => 'required|string|max:255',
+        //     'type' => 'required|string|max:255',
+        //     'description' => 'required|string',
+        //     'content' => 'required|string|max:255',
+        //     'image_path' => 'required|string',
+        // ]); public function show(article $article)
+        $art=new Article();
+        $art->title=$request->title;
+        $art->type=$request->type;
+        $art->description=$request->description;
+        $art->content=$request->content;
+        $art->image_path=$request->image_path;
+        $art->id_coache=auth()->user()->id;
+        $art->save();
+        return redirect()->back();
+    }
+
+    public function addplans(){
         return view('coach.addtrainingplanning');
     }
 
@@ -95,6 +120,9 @@ class CoachController extends Controller
      }
      public function violation (){
         return view('coach.violation');
+     }
+     public function viewplan (){
+        return view('coach.viewplannings');
      }
 
 }

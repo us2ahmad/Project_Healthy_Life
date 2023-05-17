@@ -33,7 +33,6 @@
        <!-- _navbar -->
 @include('coach.navbar')
      <!-- _navbar -->
-
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
@@ -43,79 +42,59 @@
                 <div class="card">
                 
                   <div class=" container-fluid page-body-warper">
-                    <div class="container" >
-                    <table class="table">
-                      <thead>
-              <tr >
-               <td>id planning</td>
+                    <div class="container">
+                    <h1>Update Trainer</h1>
+                          <form action="" >
               
+                    <div style="padding: 15px;" class="col-sm-12">
+                    <label for="">First Name</label>
+                    <input style="color:aliceblue" type="text" name="First Name" placeholder="Give a Trainer First Name" required="" class="form-control p_input">
+                          </div>
               
-              <td>Days</td>
-              <td></td>
-              </tr></thead><tbody>
-              <tr>
-           <td>5</td> 
-
-
-<td>  <div class="table-responsive">
-  <table class="table">
-    <tbody>
-      <tr><td>1</td><td>lorem</td>
-        <td>2</td> <td>lorem</td>
-        <td>3</td> <td>lorem</td>
-      </tr>
-      <tr><td>4</td><td>lorem</td>
-        <td>5</td> <td>lorem</td>
-        <td>6</td> <td>lorem</td>
-      </tr>
-      <tr><td>7</td><td>lorem</td>
-        <td>8</td> <td>lorem</td>
-        <td>9</td> <td>lorem</td>
-      </tr>
-      <tr>
-        <td>10</td> <td>lorem</td>
-        <td>11</td> <td>lorem</td>
-        <td>12</td> <td>lorem</td>
-      </tr>
-      <tr>
-        <td>13</td><td>lorem</td>
-        <td>14</td> <td>lorem</td>
-        <td>15</td> <td>lorem</td>
-      </tr>
-      <tr>
-        <td>16</td> <td>lorem</td>
-        <td>17</td> <td>lorem</td>
-        <td>18</td> <td>lorem</td>
-      </tr>
-      <tr>
-        <td>19</td><td>lorem</td>
-        <td>20</td> <td>lorem</td>
-        <td>21</td> <td>lorem</td>
-      </tr>
-      <tr>
-        <td>22</td><td>lorem</td>
-        <td>23</td> <td>lorem</td>
-        <td>24</td> <td>lorem</td>
-      </tr>
-      <tr>
-        <td>25</td><td>lorem</td>
-        <td>26</td> <td>lorem</td>
-        <td>27</td> <td>lorem</td>
-      </tr>
-      <tr>
-        <td>28</td><td>lorem</td>
-        <td>29</td> <td>lorem</td>
-        <td>30</td> <td>lorem</td>
-      </tr>
-    </tbody>
-  </table>
-</div></td>
-<td><a href="Tupdatecontent.html"><button class="btn btn-inverse-success btn-fw">Update</button></a></td>                
-               </tr></tbody>
-               </table>
+                    <div style="padding: 15px;" class="col-sm-12">
+                    <label for="">Last Name</label>
+                    <input style="color:aliceblue" type="text"  name="Last name" placeholder="Give a Trainer Last Name" required="" class="form-control p_input">
+                          </div>
+              
+                    <div style="padding: 15px;" class="col-sm-12">
+                      <label for="">Birdth</label>
+                      <input style="color:aliceblue" type="date" name="Birdth" placeholder="Give a Trainer Birdth" required="" class="form-control p_input">
+                      </div>
+              
+                    <div style="padding: 15px;" class="col-sm-12">
+                      <label for=""> Phone</label>
+                      <input style="color:aliceblue" type="number" name="Phone" placeholder="Give a Trainer Phone" required="" height="10px" class="form-control p_input">
+                      </div>
+                
+                    <div style="padding: 15px;" class="col-sm-12">
+                      <label for=""> Email</label>
+                      <input style="color:aliceblue" type="email" name="Email" placeholder="Give a Trainer Email" required="" height="10px" class="form-control p_input">
+                      </div>
+                                
+                    <div style="padding: 15px;" class="col-sm-12">
+                      <label for=""> Address</label>
+                      <input style="color:aliceblue" type="text" name="Address" placeholder="Give a Trainer Address" required="" class="form-control p_input">
+                        </div>
+              
+                    <div style="padding: 15px;" class="col-sm-12">
+                      <label for="">Cartificates</label>
+                      <input style="color:aliceblue;" type="text" name="Cartificates" placeholder="Give a Trainer Cartificates" required="" class="form-control p_input">
+                      </div>
+              
+                      <div style="padding: 15px;" class="col-sm-12">
+                        <label for="">Evaluation</label>
+                        <input style="color:aliceblue" type="number" name="evaluation" placeholder="Give a Trainer evaluation" required="" height="10px" class="form-control p_input">
+                        </div>	
+                       <div style="padding: 15px;" class="col-sm-12">
+                        <label for="">Experience</label>
+                        <input style="color:aliceblue;" type="text" name="Cartificates" placeholder="Give a Trainer Experience" required="" class="form-control p_input">
+                        </div>
+                        <div style="padding-left: 500px;">
+                          <a href="#"><button type="submit" class="btn btn-dribbble btn-fw">Submit</button></a> </div>
+                </form>
                     </div>	
                     </div>
-              
+               
 
                   
         </div>

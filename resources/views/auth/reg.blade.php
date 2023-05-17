@@ -44,7 +44,7 @@
 
             <div class="mt-4">
                 <x-label for="account_type" value="{{ __('Account Type') }}" />
-                <select name="account_type" id="account_type" class="block mt-1 w-full" onchange="toggleFields()">
+                <select name="account_type" id="account_type" class="block mt-1 w-full" onchange="toggleFields()" >
                     <option value="player">Player User</option>
                     <option value="coach">Coach User</option>
                 </select>
@@ -65,12 +65,19 @@
             <div id="coach_fields" style="display: none">
                 <div class="mt-4">
                     <x-label for="certificate" value="{{ __('Certificate') }}" />
-                    <x-input id="certificate" class="block mt-1 w-full" type="text" name="certificate" :value="old('certificate')"   />
+                    <x-input id="certificate" class="block mt-1 w-full" type="file" name="certificate" :value="old('certificate')"   />
                 </div>
-
                 <div class="mt-4">
-                    <x-label for="experience" value="{{ __('Experience') }}" />
-                    <x-input id="experience" class="block mt-1 w-full" type="text" name="experience" :value="old('experience')"   />
+                <x-label for="type" value="{{ __('Training Type') }}" />
+                <select name="type" id="type" class="block mt-1 w-full" onchange="toggleFields()">
+                    <option value="bodybuilding">Body Building</option>
+                    <option value="bodypower">Body Power</option>
+                    <option value="fetness">Fetness</option>
+                </select>
+            </div>
+                <div class="mt-4">
+                    <x-label for="experience" value="{{ __('Years of Experience') }}" />
+                    <x-input id="experience" class="block mt-1 w-full" type="number" name="experience" :value="old('experience')"   />
                 </div>
             </div>
 
