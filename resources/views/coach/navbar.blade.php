@@ -13,19 +13,15 @@
                   </button>
                   <ul class="navbar-nav navbar-nav-right">
                   <li class="nav-item dropdown border-left">
-                      <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="#">
-                        <p class="text-success ms-2 mb-0 font-weight-medium">15</p>
+                      <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="/chatify">
                         <i class="mdi mdi-email"></i>
-                     
                       </a>
                     </li>
-                    
-                   
                     <li class="nav-item dropdown">
                       <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                         <div class="navbar-profile">
                           <img class="img-xs rounded-circle" src="{{asset('coach/assets/images/faces/face15.jpg')}}" alt="">
-                          <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
+                          <p class="mb-0 d-none d-sm-block navbar-profile-name">{{auth()->user()->first_name}} {{auth()->user()->last_name}} </p>
                           <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                         </div>
                       </a>
@@ -39,20 +35,23 @@
                             </div>
                           </div>
                           <div class="preview-item-content">
-                            <p class="preview-subject mb-1">Settings</p>
+                            <p class="preview-subject mb-1" >Settings</p>
                           </div>
                         </a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item preview-item">
-                          <div class="preview-thumbnail">
-                            <div class="preview-icon bg-dark rounded-circle">
-                              <i class="mdi mdi-logout text-danger"></i>
-                            </div>
-                          </div>
-                          <div class="preview-item-content">
-                            <p class="preview-subject mb-1">Log out</p>
-                          </div>
-                        </a>
+                        <form action="{{ route('logout') }}" method="POST">    
+                          @csrf 
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item preview-item"  onclick="event.preventDefault(); this.closest('form').submit();">
+        <div class="preview-thumbnail">
+            <div class="preview-icon bg-dark rounded-circle">
+                <i class="mdi mdi-logout text-danger"></i>
+            </div>
+        </div>
+        <div class="preview-item-content">
+            <span class="preview-subject mb-1">Log out</span>
+        </div>
+    </a>
+</form>
                        
                       </div>
                     </li>

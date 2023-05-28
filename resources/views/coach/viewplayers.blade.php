@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-7Lm9I6vM1yY2J7Dd4Iq/0FgEa7Zqg2E6X/8L1TIeVde1zQ+/J3V7Zs9Q7O9XQG4sJlQX97n9iCZ58yEj2xZ4cQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -36,58 +38,49 @@
 
         <!-- partial -->
         <div class="main-panel">
-          <div class="content-wrapper">
-         
-            <div class="row">
-              <div class="col-xl-12 col-sm-12 grid-margin stretch-card">
-                <div class="card">
-                
-                  
-                  <div class=" container-fluid page-body-warper">
-                    <div class="container">
-                    <table class="table">
-                      <thead>
-              <td>Id</td>
-              <td>first name</td>
-              <td>last name</td>
-              <td>birdth</td>
-              <td>phone</td>
-              <td>email</td>
-              <td>address</td>
-              <td>trainer id</td>
-              <td>planning id</td>
-              <td>length</td>
-              <td>weigth</td>
-              <td>gender</td>
-              <td>level id</td>
-              </tr></thead>
-              <tbody>
-              <tr>
-              <td>6</td>
-                  <td>ali</td>
-                  <td>shami</td>
-                  <td>2/1/2001</td>
-                  <td>0985245628</td>
-                  <td>ali86@gmail.com</td>
-                  <td>damas</td>
-                  <td>45</td>
-                  <td>12</td>
-                  <td>170</td>
-                  <td>75</td>
-                  <td>male</td>
-                  <td>3</td>
-                  <td><a href="#"><button class="btn btn-inverse-danger">violation</button></a></td>
-                </tr></tbody>
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-xl-12 col-sm-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="container-fluid page-body-warper">
+            <div class="container">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>first name</th>
+                    <th>last name</th>
+                    <th>phone</th>
+                    <th>email</th>
+                    <th>gender</th>
+                    <th>planning id</th>
+                    <th>length</th>
+                    <th>weigth</th>
+                    <th>level id</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>6</td>
+                    <td>ali</td>
+                    <td>shami</td>
+                    <td>0985245628</td>
+                    <td>ahmad2tabash@gmail.com</td>
+                    <td>male</td>
+                    <td>12</td>
+                    <td>170</td>
+                    <td>75</td>
+                    <td>3</td>
+                  </tr>
+                </tbody>
               </table>
-                    </div>	
-                    </div>
-              
-                  
+            </div>	
+          </div>
         </div>
       </div>
-        </div>
-      </div>
-       </div>
+    </div>
+  </div>
+</div>
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="{{asset('coach/assets/vendors/js/vendor.bundle.base.js')}}"></script>

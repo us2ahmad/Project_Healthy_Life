@@ -57,12 +57,12 @@
             <div class="col-lg-6">
             <img class="img-fluid mb-4 mb-lg-0" src="{{ asset( $coache->user->profile_photo_path) }}" alt="Image">            </div>
             <div class="col-lg-6">
-                <h2 class="display-4 font-weight-bold mb-4">Name : {{$coache->user->first_name}}</h2>
-                <p>شغلة ما بعرف لشو          Labore vero lorem eos sed aliquy ipsum aliquy sed. Vero dolore dolore takima ipsum lorem rebum</p>
+                <h4>Name :{{$coache->user->first_name}} {{$coache->user->last_name }}</h4>
+                <p>UserName: {{$coache->user->name}}</p> <a href="/chatify/{{$coache->user->id}}">Chating</a>
                 <div class="row py-2">
                     <div class="col-sm-6">
                         <i class="flaticon-barbell display-2 text-primary"></i>
-                        <h4 class="font-weight-bold">شهادات</h4>
+                        <h4 class="font-weight-bold">Certificate</h4>
                         <p>{{$coache->certificate}}</p>
                     </div>
                     <div class="col-sm-6">
@@ -71,7 +71,7 @@
                         <p>{{$coache->experience}}</p>
                     </div>
                 </div>
-                <button class="create px-3 py-1" onclick="display()">create</button>
+                <button class="create px-3 py-1" onclick="display()">Subscribe</button>
             </div>
             @endforeach
         </div>

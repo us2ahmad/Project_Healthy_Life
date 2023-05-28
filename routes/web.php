@@ -51,24 +51,21 @@ Route::middleware(['auth','check.coach'])->group(function () {
 ///////////////////////////Manger///////////////////////////////////////////
 
 Route::controller(MangerController::class)->group(function () {
-    Route::get('manger/addadvice', 'addadvice');
+    Route::get('manger/addadvice', 'addadvice')->name('se');
     Route::get('manger/addarticle','addarticle');
-    Route::get('manger/addtrainer','addtrainer')->name('addtrainer');
-    Route::get('manger/addviolations','addviolations')->name('addviolations');
+    Route::get('oh','addcoach')->name('add.coach');
+    Route::get('manger/addviolations','addviolations')->name('violations');
     Route::get('manger/calc','calc')->name('calc');
     Route::get('manger/chat','chat')->name('chat');
     Route::get('manger/imports','imports')->name('imports');
     Route::get('manger/payments','payments')->name('payments');
-    Route::get('manger/index','index')->name('index');
+    Route::get('a/index','index')->name('index');
     Route::get('manger/replycomplaint','replycomplaint')->name('replycomplaint');
-    Route::get('manger/updateplayer','updateplayer')->name('updateplayer');
-    Route::get('manger/updatetrainer','updatetrainer')->name('updatetrainer');
-    Route::get('manger/updateviolation','updateviolation')->name('updateviolation');
-    Route::get('manger/viewbannings','viewbannings')->name('viewbannings');
-    Route::get('manger/viewtrainer','viewtrainer')->name('viewtrainer');
-    Route::get('manger/viewviolations','viewviolations')->name('viewviolations');
-    Route::get('manger/violations','violations')->name('violations');
-
+    Route::get('updateplayer','updateplayer')->name('update.player');
+    Route::get('updatetrainer','updatetrainer')->name('updatetrainer');
+    Route::get('updateviolation','updateviolation')->name('updateviolation');
+    Route::get('viewbannings','viewbannings')->name('viewbannings');
+    Route::get('viewcoach','showcoach')->name('ahmad');
 });
 
 /////////////////////////////////////////////////////////////////////////////
@@ -88,6 +85,9 @@ Route::post('/registered1', [RegController::class, 'store']);
 ///////////////////////////////////////////////////////////////
 Route::get('Check',[RegController::class,'check']);
 
+
+
+
 ///////////////////////////////////////////////////////////////////////////////
 /////////////////////Article//////////////////////////////////////////////////
 Route::controller(ArticleController::class)->group(function () {
@@ -97,7 +97,5 @@ Route::controller(ArticleController::class)->group(function () {
     Route::get('art/nutrition', 'Nutrition')->name('nutrition');
     Route::get('ShowArticle/{type}/{id}', 'ShowArticle')->name('ShowArticle');
 });
-
-Route::get('aaa',function(){
-    return view('coach.index');
-});
+///////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////

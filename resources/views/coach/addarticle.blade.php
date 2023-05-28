@@ -43,6 +43,15 @@
                   <div class=" container-fluid page-body-warper">
                     <div class="container">
                     <h3>Add Article</h3>
+                    @if ($errors->any())
+                    <div>
+                      <ul>
+              @foreach ( $errors->all() as $error )
+                <li>{{$error}}</li>
+              @endforeach
+                        </ul>
+                  </div>
+                    @endif
                 <form method="POST" action="{{route('add.article')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="col-md-12">

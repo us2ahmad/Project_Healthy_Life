@@ -39,8 +39,9 @@ class RegController extends Controller
    public function store(Request $request)
    {
        $request->validate([
-           'first_name' => 'required|string|max:255',
-           'last_name' => 'required|string|max:255',
+           'name' => 'required|string|unique:users',
+              'first_name' => 'required|string|max:255',
+              'last_name' => 'required|string|max:255',
            'gender' => 'required|string',
            'email' => 'required|string|email|max:255|unique:users',
            'password' => 'required|string|min:8|confirmed',
@@ -54,13 +55,14 @@ class RegController extends Controller
        ]);
 
        $user = new User();
-       $user->first_name = $request->first_name;
-       $user->last_name = $request->last_name;
-       $user->gender = $request->gender;
-       $user->email = $request->email;
-       $user->password = bcrypt($request->password);
-       $user->account_type = $request->account_type;
-       $user->save(); // يجب حفظ حساب المستخدم الجديد أولاً
+           $user->name = $request->name;
+           $user->first_name = $request->first_name;
+           $user->last_name = $request->last_name;
+           $user->gender = $request->gender;
+           $user->email = $request->email;
+           $user->password = bcrypt($request->password);
+           $user->account_type = $request->account_type;
+           $user->save(); // يجب حفظ حساب المستخدم الجديد أولاً
        
        if ($request->account_type === 'player') {
            $player = new Player();

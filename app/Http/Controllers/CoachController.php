@@ -38,7 +38,7 @@ class CoachController extends Controller
      */
     public function show(Coach $coach)
     {
-        return 1234;
+       
     }
 
     /**
@@ -71,13 +71,13 @@ class CoachController extends Controller
     }
     public function addarticle(Request $request)
     {
-        // $request->validate([
-        //     'title' => 'required|string|max:255',
-        //     'type' => 'required|string|max:255',
-        //     'description' => 'required|string',
-        //     'content' => 'required|string|max:255',
-        //     'image_path' => 'required|string',
-        // ]); public function show(article $article)
+        $request->validate([
+            'title' =>'required',
+            'type' => 'required',
+            'description' => 'required',
+            'content' => 'required',
+            'image_path' => 'required',
+        ]);
         $art=new Article();
         $art->title=$request->title;
         $art->type=$request->type;

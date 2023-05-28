@@ -1,13 +1,14 @@
 <?php
 
 return [
+    
+ 
     /*
     |-------------------------------------
     | Messenger display name
     |-------------------------------------
     */
     'name' => env('CHATIFY_NAME', 'Chatify Messenger'),
-
     /*
     |-------------------------------------
     | The disk on which to store added

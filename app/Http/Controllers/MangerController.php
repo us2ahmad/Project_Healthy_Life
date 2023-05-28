@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Manger;
+use App\Models\User;
+use App\Models\Coach;
 use Illuminate\Http\Request;
+
 
 class MangerController extends Controller
 {
@@ -70,7 +73,7 @@ class MangerController extends Controller
 
         return view('admin.addarticle');
     }
-    public function addtrainer(){
+    public function addcoach(){
 
         return view('admin.addtrainer');
     }
@@ -139,5 +142,16 @@ class MangerController extends Controller
         return view('admin.violations');
         
     }
+
+    public function showcoach(){
+       // $account_type='coach';
+      return '1235';
+        // $coach = Coach::with('User')->get();
+        // $coach = Coach::where('account_type', 'coach')->get();
+    //   return view('admin.viewtrainer', ['coaches' => $coaches]);
+        // return view('admin.viewcoach', compact('coach'));
+     
+    }
+    
 
 }
