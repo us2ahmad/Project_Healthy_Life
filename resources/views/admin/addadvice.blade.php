@@ -23,26 +23,20 @@
     </div>
 @endif
 
-<!-- @push('scripts')
-    <script>
-       setTimeout(function() {
-    $('div.alert-success').fadeOut();
-}, {{ session('success_expire') ? session('success_expire')->diffInMilliseconds(now()) : 3 }});
-    </script>
-@endpush -->
                   <div class=" container-fluid page-body-warper">
                     <div class="container">
                     <h1>Add Advice</h1>
-                          <form method="POST" action="{{route('add.advice')}}" enctype="multipart/form-data">
+                          <form method="POST" action="{{route('add.add.advice')}}" enctype="multipart/form-data">
                             @csrf
+                            @method('POST')
                              <div style="padding: 15px;" class="col-sm-12">
                         <label for="">Photo</label>
                         <input  style="color:aliceblue;display: block;" type="file" name="photo" required="" class="form-control p_input">
                         </div>	
                             <div style="padding: 15px;" class="col-sm-6" style="color:aliceblue;display: block;">
                              <label for="">Advice</label><br>
-              <textarea name="description" id="" cols="139" rows="17" style="color:aliceblue;background-color: rgb(27, 32, 32);" placeholder="  
-      Enter Description The Advice"></textarea>
+              <textarea name="desc" id="" cols="80" rows="10" style="color:aliceblue;background-color: rgb(27, 32, 32);" placeholder="  
+      Enter Description The Advice" required></textarea>
                      </div>
                      <div style="padding-left:50% ;">
                  <input type="submit" value="submit" class="btn btn-inverse-success btn-fw">

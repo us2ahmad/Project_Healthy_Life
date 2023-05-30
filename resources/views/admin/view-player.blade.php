@@ -25,34 +25,33 @@
                     <table class="table">
                       <thead>
               <td>Id</td>
-              <td>first name</td>
-              <td>last name</td>
-              <td>birdth</td>
-              <td>phone</td>
-              <td>email</td>
-              <td>address</td>
-              <td>trainer id</td>
-              <td>planning id</td>
-              <td>length</td>
-              <td>weigth</td>
-              <td>gender</td>
-              <td>level id</td>
+              <td>UserName</td>
+              <td>First Name</td>
+              <td>Last Name</td>
+              <td>Email</td>
+              <td>Gender</td>
+              <td>Height</td>
+              <td>Weight</td>
+              <td>Level</td>
+              <td>Trainer Id</td>
+              <td>Planning Id</td>
               <td></td>
               <td></td>
               </tr></thead>
               <tbody>
               <tr>
-            @foreach ($users  as $user)
+            @foreach ($players  as $player)
    
-        <td>{{ $User->id }}</td>
-        <td>{{ $user->first_name}}</td>
-        <td>{{ $user->last_name}}</td>
-        <td>{{ $user->email}}</td>
-        <td>{{ $user->gender}}</td>
-        <td>{{ $user->account_type}}</td>
-   
-
-                  <td><a href="#"><button class="btn btn-inverse-warning">violation</button></a></td>
+        <td>{{ $player->id }}</td>
+        <td>{{ $player->name}}</td>
+        <td>{{ $player->first_name}}</td>
+        <td>{{ $player->last_name}}</td>
+        <td>{{ $player->email}}</td>
+        <td>{{ $player->gender}}</td>
+        <td>{{ $player->player->height}}</td>
+        <td>{{ $player->player->weight}}</td>  
+         <td>{{ $player->player->level}}</td>
+        <td>{{ $player->player->id_coache}}</td>
      <td><button class="btn btn-inverse-danger">Ban</button></td>   
               </tr>
               @endforeach

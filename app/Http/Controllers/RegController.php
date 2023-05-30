@@ -68,6 +68,7 @@ class RegController extends Controller
            $player = new Player();
            $player->user_id = $user->id; // تحديد قيمة العمود "user_id"
            $player->height = $request->height;
+           $player->level = $request->level;
            $player->weight = $request->weight;
            $player->save();
        } elseif ($request->account_type === 'coach') {

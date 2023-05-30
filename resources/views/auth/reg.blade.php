@@ -55,7 +55,17 @@
             </div>
 
             <div id="player_fields" style="display: none">
-                <div class="mt-4">
+       
+            <div class="mt-4">
+                <x-label for="level" value="{{ __('Level') }}" />
+                <select name="level" id="level" class="block mt-1 w-full" onchange="toggleFields()">
+                    <option value="beginner">Beginner</option>
+                    <option value="intermediate">Intermediate</option>
+                    <option value="advanced">Advanced</option>    
+                    <option value="expert">Expert</option>
+                </select>
+            </div>
+            <div class="mt-4">
                     <x-label for="height" value="{{ __('Height') }}" />
                     <x-input id="height" class="block mt-1 w-full" type="number" name="height" :value="old('height')"   />
                 </div>

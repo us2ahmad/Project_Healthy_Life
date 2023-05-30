@@ -39,7 +39,7 @@
           </li>
          
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{route('index')}}">
+            <a class="nav-link" href="{{route('admin.index')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-view-dashboard"></i>
               </span>
@@ -48,7 +48,7 @@
           </li>
        
           <li class="nav-item menu-items">
-          <a class="nav-link" href="{{route('updatetrainer')}}">
+            <a class="nav-link" href="">
               <span class="menu-icon">
                 <i class="mdi mdi-account-multiple-plus"></i>
               </span>
@@ -56,7 +56,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="viewtrainer">
+            <a class="nav-link" href="{{route('admin.view.coashes')}}">
               <span class="menu-icon">
                 <i class="
                 mdi mdi-account-multiple"></i>
@@ -65,7 +65,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="viewplayers">
+            <a class="nav-link" href="{{route('admin.view.players')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-numeric-9-plus-box-multiple-outline"></i>
               </span>
@@ -98,7 +98,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{route('admin.peag.advice')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-monitor-cellphone-star"></i>
               </span>
@@ -106,7 +106,7 @@
             </a>
           </li>
            <li class="nav-item menu-items">
-            <a class="nav-link" href="viewadvices">
+            <a class="nav-link" href="{{route('admin.show.advices')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-monitor"></i>
               </span>
@@ -114,7 +114,7 @@
             </a>
           </li>
            <li class="nav-item menu-items">
-            <a class="nav-link" href="viewarticle">
+            <a class="nav-link" href="{{route('admin.show.article')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-monitor"></i>
               </span>
@@ -132,5 +132,4 @@
          
         </ul>
       </nav>
-
       <!-- End Sidebar -->

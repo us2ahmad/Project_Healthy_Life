@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->double('height')->nullable();
             $table->double('weight')->nullable();
+            $table->string('level')->nullable();
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
         });

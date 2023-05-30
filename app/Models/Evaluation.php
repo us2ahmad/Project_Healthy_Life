@@ -8,6 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Evaluation extends Model
 {
     use HasFactory;
+    protected $fillable=[
+        
+        'id_coache',
+        'id_player',
+        'interaction',
+        ];
     public function Plaeyr()
     {
         return $this->belongsto(Player::class,'id_plaeyr');

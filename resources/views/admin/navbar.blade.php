@@ -10,7 +10,7 @@
             </button>
             <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item dropdown border-left">
-                <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="chat">
+                <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="/chatify">
                   <p class="text-success ms-2 mb-0 font-weight-medium">15</p>
                   <i class="mdi mdi-email"></i>
                
@@ -18,7 +18,7 @@
               </li>
               
               <li class="nav-item dropdown border-left">
-                <a class="nav-link count-indicator dropdown-toggle" href="replycomplaint">
+                <a class="nav-link count-indicator dropdown-toggle" href="">
                   <p class="text-danger ms-2 mb-0 font-weight-medium">15</p>
                   <i class="mdi mdi-bell"></i>
                 </a>

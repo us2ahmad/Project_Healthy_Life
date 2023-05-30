@@ -11,6 +11,7 @@ class Player extends Model
     protected $fillable = [
         'height',
         'weight',
+        'level',
     ];
     public function User(){
 

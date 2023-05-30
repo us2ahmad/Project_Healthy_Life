@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Manger;
 use App\Models\User;
 use App\Models\Coach;
+use App\Models\Advice;
+use App\Models\Article;
 use Illuminate\Http\Request;
 
 
@@ -13,66 +15,38 @@ class MangerController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+public function index(){
+    return view('admin.index');
+}
+
+
+      public function peagadvice(){
+      return view('admin.addadvice');
+      }
+    public function addadvice(Request $request)
     {
-        return view('admin.index');
+        $adv = new Advice();
+        $adv->desc = $request->desc;
+        $adv->photo = $request->photo;
+        $adv->save();
+    
+        return redirect()->back();
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
+    public function showAdvices()
     {
-        //
+        $advices = Advice::all();
+
+        return view('admin.view-advices', compact('advices'));
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function showarticle()
     {
-        //
+        $articles = Article::all();
+
+        return view('admin.view-article', compact('articles'));
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Manger $manger)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Manger $manger)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Manger $manger)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Manger $manger)
-    {
-        //
-    }
-    public function addadvice(){
-
-        return view('admin.addadvice');
-    }
-    public function addarticle(){
-
-        return view('admin.addarticle');
-    }
+   
     public function addcoach(){
 
         return view('admin.addtrainer');
@@ -112,46 +86,21 @@ class MangerController extends Controller
         return view('admin.updateplayer');
         
     }
-    public function updatetrainer(){
 
-        return view('admin.updatetrainer');
-        
-    }
-    public function updateviolation(){
 
-        return view('admin.updateviolation');
-        
-    }
-    public function viewbannings(){
+ 
+    public function viewcoash(){
 
-        return view('admin.viewbannings');
-        
-    }
-    public function viewtrainer(){
-
-        return view('admin.viewtrainer');
-        
-    }
-    public function viewviolations(){
-
-        return view('admin.viewviolations');
-        
-    }
-    public function violations(){
-
-        return view('admin.violations');
-        
-    }
-
-    public function showcoach(){
-       // $account_type='coach';
-      return '1235';
-        // $coach = Coach::with('User')->get();
-        // $coach = Coach::where('account_type', 'coach')->get();
-    //   return view('admin.viewtrainer', ['coaches' => $coaches]);
-        // return view('admin.viewcoach', compact('coach'));
-     
+    $coaches = User::with('coach')->where('account_type', 'coach')->get();
+        return view('admin.view-coach',compact('coaches'));
     }
     
+    public function viewplayer(){
+
+        $players = User::with('player')->where('account_type', 'player')->get();
+            return view('admin.view-player',compact('players'));
+        }
+        
+
 
 }

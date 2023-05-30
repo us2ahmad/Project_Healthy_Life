@@ -25,26 +25,32 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Description</th>
+            <th>Title</th>
+            <th>Type</th> 
+            <th> Description</th>
+            <th>Content</th>
+            <th >Coache Id</th>
             <th>Photo</th>
         </tr>
     </thead>
     <tbody>
-        @foreach ($advices as $adv)
+        @foreach ($articles as $article)
         <tr>
-            <td>{{ $adv->id }}</td>
-            <td>{{ $adv->description }}</td >
-            <td> {{ $adv->photo }}</td>
+            <td>{{ $article->id }}</td>
+            <td>{{ $article->title }}</td >
+            <td>{{ $article->type }}</td >
+            <td>{{ $article->description }}</td >
+            <td>{{ $article->content }}</td >
+            <td>{{ $article->id_coache }}</td >
+            <td><img src="{{ asset($article->image_path) }}" alt=""></td>
         </tr>
         @endforeach
     </tbody>
 </table>
             
- {{-- <td><button type="submit" class="btn btn-inverse-success btn-fw">unbanned</button></td> --}}
- 
-          </tr></tbody>
-          </table><br>
-                </div>	
+
+
+  
                 </div>
           
               

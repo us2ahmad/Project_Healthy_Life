@@ -30,42 +30,52 @@ Route::controller(PlayerController::class)->group(function () {
 ////////////////////////////Coach///////////////////////////////////////////
 
 Route::middleware(['auth','check.coach'])->group(function () {
-    Route::controller(CoachController::class)->group(function () {
+    Route::prefix('coach')->controller(CoachController::class)->group(function () {
         Route::get('home','index')->name('home');      //Dashboard
         Route::get('article', 'pagearticle')->name('page.article');      //Add Articles
         Route::post('addarticle', 'addarticle')->name('add.article');
       
-        Route::get('coach/addadvice', 'addadvice')->name('add.advice');
+        Route::get('addadvice', 'addadvice')->name('add.advice');
         Route::get('addplan','addplans')->name('add.plan');
-        Route::get('coach/update_trainer','update_trainer')->name('update.trainer');
-        Route::get('coach/updatecontent','updatecontent')->name('update.content');
-        Route::get('coach/updateplanning','updateplanning')->name('update.planning');
-        Route::get('coach/viewcontent','viewcontent')->name('view.content');
-        Route::get('coach/viewplayers','viewplayers')->name('view.players');
-        Route::get('coach/viewviolations','viewviolations')->name('view.violations');
-        Route::get('coach/violation','violation')->name('violation');
-        Route::get('coach/viewplan','viewplan')->name('view.plan');
+        Route::get('update_trainer','update_trainer')->name('update.trainer');
+        Route::get('updatecontent','updatecontent')->name('update.content');
+        Route::get('updateplanning','updateplanning')->name('update.planning');
+        Route::get('viewcontent','viewcontent')->name('view.content');
+        Route::get('viewplayers','viewplayers')->name('view.players');
+        Route::get('viewviolations','viewviolations')->name('view.violations');
+        Route::get('violation','violation')->name('violation');
+        Route::get('viewplan','viewplan')->name('view.plan');
     });
 });
 /////////////////////////////////////////////////////////////////////////////
 ///////////////////////////Manger///////////////////////////////////////////
 
-Route::controller(MangerController::class)->group(function () {
-    Route::get('manger/addadvice', 'addadvice')->name('se');
-    Route::get('manger/addarticle','addarticle');
+Route::prefix('manger')->controller(MangerController::class)->group(function () {
+
+    Route::get('index', 'index')->name('admin.index');
+
+    /////////////////////////////////////////////////////////////////////////////
+    Route::get('addadvice', 'peagadvice')->name('admin.peag.advice');
+    Route::post('addadvice', 'addadvice')->name('add.add.advice');
+    Route::get('showAdvices', 'showAdvices')->name('admin.show.advices');
+
+    /////////////////////////////////////////////////////////////////////////////
+
+ Route::get('showarticle', 'showarticle')->name('admin.show.article');
+    /////////////////////////////////////////////////////////////////////////////
+    Route::get('addarticle','addarticle');
     Route::get('oh','addcoach')->name('add.coach');
-    Route::get('manger/addviolations','addviolations')->name('violations');
-    Route::get('manger/calc','calc')->name('calc');
-    Route::get('manger/chat','chat')->name('chat');
-    Route::get('manger/imports','imports')->name('imports');
-    Route::get('manger/payments','payments')->name('payments');
-    Route::get('a/index','index')->name('index');
-    Route::get('manger/replycomplaint','replycomplaint')->name('replycomplaint');
+    Route::get('addviolations','addviolations')->name('violations');
+    Route::get('mangecalc','calc')->name('calc');
+    Route::get('imports','imports')->name('imports');
+    Route::get('payments','payments')->name('payments');
+    Route::get('replycomplaint','replycomplaint')->name('replycomplaint');
     Route::get('updateplayer','updateplayer')->name('update.player');
     Route::get('updatetrainer','updatetrainer')->name('updatetrainer');
     Route::get('updateviolation','updateviolation')->name('updateviolation');
-    Route::get('viewbannings','viewbannings')->name('viewbannings');
-    Route::get('viewcoach','showcoach')->name('ahmad');
+    Route::get('viewbannings','viewbannings')->name('viewbannings');   
+    Route::get('viewplayer','viewplayer')->name('admin.view.players');
+    Route::get('viewcoach','viewcoash')->name('admin.view.coashes');
 });
 
 /////////////////////////////////////////////////////////////////////////////
