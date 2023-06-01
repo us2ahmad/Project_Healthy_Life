@@ -8,6 +8,7 @@ use App\Models\Coach;
 use App\Models\Advice;
 use App\Models\Article;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 
 class MangerController extends Controller
@@ -101,6 +102,48 @@ public function index(){
             return view('admin.view-player',compact('players'));
         }
         
+        public function register(){
+            return view('admin.register');
+        }
+        public function login(){
+            return view('admin.login');
+        }
+        public function login_submit(Request $request)
+        {
+         
+     
+   
+                $credentials = $request->only('email', 'password');
+            
+                if (Auth::guard('mangers')->attempt($credentials)) {
+                    // تسجيل الدخول الناجح للمستخدم
+                    return redirect()->intended('/manger/index');
+                } else {
+                    // عملية تسجيل الدخول فشلت
+                    return back()->withErrors(['email' => 'خطأ في بيانات تسجيل الدخول']);
+                }
+
+            
+              
+
+
+
+
+
+        //     $valid=$request->validate([
+        //         'email' => 'required|string|email|max:255|unique:users',
+        //    'password' => 'required|string|min:8|confirmed',
+        //     ]);
+            
+            // $credentials = $request->only('email', 'password');
+    
+            // if (Auth::guard('mangers')->attempt($credentials)) {
+        
+            //     return redirect()->route('admin.index');
+            // }
+    
+          //  return redirect()->back()->withErrors(['email' => 'Invalid email or password.']);
+        }
 
 
 }

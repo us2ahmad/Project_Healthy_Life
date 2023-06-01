@@ -9,7 +9,19 @@ use Illuminate\Database\Eloquent\Model;
 class Manger extends Model
 {
 
-//ما ربطو بشي وعلوبي 
-
     use HasFactory;
+
+    protected $fillable = [
+        'first_name',
+        'last_name',
+        'email',
+        'password',
+        'phone_number',
+    ];
+
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+    
 }
