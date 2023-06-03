@@ -21,6 +21,9 @@ class CheckCoach
         if (auth()->user()->coach->approved =='look') {
             return response('لم يتم الموافقة بعد .....');
         }
+        if (auth()->user()->coach->ban =='banned') {
+            return response('تم حظرك .....');
+        }
             // 
         return $next($request);
     }

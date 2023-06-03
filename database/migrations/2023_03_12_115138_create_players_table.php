@@ -16,6 +16,7 @@ return new class extends Migration
             $table->double('height')->nullable();
             $table->double('weight')->nullable();
             $table->string('level')->nullable();
+            $table->string('ban')->default('unbanned');
             $table->foreignId('user_id')->constrained('users')->cascadeOnDelete();
             $table->timestamps();
         });

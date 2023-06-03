@@ -26,7 +26,7 @@
                   <div class=" container-fluid page-body-warper">
                     <div class="container">
                     <h1>Add Advice</h1>
-                          <form method="POST" action="{{route('add.add.advice')}}" enctype="multipart/form-data">
+                          <form method="POST" action="{{route('admin.add.advice')}}" enctype="multipart/form-data">
                             @csrf
                             @method('POST')
                              <div style="padding: 15px;" class="col-sm-12">

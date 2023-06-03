@@ -70,7 +70,7 @@
           </a>
         </li>
         <li>
-            <a href="registered1">
+            <a href="{{route('register1')}}">
             <button type="button" class="btn btn-outline-warning" style="color: white;">Sing Up</button>
           </a>
         </li>

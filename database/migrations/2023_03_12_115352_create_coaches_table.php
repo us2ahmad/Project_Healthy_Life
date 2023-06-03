@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('certificate')->nullable();
             $table->string('experience')->nullable();
+            $table->string('ban')->default('unbanned');
             $table->string('type')->nullable();
             $table->string('approved')->default('look');
             $table->timestamps();

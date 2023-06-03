@@ -20,6 +20,9 @@ class CheckPlayer
 
             return response('Can Not Accsess Allow');
         }
+        if (auth()->user()->player->ban =='banned') {
+            return response('تم حظرك .....');
+        }
         
         return $next($request);
     }

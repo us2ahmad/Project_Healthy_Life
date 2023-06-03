@@ -42,9 +42,9 @@ Route::get('/dashboard', function () {
 });
 ///////////////////////////////////////////////////////////////////////////////
 
-Route::get('/registered1', [RegController::class, 'showRegistrationForm'])->name('register1');
+Route::get('/register', [RegController::class, 'showRegistrationForm'])->name('register1');
 
-Route::post('/registered1', [RegController::class, 'store']);
+Route::post('/register', [RegController::class, 'store']);
 
 ///////////////////////////////////////////////////////////////
 Route::get('Check',[RegController::class,'check']);

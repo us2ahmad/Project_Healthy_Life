@@ -15,8 +15,8 @@
                   <span class="count bg-success"></span>
                 </div>
                 <div class="profile-name">
-                  <h5 class="mb-0 font-weight-normal">Henry Klein</h5>
-                  <span>Moderator</span>
+                  <h5 class="mb-0 font-weight-normal">{{auth()->user()->name}}</h5>
+              
                 </div>
               </div>
               <a href="#" id="profile-dropdown" data-bs-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
@@ -28,6 +28,7 @@
                     </div>
                   </div>
                   <div class="preview-item-content">
+                  
                     <p class="preview-subject ellipsis mb-1 text-small">Settings</p>
                   </div>
                   
@@ -48,11 +49,11 @@
           </li>
        
           <li class="nav-item menu-items">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="{{route('admin.accept.coach')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-account-multiple-plus"></i>
               </span>
-              <span class="menu-title">Add Triner</span>
+              <span class="menu-title">Coach Request</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -61,9 +62,10 @@
                 <i class="
                 mdi mdi-account-multiple"></i>
               </span>
-              <span class="menu-title">View Triners</span>
+              <span class="menu-title">View Coaches</span>
             </a>
           </li>
+
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{route('admin.view.players')}}">
               <span class="menu-icon">
@@ -72,7 +74,6 @@
               <span class="menu-title">View Players</span>
             </a>
           </li>
-          
           <li class="nav-item menu-items">
             <a class="nav-link" href="viewplannings">
               <span class="menu-icon">
@@ -82,19 +83,19 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="viewviolations">
+            <a class="nav-link" href="{{route('admin.view.coach.ban')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-account-off"></i>
-              </span>
-              <span class="menu-title">View violations</span>
+                </span>
+              <span class="menu-title">View Coach Bannings</span>
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="viewbannings">
+            <a class="nav-link" href="{{route('admin.view.player.ban')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-account-off"></i>
               </span>
-              <span class="menu-title">View Bannings</span>
+              <span class="menu-title">View Player Bannings</span>
             </a>
           </li>
           <li class="nav-item menu-items">
@@ -122,7 +123,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="calc">
+            <a class="nav-link" href="{{route('admin.calc')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-calculator"></i>
               </span>
