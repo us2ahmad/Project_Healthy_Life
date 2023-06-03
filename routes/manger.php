@@ -3,7 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MangerController;
 
 
-Route::prefix('manger')->controller(MangerController::class)->group(function () {
+Route::prefix('manger')->middleware('check.manger','auth')->controller(MangerController::class)->group(function () {
 
 Route::get('index', 'index')->name('admin.index');
 
@@ -40,9 +40,4 @@ Route::get('viewbannings','viewbannings')->name('viewbannings');
 Route::get('viewplayer','viewplayer')->name('admin.view.players');
 
 Route::get('viewcoach','viewcoash')->name('admin.view.coashes');
-
-Route::get('register','register')->name('admin.register');
-
-Route::get('login','login')->name('admin.login');
-Route::post('loginsubmit','login_submit')->name('admin.login.submit');
 });

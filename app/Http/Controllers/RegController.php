@@ -20,6 +20,9 @@ class RegController extends Controller
         elseif($user === 'coach'){
             return redirect()->route('home');
         }
+        elseif($user === 'manger'){
+            return redirect()->route('admin.index');
+        }
         else{
             return redirect()->route('player.index');
         }
