@@ -39,7 +39,7 @@
 
       @foreach ($health as $art_health )
       <div class= "post">
-        <img src="{{asset($art_health->image_path)}}" alt="" class="post-image">
+    <img src="{{ asset('/imgs/'.$art_health->image_path) }}" width="200" height="200" alt="">
         <div class="post-preview">
           <h2>{{$art_health->title}}</h2>
          <i class="far fa-user"> Name Coach :  {{$art_health->first_name}}  {{$art_health->last_name}}</i>

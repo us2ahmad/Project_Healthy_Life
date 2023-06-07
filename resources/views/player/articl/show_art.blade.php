@@ -38,10 +38,9 @@
     <div class="post">
       <div class="post-preview">
         <section id="nurtrition1" class="d-flex align-items-center justify-content-center"></section>
-        @if ($artic->image_path)
+    
             <h2>Image</h2>
-            <img src="{{asset($artic->image_path)}}" alt="" class="post-image" width="600" height="300">
-          @endif
+            <img src="{{ asset('/imgs/'.$artic->image_path) }}" width="400"  height="200" alt="">
         <h2>Title</h2>  
         <p class="preview-text">{{ $artic->title }}</p>
         <div class="inside">

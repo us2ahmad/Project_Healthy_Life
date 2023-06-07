@@ -41,7 +41,7 @@
   
 
       <div class= "post">
-        <img src="{{asset($art_training->image_path)}}" alt="" class="post-image">
+      <img src="{{ asset('/imgs/'.$art_training->image_path) }}" width="200" height="200" alt="">
         <div class="post-preview">
           <h2>{{$art_training->title}}</h2>
          <i class="far fa-user"> Name Coach :  {{$art_training->first_name}}  {{$art_training->last_name}} </i>

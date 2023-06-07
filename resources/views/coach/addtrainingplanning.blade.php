@@ -45,7 +45,7 @@
                   <div class=" container-fluid page-body-warper">
                     <div class="container">
                     <h1>Add Training Planning</h1>
-                          <form action="" >
+                          <form action="" method="POST" enctype="multipart/form-data" >
                            
                     <div style="padding: 15px;" class="col-sm-12">
                     <label for="">Plan Goal</label>

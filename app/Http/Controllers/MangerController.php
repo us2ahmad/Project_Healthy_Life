@@ -29,7 +29,8 @@ public function index(){
     {
         $adv = new Advice();
         $adv->desc = $request->desc;
-        $adv->photo = $request->photo;
+       // $adv->photo = $request->file('photo')->getClientOriginalName();
+        $adv->photo = $request->file('photo')->store('uploadfile','ahmad');
         $adv->save();
     
         return redirect()->back();

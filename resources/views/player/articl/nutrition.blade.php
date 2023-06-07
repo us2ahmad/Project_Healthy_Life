@@ -39,7 +39,7 @@
     <div class="main-content">
      <div class= "post">
      @foreach ($nutrition as $art_nutrition )
-        <img src="{{asset($art_nutrition->image_path)}}" alt="" class="post-image" >
+     <img src="{{ asset('/imgs/'.$art_nutrition->image_path) }}" width="200" height="200" alt="">
         <div class="post-preview">
           <h3>{{$art_nutrition->title}}</h3>
         

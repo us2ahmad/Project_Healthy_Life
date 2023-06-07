@@ -21,6 +21,9 @@
               
               <div class=" container-fluid page-body-warper">
                 <div class="container">
+                  @if(count($advices)>0)
+                    
+                
          <table class="table">
     <thead>
         <tr>
@@ -34,7 +37,7 @@
         <tr>
             <td>{{ $adv->id }}</td>
             <td>{{ $adv->desc }}</td >
-            <td><img src="{{ asset($adv->photo) }}" alt=""></td>
+            <td><img src="{{ asset('/imgs/'.$adv->photo) }}" alt=""></td>
             <td><button type="submit" class="btn btn-inverse-success btn-fw">unbanned</button></td>
         </tr>
         @endforeach
@@ -44,7 +47,13 @@
 
  
           </tr></tbody>
-          </table><br>
+          </table>
+          @else
+          <div style="text-align: center; margin-top: 50px;">
+          <h3 style="color: #555; font-size: 24px;">There Are No Advices</h3>
+        </div>
+          @endif
+          <br>
                 </div>	
                 </div>
           

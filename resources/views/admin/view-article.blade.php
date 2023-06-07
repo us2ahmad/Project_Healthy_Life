@@ -21,6 +21,7 @@
               
               <div class=" container-fluid page-body-warper">
                 <div class="container">
+                  @if(count($articles)>0)
          <table class="table">
     <thead>
         <tr>
@@ -42,13 +43,17 @@
             <td>{{ $article->description }}</td >
             <td>{{ $article->content }}</td >
             <td>{{ $article->id_coache }}</td >
-            <td><img src="{{ asset($article->image_path) }}" alt=""></td>
+            <td><img src="{{ asset('/imgs/'.$article->image_path) }}" alt=""></td>
         </tr>
         @endforeach
     </tbody>
 </table>
-            
+@else
 
+<div style="text-align: center; margin-top: 50px;">
+          <h3 style="color: #555; font-size: 24px;">There Are No Advices</h3>
+        </div>
+@endif
 
   
                 </div>

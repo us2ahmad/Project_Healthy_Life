@@ -45,7 +45,7 @@
                 <td>{{ $coach->last_name }}</td>
                 <td>{{ $coach->email }}</td>
                 <td>{{ $coach->gender }}</td>    
-                <td><img src="{{ asset('storage/' . $coach->coach->certificate) }}"></td>
+                <td><img src="{{ asset('/imgs/' . $coach->coach->certificate) }}"></td>
                 <td>{{ $coach->coach->experience }}</td>
                 <td>{{ $coach->coach->approved }}</td>
                 <td>{{ $coach->coach->created_at }}</td>

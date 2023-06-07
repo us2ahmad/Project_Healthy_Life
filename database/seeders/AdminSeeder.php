@@ -23,5 +23,6 @@ class AdminSeeder extends Seeder
         $admin->email = 'admin@admin.com';
         $admin->password = Hash::make('123456789');
         $admin->save();
+        //php artisan db:seed --class=AdminSeeder
     }
 }

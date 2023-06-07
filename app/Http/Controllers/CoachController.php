@@ -83,8 +83,8 @@ class CoachController extends Controller
         $art->type=$request->type;
         $art->description=$request->description;
         $art->content=$request->content;
-        $art->image_path=$request->image_path;
-        $art->id_coache=auth()->user()->id;
+        $art->image_path=$request->file('image_path')->store('uploadfile','ahmad');
+        $art->id_coache=auth()->user()->coach->id;
         $art->save();
         return redirect()->back();
     }
