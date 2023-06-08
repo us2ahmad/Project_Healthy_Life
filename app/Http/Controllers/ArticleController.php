@@ -62,25 +62,45 @@ class ArticleController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(article $article)
+    public function edit($id)
     {
-        //
+        $art=Article::where('id',$id)->first();
+        return view('coach.edit-article',compact('art')); 
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, article $article)
+    public function update(Request $request,$id)
     {
-        //
+     
+        $request->validate([
+                'title' => 'required|string|max:255',
+                'type' => 'required|string|max:255',
+                'description' => 'required|string',
+                'content' => 'required|string|max:255',
+                'image_path'=>'required',
+                ]);
+        $articel=Article::where('id',$id)->first();
+        $articel->type =$request->type;
+        $articel->title =$request->title;
+        $articel->description =$request->description;
+        $articel->content =$request->content; 
+        $articel->image_path =$request->file('image_path')->store('article','ahmad');
+
+        $articel->save();
+        return redirect()->route('coach.view.article')->with('success','Modified successfully');
+
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(article $article)
+    public function destroy($id)
     {
-        //
+        $advice=Article::find($id)->first();
+        $advice->delete();
+        return redirect()->back()->with('success','Done Deleting');
     }
     public function Nutrition ()
     {

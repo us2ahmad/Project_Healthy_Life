@@ -51,8 +51,12 @@
           <p class="preview-text"></h3>{{ $artic->description }}</h3></p>
           <h2>Content</h2>
           <p class="preview-text"></h3>{{ $artic->content }}</h3></p>
-          
         </div>
+     <form action="{{route('eval.like')}}" method="POST" >
+     @csrf
+      <a name="" id="" class="btn btn-primary" href="#" role="button">Button</a>
+
+     </form>
       </div>
     </div>  
   </div>
@@ -68,8 +72,8 @@
   <script src="{{asset('assets/vendor/php-email-form/validate.js')}}"></script>
   <script src="{{asset('assets/vendor/purecounter/purecounter.js')}}"></script>
   <script src="{{asset('assets/vendor/swiper/swiper-bundle.min.js')}}"></script>
-
-  <!-- Template Main JS File -->
+<!-- ////////////////////////////////// -->
+<!-- Template Main JS File -->
   <script src="{{asset('assets/js/main.js')}}"></script>
 
 </body>

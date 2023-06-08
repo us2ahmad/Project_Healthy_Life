@@ -5,8 +5,8 @@
 
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
-          <a class="sidebar-brand brand-logo" href="{{route('home')}}"><img src="{{asset('coach/assets/images/logo.svg')}}" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="{{route('home')}}"><img src="{{asset('coach/assets/images/logo-mini.svg')}}" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo" href="{{route('coach.home')}}"><img src="{{asset('coach/assets/images/logo.svg')}}" alt="logo" /></a>
+          <a class="sidebar-brand brand-logo-mini" href="{{route('coach.home')}}"><img src="{{asset('coach/assets/images/logo-mini.svg')}}" alt="logo" /></a>
         </div>
         <ul class="nav">
           <li class="nav-item profile">
@@ -41,7 +41,7 @@
           </li>
          
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{route('home')}}">
+            <a class="nav-link" href="{{route('coach.home')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-view-dashboard"></i>
               </span>
@@ -50,7 +50,7 @@
           </li>
        
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{route('add.plan')}}">
+            <a class="nav-link" href="{{route('coach.add.plan')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-account-multiple-plus"></i>
               </span>
@@ -58,7 +58,7 @@
             </a>
           </li>
            <li class="nav-item menu-items">
-            <a class="nav-link" href="{{route('view.plan')}}">
+            <a class="nav-link" href="{{route('coach.view.plan')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-dumbbell"></i>
               </span>
@@ -66,7 +66,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{route('view.players')}}">
+            <a class="nav-link" href="{{route('coach.view.players')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-numeric-9-plus-box-multiple-outline"></i>
               </span>
@@ -76,7 +76,7 @@
           
          
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{route('view.violations')}}">
+            <a class="nav-link" href="{{route('coach.view.violations')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-account-off"></i>
               </span>
@@ -84,19 +84,19 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{route('add.advice')}}">
-              <span class="menu-icon">
-                <i class="mdi mdi-monitor-cellphone-star"></i>
-              </span>
-              <span class="menu-title">Add Advice</span>
-            </a>
-          </li>
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="{{route('page.article')}}">
+            <a class="nav-link" href="{{route('coach.page.article')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-monitor-star"></i>
               </span>
               <span class="menu-title">Add Articles</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{route('coach.view.article')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-monitor-cellphone-star"></i>
+              </span>
+              <span class="menu-title">View Articel</span>
             </a>
           </li>
         </ul>

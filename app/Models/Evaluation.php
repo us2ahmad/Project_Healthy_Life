@@ -13,6 +13,7 @@ class Evaluation extends Model
         'id_coache',
         'id_player',
         'interaction',
+        'article_id'
         ];
     public function Plaeyr()
     {

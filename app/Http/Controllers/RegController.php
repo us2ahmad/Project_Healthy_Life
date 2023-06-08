@@ -18,7 +18,7 @@ class RegController extends Controller
             return redirect()->route('player.index');    
             }
         elseif($user === 'coach'){
-            return redirect()->route('home');
+            return redirect()->route('coach.home');
         }
         elseif($user === 'manger'){
             return redirect()->route('admin.index');
@@ -78,6 +78,7 @@ class RegController extends Controller
            $coach = new Coach();
            $coach->user_id = $user->id;
            $coach->certificate = $request->certificate;
+        //    file('certificate')->store('certificate','ahmad');
            $coach->experience = $request->experience;
            $coach->type= $request->type;
            $coach->save();

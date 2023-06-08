@@ -13,10 +13,8 @@ return new class extends Migration
     {
         Schema::table('evaluations', function (Blueprint $table) {
             $table->foreignId('id_player')->constrained('players')->cascadeOnDelete();
+            $table->foreignId('id_article')->constrained('articles')->cascadeOnDelete();
             $table->foreignId('id_coache')->constrained('coaches')->cascadeOnDelete();
-
-
-
         });
     }
 

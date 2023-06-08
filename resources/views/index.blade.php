@@ -175,15 +175,17 @@
           <h2>Daily Advance</h2>
         </div>
         <div class="row">
-       
+
+        @if (isset($advice))
         <div class="col-lg-6 pt-4 pt-lg-0">
          
           <p>
-            Healthy Life was founded in 2019 with the aim of becoming a digital health model service aimed at providing modern health services and education to users. Healthy Life is passionate about providing health benefits to users and ready to be the pioneer of advances in the field of health and sports in the information and technology sector.
+           {{$advice->desc }}
           </p></div>
            <div class="col-lg-6">
-          <img src="{{asset('/assets/img/about.png')}}" class="img-fluid" alt="">
+          <img src="{{asset('/imgs/'.$advice->photo)}}" class="img-fluid" alt="">
         </div>
+      @endif
         </div>
       </div>
     </section>

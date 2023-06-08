@@ -16,6 +16,12 @@
                 <div class="card">
                   <div class=" container-fluid page-body-warper">
                     <div class="container">
+                      
+                @if(session('success'))
+    <div class="alert alert-success" id="success-message">
+        {{ session('success') }}
+    </div>
+@endif
                       @if(count($look)>0)
                     <table class="table">             
                     <thead>
@@ -64,6 +70,17 @@
 </div>
 </div>
 <!-- container-scroller -->
+<script>
+    // تحديد الرسائل التأكيدية بواسطة الهوية (IDs)
+    var successMessage = document.getElementById('success-message');
+    // تعيين مؤقت زمني لعنصر الرسالة التأكيدية
+    setTimeout(function() {
+        if (successMessage) {
+            successMessage.style.display = 'none';
+        }
+    }, 1000); // تعيين 5000 ميلي ثانية (5 ثواني) كمؤقت زمني
+</script>
+
 <script src="{{asset('admin/assets/vendors/js/vendor.bundle.base.js')}}"></script>
 <script src="{{asset('admin/assets/js/misc.js')}}"></script>
 </body>

@@ -17,7 +17,7 @@ class AdminSeeder extends Seeder
         $admin=new User();
         $admin->name = 'Admin';
         $admin->first_name = 'ahmad';
-        $admin->last_name = 'tabash';
+        $admin->last_name = 'yassin';
         $admin->gender ='meal';
         $admin->account_type='manger';
         $admin->email = 'admin@admin.com';

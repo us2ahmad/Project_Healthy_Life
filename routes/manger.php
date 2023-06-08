@@ -1,4 +1,7 @@
 <?php
+
+use App\Http\Controllers\AdviceController;
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MangerController;
 
@@ -49,3 +52,10 @@ Route::get('viewplayer','viewplayer')->name('view.players');
 
 Route::get('viewcoach','viewcoash')->name('view.coashes');
 });
+
+
+Route::post('delete/advice/{id}',[AdviceController::class,'destroy'])->name('admin.destroy.advice');
+Route::post('edit/advice/{id}',[AdviceController::class,'edit'])->name('admin.edit.advice');
+Route::post('update/advice/{id}',[AdviceController::class,'update'])->name('admin.update.advice');
+
+Route::post('delete/article/{id}',[ArticleController::class,'destroy'])->name('admin.destroy.article');

@@ -44,9 +44,9 @@ class CoachController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Coach $coach)
+    public function edit()
     {
-        //
+      
     }
 
     /**
@@ -83,11 +83,19 @@ class CoachController extends Controller
         $art->type=$request->type;
         $art->description=$request->description;
         $art->content=$request->content;
-        $art->image_path=$request->file('image_path')->store('uploadfile','ahmad');
+        $art->image_path=$request->file('image_path')->store('article','ahmad');
         $art->id_coache=auth()->user()->coach->id;
         $art->save();
         return redirect()->back();
     }
+    public function view_article()
+    {
+        $coach=auth()->user()->coach->id;
+        $articles=Article::where('id_coache', $coach)->get();
+        return view('coach.view-article',compact('articles'));
+
+    }
+
 
     public function addplans(){
         return view('coach.addtrainingplanning');

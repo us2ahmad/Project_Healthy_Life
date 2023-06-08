@@ -30,10 +30,10 @@ public function index(){
         $adv = new Advice();
         $adv->desc = $request->desc;
        // $adv->photo = $request->file('photo')->getClientOriginalName();
-        $adv->photo = $request->file('photo')->store('uploadfile','ahmad');
+        $adv->photo = $request->file('photo')->store('advice','ahmad');
         $adv->save();
     
-        return redirect()->back();
+        return redirect()->back()->with('success','Done Add');
     }
     public function showAdvices()
     {
@@ -98,7 +98,7 @@ public function index(){
         $look=Coach::where('id',$id)->first();
         $look->approved='unlook';
         $look->save();
-        return redirect()->back();
+        return redirect()->back()->with('success','Done');
 
     }
 

@@ -28,7 +28,8 @@ class AdviceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+
     }
 
     /**
@@ -42,24 +43,35 @@ class AdviceController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Advice $advice)
+    public function edit($id)
     {
-        //
+      $advice=Advice::where('id',$id)->first();
+        return view('admin.edit-advice',compact('advice'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Advice $advice)
-    {
-        //
+    public function update(Request $request, $id) {
+        $request->validate([
+            'desc'=>'required|string',
+            'photo'=>'required|image',
+        ]);
+        $advice = Advice::where('id',$id)->first();
+        $advice->desc = $request->desc;
+        $advice->photo = $request->file('photo')->store('advice','ahmad');
+        $advice->save();
+        return redirect()->route('admin.show.advices');
+        // back()->with('success', 'تم تحديث النصيحة بنجاح!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Advice $advice)
+    public function destroy($id)
     {
-        //
+      $advice=Advice::find($id)->first();
+      $advice->delete();
+      return redirect()->back()->with('success','Done Deleting');
     }
 }

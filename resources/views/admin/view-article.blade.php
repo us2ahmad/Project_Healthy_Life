@@ -32,6 +32,7 @@
             <th>Content</th>
             <th >Coache Id</th>
             <th>Photo</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -43,7 +44,14 @@
             <td>{{ $article->description }}</td >
             <td>{{ $article->content }}</td >
             <td>{{ $article->id_coache }}</td >
-            <td><img src="{{ asset('/imgs/'.$article->image_path) }}" alt=""></td>
+            <td><img src="{{ asset('/imgs/'.$article->image_path) }}" alt="Not Found"></td>
+            <td>
+            <form method="POST" action="{{ route('admin.destroy.article',$article->id) }}">
+              @csrf
+              @method('POST')
+              <button type="submit" class="btn btn-inverse-success btn-fw">Delete</button>
+            </form>
+          </td>
         </tr>
         @endforeach
     </tbody>

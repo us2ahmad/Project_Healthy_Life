@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Advice;
 use App\Models\Article;
 use App\Models\Coach;
 use App\Models\Player;
@@ -17,7 +18,8 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        return view ('index');
+        $advice=Advice::latest('created_at')->first();
+                return view ('index',compact('advice'));
     }
 
     /**

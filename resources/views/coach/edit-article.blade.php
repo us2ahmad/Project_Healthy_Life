@@ -34,7 +34,6 @@
        <!-- _navbar -->
 @include('coach.navbar')
      <!-- _navbar -->
-
         <!-- partial -->
         <div class="main-panel">
           <div class="content-wrapper">
@@ -42,7 +41,12 @@
                 <div class="card">
                   <div class=" container-fluid page-body-warper">
                     <div class="container">
-                    <h3>Add Article</h3>
+                      @if(session('success'))
+                      <div class="alert alert-success" id="success-message">
+                      {{ session('success') }}
+                    </div>
+                      @endif
+                    <h3>Eidt Article</h3>
                     @if ($errors->any())
                     <div>
                       <ul>
@@ -52,37 +56,39 @@
                         </ul>
                   </div>
                     @endif
-                <form method="POST" action="{{route('coach.add.article')}}" enctype="multipart/form-data">
+                <form method="POST" action="{{route('coach.update.article',$art->id)}}" enctype="multipart/form-data">
                     @csrf
+                    @method('POST')
                     <div class="col-md-12">
                                 <label for="type" class="form-label">Type</label>
-                    <select name="type" id="" style="color:aliceblue; background-color:rgb(60, 71, 81)"    required >
-                      <option value="health" >Health</option> 
-                      <option value="training">Training</option>
-                      <option value="nutrition">Nutrition</option>
+                    <select name="type" id=""  style="color:aliceblue; background-color:rgb(60, 71, 81)"    required >
+                      <option value="health" @if($art->type=='health') selected @endif >Health</option> 
+                      <option value="training" @if($art->type=='training') selected @endif >Training</option>
+                      <option value="nutrition" @if($art->type=='nutrition') selected @endif >Nutrition</option>
                     </select>
                     </div>
                     <div style="padding: 15px;" class="col-sm-6" style="color:aliceblue;display: block;">
-                              <label for="title">Title:</label>
-                    <input type="text" id="title" name="title" required   style="color:aliceblue;background-color: rgb(27, 32, 32);" class="form-control p_input"><br>       </div>	
+                    <label for="title">Title:</label>
+                    <input type="text" id="title" name="title" required   value="{{$art->title}}" style="color:aliceblue;background-color: rgb(27, 32, 32);" class="form-control p_input"><br>       </div>	
                     <div style="padding: 15px;" class="col-sm-6" style="color:aliceblue;display: block;">
                     <label for="description">Description:</label><br>
-                    <textarea id="description" name="description"  cols="50" rows="4" style="color:aliceblue;background-color: rgb(27, 32, 32);" required ></textarea><br>
+                    <textarea id="description" name="description"  cols="50" rows="4" style="color:aliceblue;background-color: rgb(27, 32, 32);" required >{{$art->description}} </textarea><br>
                     </div>    
-                  
                     <div style="padding: 15px;" class="col-sm-6" style="color:aliceblue;display: block;">
                     <label for="content">Content:</label><br>
-                    <textarea id="content" name="content" cols="50" rows="10" required style="color:aliceblue;background-color: rgb(27, 32, 32);"></textarea><br>
+                    <textarea id="content" name="content" cols="50" rows="10" required style="color:aliceblue;background-color: rgb(27, 32, 32);">{{$art->content}} </textarea><br>
                     </div>
-                    <label for="image">Image:</label><br>
-                    <input type="file" id="image" name="image_path" required><br>
-                   
+                    <div class="col-md-12">
+                    <label for="image" class="form-label">Image</label>
+                    <input type="file" name="image_path" id="image" class="form-control" required>
+                    @if ($art->image_path)
+                    <label for="description">Old Image:</label><br>
+                    <img src="{{ asset('/imgs/'.$art->image_path) }}" alt="Old Image" width="200" height="150">
+                    @endif
+                  </div>
                     <div style="padding-left:550px ;">
                     <input type="submit"  class="btn btn-success btn-fw" value="Submit">
                     </div>
-
-
-
                     </form>
                   </div>	
                 </div>
@@ -113,5 +119,17 @@
     <!-- Custom js for this page -->
     <script src="{{asset('admin/assets/js/dashboard.js')}}"></script>
     <!-- End custom js for this page -->
+
+    <script>
+    // تحديد الرسائل التأكيدية بواسطة الهوية (IDs)
+    var successMessage = document.getElementById('success-message');
+    // تعيين مؤقت زمني لعنصر الرسالة التأكيدية
+    setTimeout(function() {
+        if (successMessage) {
+            successMessage.style.display = 'none';
+        }
+    }, 1000); // تعيين 5000 ميلي ثانية (5 ثواني) كمؤقت زمني
+</script>
+
   </body>
 </html>
