@@ -47,7 +47,7 @@
                 <td>{{ $looke->user->last_name }}</td>
                 <td>{{ $looke->user->email }}</td>
                 <td>{{ $looke->user->gender }}</td>    
-                <td>{{ $looke->certificate }}</td>
+                <td><img src="{{asset('/imgs/'. $looke->certificate )}}" alt="not found"></td>
                 <td>{{ $looke->experience }}</td>
                 <td>{{ $looke->created_at }}</td>
                 <td><form action="{{route('admin.act.coach', $looke->id)}}" method="POST">@csrf<button type="submit" class="btn btn-primary">Accept</button></form></td>             

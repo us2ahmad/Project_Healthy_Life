@@ -61,7 +61,7 @@
         </li>
         @if(auth()->user()->account_type=='coach')
         
-        <li><a class="nav-link scrollto" href="{{ route('home')}}">DashBoard</a></li>
+        <li><a class="nav-link scrollto" href="{{ route('coach.home')}}">DashBoard</a></li>
         @endif
         @else
         <li>

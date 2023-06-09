@@ -21,6 +21,7 @@ class AdminSeeder extends Seeder
         $admin->gender ='meal';
         $admin->account_type='manger';
         $admin->email = 'admin@admin.com';
+        $admin->photo = 'img';
         $admin->password = Hash::make('123456789');
         $admin->save();
         //php artisan db:seed --class=AdminSeeder

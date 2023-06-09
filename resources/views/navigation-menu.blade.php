@@ -6,7 +6,7 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('player.index') }}">
-                        <x-application-mark class="block h-9 w-auto" />
+                      <img src="{{asset('assets/img/Logo.png')}}" width="50" height="50" alt="">
                     </a>
                 </div>
 

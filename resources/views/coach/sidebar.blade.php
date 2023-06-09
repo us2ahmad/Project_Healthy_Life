@@ -1,19 +1,15 @@
 
       <!-- Sidebar -->
-
-
-
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-brand-wrapper d-none d-lg-flex align-items-center justify-content-center fixed-top">
           <a class="sidebar-brand brand-logo" href="{{route('coach.home')}}"><img src="{{asset('coach/assets/images/logo.svg')}}" alt="logo" /></a>
-          <a class="sidebar-brand brand-logo-mini" href="{{route('coach.home')}}"><img src="{{asset('coach/assets/images/logo-mini.svg')}}" alt="logo" /></a>
         </div>
         <ul class="nav">
           <li class="nav-item profile">
             <div class="profile-desc">
               <div class="profile-pic">
                 <div class="count-indicator">
-                  <img class="img-xs rounded-circle " src="{{asset('auth()->user()->profile_photo_path')}}" alt="">
+                  <img class="img-xs rounded-circle " src="{{asset('/imgs/'.auth()->user()->photo)}}" alt="">
                   <span class="count bg-success"></span>
                 </div>
                 <div class="profile-name">
@@ -30,7 +26,7 @@
                     </div>
                   </div>
                   <div class="preview-item-content">
-                    <p class="preview-subject ellipsis mb-1 text-small">Settings</p>
+                    <p class="preview-subject ellipsis mb-1 text-Bigger">Profile</p>
                   </div>
                   
                 </a>

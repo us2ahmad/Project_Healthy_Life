@@ -38,6 +38,7 @@ public function coach (){
         'email',
         'password',
         'gender',
+        'photo',
     ];
 
     /**

@@ -55,7 +55,7 @@
     
 
             <div class="col-lg-6">
-            <img class="img-fluid mb-4 mb-lg-0" src="{{ asset( $coache->user->profile_photo_path) }}" alt="Image">            </div>
+            <img class="img-fluid mb-4 mb-lg-0" src="{{ asset('/imgs/'. $coache->user->photo) }}" width="200" height="150" alt="Image">            </div>
             <div class="col-lg-6">
                 <h4>Name :{{$coache->user->first_name}} {{$coache->user->last_name }}</h4>
                 <p>UserName: {{$coache->user->name}}</p> <a href="/chatify/{{$coache->user->id}}">Chating</a>
@@ -63,7 +63,7 @@
                     <div class="col-sm-6">
                         <i class="flaticon-barbell display-2 text-primary"></i>
                         <h4 class="font-weight-bold">Certificate</h4>
-                        <p>{{$coache->certificate}}</p>
+                       <img src="{{asset('/imgs/'.$coache->certificate)}}" alt="">
                     </div>
                     <div class="col-sm-6">
                         <i class="flaticon-medal display-2 text-primary"></i>

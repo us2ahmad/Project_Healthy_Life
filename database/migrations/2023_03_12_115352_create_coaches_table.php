@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('coaches', function (Blueprint $table) {
             $table->id();
-            $table->string('certificate')->nullable();
+            $table->string('certificate');
             $table->string('experience')->nullable();
             $table->string('ban')->default('unbanned');
             $table->string('type')->nullable();

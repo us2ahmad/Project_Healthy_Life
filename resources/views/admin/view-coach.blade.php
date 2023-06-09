@@ -29,6 +29,7 @@
                     <th>Last Name</th>
                     <th>Email</th>
                     <th>Gender</th>
+                    <th>Photo</th>
                     <th>Certification</th>
                     <th>Experience</th>
                     <th>status</th>
@@ -44,7 +45,8 @@
                 <td>{{ $coach->first_name }}</td>
                 <td>{{ $coach->last_name }}</td>
                 <td>{{ $coach->email }}</td>
-                <td>{{ $coach->gender }}</td>    
+                <td>{{ $coach->gender }}</td>   
+                <td><img src="{{asset('/imgs/'.$coach->photo)}}" alt="Not Found"></td> 
                 <td><img src="{{ asset('/imgs/' . $coach->coach->certificate) }}"></td>
                 <td>{{ $coach->coach->experience }}</td>
                 <td>{{ $coach->coach->approved }}</td>

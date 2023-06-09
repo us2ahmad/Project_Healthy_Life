@@ -47,11 +47,12 @@ class RegController extends Controller
               'last_name' => 'required|string|max:255',
            'gender' => 'required|string',
            'email' => 'required|string|email|max:255|unique:users',
-           'password' => 'required|string|min:8|confirmed',
+           'photo' => 'required',
+            'password' => 'required|string|min:8|confirmed',
            'account_type' => '|string|in:player,coach',
            'height' => 'nullable|numeric',
            'weight' => 'nullable|numeric',
-           'certificate' => 'nullable|string',
+           'certificate' => 'nullable',
            'experience' => 'nullable|numeric',
            'type'=>'required|string'
           
@@ -62,7 +63,8 @@ class RegController extends Controller
            $user->first_name = $request->first_name;
            $user->last_name = $request->last_name;
            $user->gender = $request->gender;
-           $user->email = $request->email;
+           $user->email = $request->email;   
+           $user->photo = $request->file('photo')->store('user_photo', 'ahmad');
            $user->password = bcrypt($request->password);
            $user->account_type = $request->account_type;
            $user->save(); // يجب حفظ حساب المستخدم الجديد أولاً
@@ -77,8 +79,7 @@ class RegController extends Controller
        } elseif ($request->account_type === 'coach') {
            $coach = new Coach();
            $coach->user_id = $user->id;
-           $coach->certificate = $request->certificate;
-        //    file('certificate')->store('certificate','ahmad');
+           $coach->certificate = $request->file('certificate')->store('certificate','ahmad');
            $coach->experience = $request->experience;
            $coach->type= $request->type;
            $coach->save();

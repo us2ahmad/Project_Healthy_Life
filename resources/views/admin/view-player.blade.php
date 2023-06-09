@@ -25,6 +25,7 @@
                     <td>Last Name</td>
                     <td>Email</td>
                     <td>Gender</td>
+                    <td>Photo</td>
                     <td>Height</td>
                     <td>Weight</td>
                     <td>Level</td>
@@ -42,6 +43,7 @@
                 <td>{{ $player->last_name}}</td>
                 <td>{{ $player->email}}</td>
                 <td>{{ $player->gender}}</td>
+                <td><img src="{{asset('/imgs/'.$player->photo)}}" alt="Not Found"></td>
                 <td>{{ $player->player->height}}</td>
                 <td>{{ $player->player->weight}}</td>  
                 <td>{{ $player->player->level}}</td>
