@@ -13,9 +13,8 @@ return new class extends Migration
     {
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
-            $table->double('value');
-            $table->date('p_date');
-            $table->string('id_invoice');
+            $table->string('phone_number');
+            $table->string('approved')->default('unaccept');
             $table->timestamps();
         });
     }

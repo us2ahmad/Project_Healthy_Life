@@ -17,11 +17,10 @@ class MangerController extends Controller
     /**
      * Display a listing of the resource.
      */
-public function index(){
-    return view('admin.index');
-}
-
-
+public function index()
+    {
+        return view('admin.index');
+    }
       public function peagadvice(){
       return view('admin.addadvice');
       }
@@ -32,60 +31,40 @@ public function index(){
        // $adv->photo = $request->file('photo')->getClientOriginalName();
         $adv->photo = $request->file('photo')->store('advice','ahmad');
         $adv->save();
-    
         return redirect()->back()->with('success','Done Add');
     }
     public function showAdvices()
     {
         $advices = Advice::all();
-
         return view('admin.view-advices', compact('advices'));
     }
-
     public function showarticle()
     {
         $articles = Article::all();
-
         return view('admin.view-article', compact('articles'));
-    }
-
-   
-    public function addcoach(){
-
-        return view('admin.addtrainer');
-    }
-    public function addviolations(){
-
-        return view('admin.addviolations');
     }
     public function calc(){
 
         return view('admin.calc');
     }
 
-    public function imports(){
-
+    public function imports()
+    {
         return view('admin.imports');
-        
     }
-    public function payments(){
-
+    public function payments()
+    {
         return view('admin.payments');
-        
     }
     
-    public function replycomplaint(){
-
+    public function replycomplaint()
+    {
         return view('admin.replycomplaint');
-        
     }
-    public function updateplayer(){
-
+    public function updateplayer()
+    {
         return view('admin.updateplayer');
-        
     }
-
-
     public function accept_coach()
     {
         $look=Coach::where('approved','look')
@@ -99,12 +78,9 @@ public function index(){
         $look->approved='unlook';
         $look->save();
         return redirect()->back()->with('success','Done');
-
     }
-
- 
-    public function viewcoash(){
-
+    public function viewcoash()
+    {
     // $coaches = User::with('coach')->where('account_type', 'coach')->get();
     $coaches=  User::with('coach')->where('account_type', 'coach')
                 ->whereHas('coach', function ($query) {
@@ -113,15 +89,12 @@ public function index(){
                 ->get();
         return view('admin.view-coach',compact('coaches'));
     }
-    
     public function viewplayer()
     {
-
         $players = User::with('player')->where('account_type', 'player')
                     ->whereHas('player',function($query){
                      $query->where('ban','unbanned');})
                      ->get();
-                   
             return view('admin.view-player',compact('players'));
     }
     public function view_player_ban()
@@ -141,7 +114,6 @@ public function index(){
         $coach->save();
         return redirect()->back();      
     }
-
     public function coach_unban($id)
     {
         $coach=Coach::where('id',$id)->first();
@@ -149,7 +121,6 @@ public function index(){
         $coach->save();
         return redirect()->back();      
     }
-
     public function player_ban($id)
     {
         $player=Player::where('user_id',$id)->first();
@@ -157,7 +128,6 @@ public function index(){
         $player->save();
         return redirect()->back();      
     }
-
     public function player_unban($id)
     {
         $player=Player::where('id',$id)->first();
@@ -165,6 +135,4 @@ public function index(){
         $player->save();
         return redirect()->back();      
     }
-
-
 }

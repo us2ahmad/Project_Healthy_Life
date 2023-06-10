@@ -11,7 +11,7 @@
             <div class="profile-desc">
               <div class="profile-pic">
                 <div class="count-indicator">
-                  <img class="img-xs rounded-circle " src="{{asset('admin/assets/images/faces/face15.jpg')}}" alt="">
+                  <img class="img-xs rounded-circle " src="{{asset('admin/assets/images/photo.jpg')}}" alt="">
                   <span class="count bg-success"></span>
                 </div>
                 <div class="profile-name">
@@ -21,7 +21,7 @@
               </div>
               <a href="#" id="profile-dropdown" data-bs-toggle="dropdown"><i class="mdi mdi-dots-vertical"></i></a>
               <div class="dropdown-menu dropdown-menu-right sidebar-dropdown preview-list" aria-labelledby="profile-dropdown">
-                <a href="#" class="dropdown-item preview-item">
+                <a  href="{{ route('profile.show') }}" class="dropdown-item preview-item">
                   <div class="preview-thumbnail">
                     <div class="preview-icon bg-dark rounded-circle">
                       <i class="mdi mdi-settings text-primary"></i>
@@ -29,7 +29,7 @@
                   </div>
                   <div class="preview-item-content">
                   
-                    <p class="preview-subject ellipsis mb-1 text-small">Settings</p>
+                    <p class="preview-subject ellipsis mb-1 text-big">Profile</p>
                   </div>
                   
                 </a>
@@ -123,11 +123,19 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="{{route('admin.calc')}}">
+            <a class="nav-link" href="{{route('admin.payment','accept')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-calculator"></i>
               </span>
-              <span class="menu-title">View Site Statistics</span>
+              <span class="menu-title">Payments Accept</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{route('admin.payment','unaccept')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-calculator"></i>
+              </span>
+              <span class="menu-title">Payments UnAccept</span>
             </a>
           </li>
          

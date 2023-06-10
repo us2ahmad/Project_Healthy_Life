@@ -78,7 +78,7 @@
         if (successMessage) {
             successMessage.style.display = 'none';
         }
-    }, 1000); // تعيين 5000 ميلي ثانية (5 ثواني) كمؤقت زمني
+    }, 1000); // تعيين 1000  ميلي ثانية (1 ثانية) كمؤقت زمني
 </script>
 
 <script src="{{asset('admin/assets/vendors/js/vendor.bundle.base.js')}}"></script>

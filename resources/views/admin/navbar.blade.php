@@ -12,10 +12,8 @@
                 <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="/chatify">
                   <p class="text-success ms-2 mb-0 font-weight-medium">15</p>
                   <i class="mdi mdi-email"></i>
-               
                 </a>
               </li>
-              
               <li class="nav-item dropdown border-left">
                 <a class="nav-link count-indicator dropdown-toggle" href="">
                   <p class="text-danger ms-2 mb-0 font-weight-medium">15</p>
@@ -37,32 +35,33 @@
                   </div>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right navbar-dropdown preview-list" aria-labelledby="profileDropdown">
-                  <h6 class="p-3 mb-0">Profile</h6>
+                  <h6 class="p-3 mb-0">Manage Account</h6>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-settings text-success"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                      <p class="preview-subject mb-1">Settings</p>
-                    </div>
-                  </a>
+                  <a class="dropdown-item preview-item" href="{{ route('profile.show') }}">
+                          <div class="preview-thumbnail">
+                            <div class="preview-icon bg-dark rounded-circle">
+                              <i class="mdi mdi-settings text-success"></i>
+                            </div>
+                          </div>
+                          <div class="preview-item-content">
+                            <p class="preview-subject mb-1" >Profile</p>
+                          </div>
+                        </a>
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item preview-item">
-                    <div class="preview-thumbnail">
-                      <div class="preview-icon bg-dark rounded-circle">
-                        <i class="mdi mdi-logout text-danger"></i>
-                      </div>
-                    </div>
-                    <div class="preview-item-content">
-                    <form method="POST" action="{{ route('logout') }}">
-    @csrf
-    <button type="submit">Log out</button>
+                  <form action="{{ route('logout') }}" method="POST">    
+                          @csrf 
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item preview-item"  onclick="event.preventDefault(); this.closest('form').submit();">
+        <div class="preview-thumbnail">
+            <div class="preview-icon bg-dark rounded-circle">
+                <i class="mdi mdi-logout text-danger"></i>
+            </div>
+        </div>
+        <div class="preview-item-content">
+            <span class="preview-subject mb-1">Log out</span>
+        </div>
+    </a>
 </form>
-                    </div>
-                  </a>
                  
                 </div>
               </li>

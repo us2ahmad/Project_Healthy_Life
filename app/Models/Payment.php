@@ -8,6 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Payment extends Model
 {
     use HasFactory;
+
+    protected $fillable=[
+        'phone_number',
+        'id_plyer',
+        'id_coach',
+    ];
+
+
     public function Plaeyr()
     {
     return $this->belongsTo(Player::class, 'id_plaeyr');

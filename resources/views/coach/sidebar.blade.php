@@ -70,15 +70,6 @@
             </a>
           </li>
           
-         
-          <li class="nav-item menu-items">
-            <a class="nav-link" href="{{route('coach.view.violations')}}">
-              <span class="menu-icon">
-                <i class="mdi mdi-account-off"></i>
-              </span>
-              <span class="menu-title">View violations</span>
-            </a>
-          </li>
           <li class="nav-item menu-items">
             <a class="nav-link" href="{{route('coach.page.article')}}">
               <span class="menu-icon">

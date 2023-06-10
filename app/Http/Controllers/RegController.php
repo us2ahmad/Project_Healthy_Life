@@ -50,10 +50,10 @@ class RegController extends Controller
            'photo' => 'required',
             'password' => 'required|string|min:8|confirmed',
            'account_type' => '|string|in:player,coach',
-           'height' => 'nullable|numeric',
-           'weight' => 'nullable|numeric',
+           'height' => 'nullable|numeric|min:0',
+           'weight' => 'nullable|numeric|min:0',
            'certificate' => 'nullable',
-           'experience' => 'nullable|numeric',
+           'experience' => 'nullable|numeric|min:0',
            'type'=>'required|string'
           
        ]);

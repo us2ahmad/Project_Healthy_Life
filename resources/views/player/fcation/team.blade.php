@@ -44,6 +44,9 @@
     <title>Document</title>
 </head>
 <body>
+@php
+    $id = 0 ;
+@endphp
 <!-- Nav Bar -->
 @include('player.nav_bar')
 
@@ -52,8 +55,6 @@
     <div class="container py-5">
         <div class="row align-items-center">
         @foreach ( $coach as $coache )
-    
-
             <div class="col-lg-6">
             <img class="img-fluid mb-4 mb-lg-0" src="{{ asset('/imgs/'. $coache->user->photo) }}" width="200" height="150" alt="Image">            </div>
             <div class="col-lg-6">
@@ -71,24 +72,32 @@
                         <p>{{$coache->experience}}</p>
                     </div>
                 </div>
-                <button class="create px-3 py-1" onclick="display()">Subscribe</button>
+               
+                <button class="create px-3 py-1" onclick="display('{{$coache->id}}')">Subscribe</button>
             </div>
             @endforeach
         </div>
     </div>
-   
-    <form id="window" action="{{route('player.plans')}}"  method="GET" class="position-fixed info-box">
-        <fieldset class="d-flex align-items-center justify-content-center flex-column">
-            <h3>Enter your information</h3>
-            <input type="number" name="weight" placeholder="Enter Your Weight">
-            <input type="number" name="height" placeholder="Enter Your Height">
-            <input type="submit" value="OK"  class="btn-ok px-3 py-1">
-        </fieldset>
-    </form>
-    <script>
-        function display(){
-            document.getElementById('window').style='display:block;';
-        }
+
+    <form id="window" action="{{route('admin.pay')}}"  method="Post" class="position-fixed info-box">
+    @csrf
+    <fieldset class="d-flex align-items-center justify-content-center flex-column">
+        <div class="image-container">
+            <img src="{{asset('assets/img/syriatel.jpg')}}" width="100" height="50" alt=""> 
+            <img src="{{asset('assets/img/mtn.jpg')}}" alt="" width="100" height="50">  
+        </div>
+        <h4 style="text-align: center;">Pay 10 $ to This Number 0945917735</h4>
+        <input type="number" name="phone_number" placeholder="Enter Your Phone Number">
+        <input type="hidden" name="id_coach" value="" id="id_coach">
+        <input type="submit" value="Pay"  class="btn-ok px-3 py-1">
+    </fieldset>
+</form>
+<script>
+     function display(id_coach){
+    var form = document.getElementById('window');
+    form.style.display = 'block';
+    form.querySelector('input[name="id_coach"]').value = id_coach;
+}
     </script>
     <script src="{{asset('/assets/js/main.js')}}"></script>
 </body>

@@ -51,13 +51,6 @@
           <p class="preview-text"></h3>{{ $artic->description }}</h3></p>
           <h2>Content</h2>
           <p class="preview-text"></h3>{{ $artic->content }}</h3></p>
-        </div>
-     <form action="{{route('eval.like')}}" method="POST" >
-     @csrf
-      <a name="" id="" class="btn btn-primary" href="#" role="button">Button</a>
-
-     </form>
-      </div>
     </div>  
   </div>
 </div>

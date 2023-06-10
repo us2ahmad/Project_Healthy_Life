@@ -4,6 +4,7 @@ use App\Http\Controllers\AdviceController;
 use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MangerController;
+use App\Http\Controllers\PaymentController;
 
 
 Route::prefix('manger')->middleware('check.manger','auth')->name('admin.')->controller(MangerController::class)->group(function () {
@@ -52,6 +53,11 @@ Route::get('viewplayer','viewplayer')->name('view.players');
 
 Route::get('viewcoach','viewcoash')->name('view.coashes');
 });
+
+Route::get('payment/{approved}',[PaymentController::class,'index'])->name('admin.payment');
+Route::post('acceptpayment/{id}',[PaymentController::class,'accept_payment'])->name('admin.accept.payment');
+Route::post('addpayment',[PaymentController::class,'add_payment'])->name('admin.pay');
+
 
 
 Route::post('delete/advice/{id}',[AdviceController::class,'destroy'])->name('admin.destroy.advice');
