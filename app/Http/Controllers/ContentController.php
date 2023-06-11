@@ -14,52 +14,77 @@ class ContentController extends Controller
     {
         //
     }
+    public function addcontent (Request $request){
+       
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
+        $request->validate([
+           'title' =>'required|string|min:5|max:150',
+           'type' => 'required|string',
+           'description' => 'required|string|max:1000',
+           'link' => 'required',
+       ]);
+       //    dd($request);
+       $cont=new Content();
+       $cont->id_coache=auth()->user()->coach->id;
+       $cont->title=$request->title;
+       $cont->type=$request->type;
+       $cont->description=$request->description;
+        $cont->link = $request->file('link')->store('content','ahmad');
+       $cont->save();
+
+   //  DB::table('contents')->insert([
+   //        'title' => $request->title,
+   //         'type' => $request->type,
+   //         'description' => $request->description,
+   //         'link' => $request->file('link')->store('content','ahmad'),
+   //         'id_coache' => auth()->user()->coach->id,
+   //         'created_at' => time(),
+   //         'updated_at' => time(),   
+   // ]);
+       return redirect()->back()->with('success' ,'content added');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
+    public function view_content()
     {
-        //
+        $coach=auth()->user()->coach->id;
+        $content=Content::where('id_coache',$coach)->get();
+        return view('coach.view-content',compact('content'));
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Content $content)
+    public function delet_content($id)
     {
-        //
+        // $coach=auth()->user()->coach->id;
+        $content=Content::find($id)->first();
+        $content->delete();
+        return redirect()->back()->with('success','Done Deleting');
+    }
+    public function edit_content($id)
+    {
+        $content=Content::find($id)->first();
+        return view('coach.edit-content',compact('content'));
+
+    }
+    public function update_content(Request $request,$id)
+    {
+
+        $request->validate([
+            'title' =>'required|string|min:5|max:150',
+            'type' => 'required|string',
+            'description' => 'required|string|max:1000',
+            'link' => 'required',
+        ]);
+        $content=Content::find($id)->first();
+        $content->title=$request->title;
+        $content->type=$request->type;
+        $content->description=$request->description;
+        $content->link = $request->file('link')->store('content','ahmad');
+        $content->save();
+        // return 'Done';
+        return redirect()->route('coach.view.content')->with('success','Modified successfully');
+
+
+
+
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Content $content)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Content $content)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Content $content)
-    {
-        //
-    }
 }

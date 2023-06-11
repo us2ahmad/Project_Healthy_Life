@@ -3,6 +3,8 @@
 use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CoachController;
+use App\Http\Controllers\ContentController;
+use App\Http\Controllers\TrainingPlanController;
 
 Route::middleware(['auth','check.coach'])->group(function () {
      
@@ -42,3 +44,20 @@ Route::controller(ArticleController::class)->name('coach.')->group(function(){
     Route::post('editarticel/{id}','edit')->name('edit.articel');
     Route::post('update/{id}','update')->name('update.article');
 });
+
+Route::view('addconten','coach.contents')->name('coach.add.cont');
+Route::post('addconten',[ContentController::class,'addcontent'])->name('coach.add.content');
+Route::get('viewcontent',[ContentController::class,'view_content'])->name('coach.view.content');
+Route::post('deletcontent/{id}',[ContentController::class,'delet_content'])->name('coach.delet.content');
+Route::post('editcontent/{id}',[ContentController::class,'edit_content'])->name('coach.edit.content');
+Route::post('updatecontent/{id}',[ContentController::class,'update_content'])->name('coach.update.content');
+
+
+
+
+
+
+
+Route::view('addaddplan','coach.addtrainingplanning')->name('coach.add.plan');
+Route::post('addplan',[TrainingPlanController::class,'addplan'])->name('coach.add.tr.plan');
+Route::get('addtrin',[TrainingPlanController::class,'addtrin'])->name('coach.add.trin');

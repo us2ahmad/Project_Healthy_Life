@@ -8,6 +8,13 @@ use Illuminate\Database\Eloquent\Model;
 class Content extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'id_coache',
+        'title',
+        'description',
+        'type',
+        'link',
+    ];
     
     public function Coach()
     {

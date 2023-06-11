@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('training_plans', function (Blueprint $table) {
             $table->id();
-
-            $table->date('s_date');
-            $table->date('e_date');
-            $table->string('goal');
-
-
+            $table->string('goal')->nullable();
+            $table->integer('duration')->nullable();
+            $table->integer('min_high')->nullable();
+            $table->integer('max_high')->nullable();
+            $table->integer('min_weight')->nullable();
+            $table->integer('max_weight')->nullable();
             $table->timestamps();
-        });
+       });
     }
 
     /**

@@ -87,7 +87,6 @@ class ArticleController extends Controller
         $articel->description =$request->description;
         $articel->content =$request->content; 
         $articel->image_path =$request->file('image_path')->store('article','ahmad');
-
         $articel->save();
         return redirect()->route('coach.view.article')->with('success','Modified successfully');
 

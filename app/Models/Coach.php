@@ -32,10 +32,7 @@ class Coach extends Model
     {
         return $this->hasMany(Player::class,'id_coach');
     }
-    public function Evaluation ()
-    {
-        return $this->hasmany(Evaluation::class,'id_coach');
-    }
+  
 
     public function Content()
     {

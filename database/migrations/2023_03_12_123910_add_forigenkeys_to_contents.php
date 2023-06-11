@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::table('contents', function (Blueprint $table) {
             $table->foreignId('id_coache')->constrained('coaches')->cascadeOnDelete();
 
-            $table->foreignId('id_training_plan')->constrained('training_plans')->cascadeOnDelete();
+            // $table->foreignId('id_training_plan')->constrained('training_plans')->cascadeOnDelete();
 
 
         });
