@@ -19,8 +19,6 @@ Route::get('viewarticle','view_article')->name('view.article');
       
 Route::get('addadvice', 'addadvice')->name('add.advice');
 
-Route::get('addplan','addplans')->name('add.plan');
-
 Route::get('update_trainer','update_trainer')->name('update.trainer');
 
 Route::get('updatecontent','updatecontent')->name('update.content');
@@ -60,4 +58,6 @@ Route::post('updatecontent/{id}',[ContentController::class,'update_content'])->n
 
 Route::view('addaddplan','coach.addtrainingplanning')->name('coach.add.plan');
 Route::post('addplan',[TrainingPlanController::class,'addplan'])->name('coach.add.tr.plan');
-Route::get('addtrin',[TrainingPlanController::class,'addtrin'])->name('coach.add.trin');
+Route::get('addtrin/{plan}',[TrainingPlanController::class,'addtrin'])->name('coach.add.trin');
+// Route::post('saveplan/{id}',[TrainingPlanController::class,'saveplan'])->name('coach.save.plan');
+Route::post('saveplan/{planid}',[TrainingPlanController::class,'saveplan'])->name('coach.save.plan');

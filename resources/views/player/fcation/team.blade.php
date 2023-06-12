@@ -79,17 +79,21 @@
         </div>
     </div>
 
-    <form id="window" action="{{route('admin.pay')}}"  method="Post" class="position-fixed info-box">
+    <form id="window" action="{{route('player.info')}}"  method="Post" class="position-fixed info-box">
     @csrf
     <fieldset class="d-flex align-items-center justify-content-center flex-column">
-        <div class="image-container">
-            <img src="{{asset('assets/img/syriatel.jpg')}}" width="100" height="50" alt=""> 
-            <img src="{{asset('assets/img/mtn.jpg')}}" alt="" width="100" height="50">  
-        </div>
-        <h4 style="text-align: center;">Pay 10 $ to This Number 0945917735</h4>
-        <input type="number" name="phone_number" placeholder="Enter Your Phone Number">
+  
+        <h4 style="text-align: center;">Enter Your Information</h4>
+        <input type="number" name="height" placeholder="Enter Your Height" required>
+        <input type="number" name="weight" placeholder="Enter Your Weight" required>
+        <select name="goal" class="text-input" >
+        <option value="increaseweight">Increase Weight</option>
+        <option value="musclemass">Increased Muscle Mass</option>
+        <option value="fatburning">Fat Burning</option>
+
+        </select>
         <input type="hidden" name="id_coach" value="" id="id_coach">
-        <input type="submit" value="Pay"  class="btn-ok px-3 py-1">
+        <input type="submit" value="Send"  class="btn-ok px-3 py-1">
     </fieldset>
 </form>
 <script>

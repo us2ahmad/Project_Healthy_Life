@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Training_Plan extends Model
 {
     use HasFactory;
+    
     public function Coach()
     {
         return $this->belongsto(Coach::class,'id_coach');

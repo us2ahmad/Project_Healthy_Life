@@ -22,10 +22,7 @@ class Coach extends Model
         return $this->belongsTo(User::class);
 
     }
-    public function Payment (){
-
-        return $this->hasone(Payment::class, 'id_coach');
-    }
+ 
 
 
     public function Players()

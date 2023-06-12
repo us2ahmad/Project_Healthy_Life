@@ -32,7 +32,7 @@
                 <td>Id</td>
                 <td>Player Id</td>
                 <td>player Phone Number</td>
-                <td>Coach Id</td>
+                <td> Training Plan Id</td>
                 <td>Stauts</td>
                 <td>Action</td>
               </tr>
@@ -45,10 +45,10 @@
         <td>{{$payment->id}}</td>
         <td>{{$payment->id_player}}</td>
         <td>{{$payment->phone_number}}</td>
-        <td>{{$payment->id_coache}}</td>
+        <td>{{$payment->id_training_plans}}</td>
         <td>{{$payment->approved}}</td>
         @if($payment->approved=='unaccept')
-        <td><form action="{{route('admin.accept.payment',$payment->id)}}" method="POST">@csrf<button type="submit" class="btn btn-primary">Accept</button></form></td>             
+        <td><form action="{{route('admin.accept.payment',[$payment->id,$payment->id_player])}}" method="POST">@csrf<button type="submit" class="btn btn-primary">Accept</button></form></td>             
       @endif  
       </tr>
           @endforeach

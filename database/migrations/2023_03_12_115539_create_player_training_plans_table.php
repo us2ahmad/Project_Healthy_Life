@@ -14,6 +14,8 @@ return new class extends Migration
         Schema::create('player_training_plans', function (Blueprint $table) {
             $table->id();
             $table->boolean('status');
+            $table->date('sdate')->nullable();
+            $table->date('edate')->nullable();
             $table->timestamps();
         });
     }

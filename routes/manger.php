@@ -61,8 +61,8 @@ Route::get('viewcoach','viewcoash')->name('view.coashes');
 });
 
 Route::get('payment/{approved}',[PaymentController::class,'index'])->name('admin.payment');
-Route::post('acceptpayment/{id}',[PaymentController::class,'accept_payment'])->name('admin.accept.payment');
-Route::post('addpayment',[PaymentController::class,'add_payment'])->name('admin.pay');
+Route::post('acceptpayment/{id}/{id_player}',[PaymentController::class,'accept_payment'])->name('admin.accept.payment');
+Route::post('admin/addpayment',[PaymentController::class,'add_payment'])->name('admin.pay');
 
 
 

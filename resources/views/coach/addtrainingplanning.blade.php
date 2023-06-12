@@ -29,12 +29,11 @@
                                          enctype="multipart/form-data">
                                          @csrf
 
-                                         <div style="padding: 15px;" class="col-sm-12">
-                                             <label for="">Plan Goal</label>
-                                             <input style="color:aliceblue" type="text" name="goal"
-                                                 placeholder="Give a Plan Goal" required=""
-                                                 class="form-control p_input">
-                                         </div>
+                                         <select name="goal"  class="form-control p_input">
+                                <option value="increaseweight">Increase Weight</option>
+                                <option value="musclemass">Increased Muscle Mass</option>
+                                <option value="fatburning">Fat Burning</option>
+                                         </select><br>
                                          <div style="padding: 15px;" class="col-sm-12">
                                              <label for="">Duration</label>
                                              <input style="color:aliceblue" type="number" name="duration"
@@ -42,25 +41,25 @@
                                                  class="form-control p_input">
                                          </div>
                                          <div style="padding: 15px;" class="col-sm-12">
-                                             <label for="">min Length</label>
+                                             <label for="">Min high</label>
                                              <input style="color:aliceblue;" type="number" name="min_high"
                                                  placeholder="Give a min Length" required=""
                                                  class="form-control p_input">
                                          </div>
                                          <div style="padding: 15px;" class="col-sm-12">
-                                             <label for="">maxLength</label>
+                                             <label for="">Max high</label>
                                              <input style="color:aliceblue;" type="number" name="max_high"
                                                  placeholder="Give a maxLength" required=""
                                                  class="form-control p_input">
                                          </div>
                                          <div style="padding: 15px;" class="col-sm-12">
-                                             <label for="">min Width</label>
+                                             <label for="">Min Weight</label>
                                              <input style="color:aliceblue;" type="number" name="min_weight"
                                                  placeholder="Give a min Width" required=""
                                                  class="form-control p_input">
                                          </div>
                                          <div style="padding: 15px;" class="col-sm-12">
-                                             <label for="">maxWidth</label>
+                                             <label for="">Max Weight</label>
                                              <input style="color:aliceblue;" type="number" name="max_weight"
                                                  placeholder="Give a maxWidth" required=""
                                                  class="form-control p_input">

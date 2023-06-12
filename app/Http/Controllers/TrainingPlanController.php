@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Content;
+use App\Models\Content_Training_Plan;
 use App\Models\Training_Plan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -27,15 +28,17 @@ class TrainingPlanController extends Controller
     //     $tp->max_weight=$request->max_weight;
     //     $tp->id_coache= auth()->user()->coach->id;
     //     $tp->save();
-    $request->validate([
-        'goal' =>'required|string',
-        'duration' => 'required|numeric|min:1',
-        'min_high' => 'required|numeric|max:3|min:1',
-        'max_high' => 'required|numeric|max:3|min:1',
-        'min_weight' => 'required|numeric|max:3|min:1',
-        'max_weight' => 'required|numeric|max:3|min:1',
-    ]);
-      DB::table('training_plans')->insert([
+
+    // $request->validate([
+    //     'goal' =>'required|string',
+    //     'duration' => 'required|numeric|min:1',
+    //     'min_high' => 'required|numeric|max:3|min:1',
+    //     'max_high' => 'required|numeric|max:3|min:1',
+    //     'min_weight' => 'required|numeric|max:3|min:1',
+    //     'max_weight' => 'required|numeric|max:3|min:1',
+    // ]);
+    // dd($request);
+    $plan  = DB::table('training_plans')->insertGetId([
            'goal' => $request->goal,
             'duration' => $request->duration,
             'min_high' => $request->min_high,
@@ -46,15 +49,35 @@ class TrainingPlanController extends Controller
             'created_at' => now()->format('Y-m-d H:i:s'),
             'updated_at' => now(),
             ]);
-        return redirect()->route('coach.add.trin');
+            return redirect()->route('coach.add.trin'  ,compact('plan') );
     }
 
-   public function addtrin()
-    {
-        $coach=auth()->user()->coach->id;
-        $cont=Content::where('id_coache', $coach)->get();
+   public function addtrin($plan)
+    {   
+        $coach   = DB::table('training_plans')->where('id'  , $plan )->get('id_coache');
+        $coachid= $coach[0]->id_coache;
+        $content=Content::where('id_coache',$coachid )->get();
+
+        return view('coach.addcontent-to-plan',compact('content','plan'));
+        
+        // dd( $content);
+        // $coach=auth()->user()->coach->id;
+        // $cont=Content::where('id_coache', $coach)->get();
         // dd($cont);
-        return view('coach.addcontent-to-plan',compact('cont'));
+       
+    }
+
+    public function saveplan($planid ,Request $request)
+    {
+        DB::table('contents_training_plans')->insert([
+            
+            'id_content'=>$request->dsa,
+            'id_training_plan'=>$planid,
+            'created_at' => now()->format('Y-m-d H:i:s'),
+            'updated_at' => now(),
+        ]);
+
+              return redirect()->back();
     }
 
 

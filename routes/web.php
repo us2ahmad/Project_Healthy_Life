@@ -4,6 +4,8 @@ use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\RegController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\EvaluationController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\PlayerTrainingPlanController;
 use App\Mail\WelcomeMail;
 use Chatify\Http\Controllers\MessagesController;
 use Illuminate\Support\Facades\Mail;
@@ -54,8 +56,8 @@ Route::post('/register', [RegController::class, 'store']);
 Route::get('Check',[RegController::class,'check']);
 ///////////////////////////////////////////////////////////////////////////////
 /////////////////////Article//////////////////////////////////////////////////
+
 Route::controller(ArticleController::class)->group(function () {
-  
     Route::get('art/health', 'Health')->name('health');
     Route::get('art/training', 'Training')->name('training');
     Route::get('art/nutrition', 'Nutrition')->name('nutrition');
@@ -65,3 +67,10 @@ Route::controller(ArticleController::class)->group(function () {
 ///////////////////////////////////////////////////////////////////////////////
 
 
+// Route::post('addtr',[PlayerTrainingPlanController::class,'add_tr'])->name('player.add.tr');
+
+
+Route::post('player/info',[PlayerTrainingPlanController::class,'add_tr'])->name('player.info');
+
+Route::get('player/payment',[PaymentController::class,'show'])->name('player.pay');
+Route::post('player/confarm/payment',[PaymentController::class,'add_payment'])->name('player.confarm.pay');

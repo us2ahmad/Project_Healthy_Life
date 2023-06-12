@@ -7,6 +7,7 @@ use App\Traits\QueryTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Auth as FacadesAuth;
+use Illuminate\Support\Facades\DB;
 
 class PaymentController extends Controller
 {
@@ -22,25 +23,59 @@ class PaymentController extends Controller
          return view('admin.payments',compact('payments','count'));
     }
 
-    public function accept_payment($id)
+    public function accept_payment($id,$id_player)
     {
         $payment=Payment::where('id',$id)->first();
         $payment->approved='accept';
         $payment->save();
+
+       $trid= $payment->id_training_plans;
+          
+       
+       
+       DB::table('player_training_plans')->insert([
+        'status' => 'active',
+        'id_player' => $id_player,
+        'id_training_plan' => $trid,
+        // 'created_at' => now(),
+        // 'updated_at' => now(),
+    ]);
+    // return response('Done');
         return redirect()->back()->with('success','Payment accepted');
 
     }
+
     public function add_payment(Request $request)
     {
-      $payment = new Payment();
-      $payment->phone_number= $request->phone_number;
-      $payment->id_coache = $request->id_coach;
-      $payment->id_player= auth()->user()->player->id;
-      $payment->save();
-      return response('Done');
+    //   dd($request ,'ii');
+    //  return view('player.sendpyment');
+    //      dd($request);
+    //   $payment = new Payment();
+    //   $payment->phone_number= $request->phone_number;
+    //   $payment->id_training_plans =$request->trid;
+    //   $payment->id_player= auth()->user()->player->id;
+    //   $payment->save();
+
+    // dd($request);
+    DB::table('payments')->insert([
+        'approved' => 'unaccept',
+        'id_player' => auth()->user()->player->id,
+        'id_training_plans' =>$request->trid,
+        'phone_number' => $request->phone_number,
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+    
 
     }
+  public function show(Request $request)
+    {
 
+        dd($request );
+        // return view('player.sendpyment',compact('request'));
+
+    }
 
 
     /**
@@ -62,10 +97,7 @@ class PaymentController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Payment $payment)
-    {
-        //
-    }
+ 
 
     /**
      * Show the form for editing the specified resource.

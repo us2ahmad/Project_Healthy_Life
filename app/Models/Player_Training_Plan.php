@@ -17,4 +17,5 @@ class Player_Training_Plan extends Model
     {
         return $this->belongsto(Training_Plan::class,'id_Training_Plan');
     }
+    
 }
