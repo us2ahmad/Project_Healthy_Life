@@ -3,19 +3,23 @@
 namespace App\Http\Controllers;
 
 use App\Models\Payment;
+use App\Traits\QueryTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Auth as FacadesAuth;
 
 class PaymentController extends Controller
 {
+    use QueryTrait;
     /**
      * Display a listing of the resource.
      */
     public function index($approved)
     {
+
+        $count = $this->getCountRequestCouach();
        $payments=Payment::where('approved',$approved)->get();
-         return view('admin.payments',compact('payments'));
+         return view('admin.payments',compact('payments','count'));
     }
 
     public function accept_payment($id)

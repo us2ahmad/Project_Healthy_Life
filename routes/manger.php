@@ -23,8 +23,14 @@ Route::get('addarticle','addarticle');
 
 Route::get('accoach','accept_coach')->name('accept.coach');
 
-Route::post('accoach/{id}','acc_coach')->name('act.coach');
-Route::get('addviolations','addviolations')->name('violations');
+
+
+// Route::post('accoach/{id}','acc_coach')->name('coach');
+Route::post('accoa/{id}', 'acc_coach')->name('accoa.coach');
+//////////////////////////////////////////////////////////////////////////////
+Route::post('accoach/dis/{id}', 'dis_acc_coach')->name('dis.act.coach');
+//////////////////////////////////////////////////////////////////////////////
+
 
 Route::get('calc','calc')->name('calc');
 
@@ -65,3 +71,5 @@ Route::post('edit/advice/{id}',[AdviceController::class,'edit'])->name('admin.ed
 Route::post('update/advice/{id}',[AdviceController::class,'update'])->name('admin.update.advice');
 
 Route::post('delete/article/{id}',[ArticleController::class,'destroy'])->name('admin.destroy.article');
+
+

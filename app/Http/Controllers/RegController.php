@@ -1,5 +1,7 @@
 <?php
 namespace App\Http\Controllers;
+
+use App\Mail\WelcomeMail;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Player;
@@ -7,6 +9,7 @@ use App\Models\Coach;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Mail;
 
 class RegController extends Controller
 {
@@ -76,6 +79,7 @@ class RegController extends Controller
            $player->level = $request->level;
            $player->weight = $request->weight;
            $player->save();
+           Mail::to($user->email)->send(new WelcomeMail ($user->name, 'player', ''));
        } elseif ($request->account_type === 'coach') {
            $coach = new Coach();
            $coach->user_id = $user->id;
@@ -83,6 +87,7 @@ class RegController extends Controller
            $coach->experience = $request->experience;
            $coach->type= $request->type;
            $coach->save();
+           Mail::to($user->email)->send(new WelcomeMail($user->name, 'coach', ''));
        }
        
        event(new Registered($user));
