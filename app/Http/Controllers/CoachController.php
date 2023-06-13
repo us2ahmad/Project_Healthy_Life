@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Coach;
+use App\Models\Player;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class CoachController extends Controller
 {
@@ -13,58 +15,11 @@ class CoachController extends Controller
      */
     public function index()
     {
-        return view('coach.index');
+        $plan = DB::table('training_plans')->where('id_coache',auth()->user()->coach->id)->get();
+        $players=Player::where('id_coache',auth()->user()->coach->id)->get();
+        return view('coach.index',compact('players','plan'));
 
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(Coach $coach)
-    {
-       
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit()
-    {
-      
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Coach $coach)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Coach $coach)
-    {
-        //
-    }
-
     public function pagearticle( )
     {
       return view('coach.addarticle');
@@ -95,42 +50,14 @@ class CoachController extends Controller
         return view('coach.view-article',compact('articles'));
 
     }
-
-
-    public function addplans(){
-        return view('coach.addtrainingplanning');
-    }
-
-    public function addadvice (){
-       return view('coach.addadvice');
-    }
-    public function update_trainer (){
-        return view('coach.update trainer');
+     public function view_players (){
+        $players=Player::where('id_coache',auth()->user()->coach->id)->get();
+        return view('coach.view-players',compact('players'));
      }
-
-     public function updatecontent (){
-        return view('coach.updatecontent');
-     }
-     public function updateplanning (){
-        return view('coach.updateplanning');
-     }
-     public function viewcontent (){
-        return view('coach.viewcontent');
-     }
-     public function viewplannings (){
-        return view('coach.viewplannings');
-     }
-     public function viewplayers (){
-        return view('coach.viewplayers');
-     }
-     public function viewviolations (){
-        return view('coach.viewviolations');
-     }
-     public function violation (){
-        return view('coach.violation');
-     }
-     public function viewplan (){
-        return view('coach.viewplannings');
+    public function view_plan ()
+    {
+        $plans = DB::table('training_plans')->where('id_coache',auth()->user()->coach->id)->get();
+        return view('coach.view-plan',compact('plans'));
      }
 
 }

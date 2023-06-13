@@ -26,63 +26,39 @@
 
 </head>
 <body>
-    <header id="header" class="fixed-top header-transparent">
-      <div class="container d-flex align-items-center justify-content-between">
-
-        <a href="index.html" class="logo">
-          <img src="{{asset('/assets/img/Logo.png')}}" alt="" class="img-fluid">
-        </a>
-
-        <nav id="navbar" class="navbar">
-          <ul>
-            <li><a class="nav-link scrollto" href="/player/index.html">Home</a></li>
-            
-            <li><a class="nav-link scrollto" href="/player/fcation/plans/plan1/plan.html">your plan</a></li>
-            
-          </a>
-    
-                <a href="\logout.html">
-                  <button type="button" class="btn btn-outline-warning" style="color: white;">Log Out</button>
-                </a>
-            
-          </ul>
-        </nav>
-          <i class="bi bi-list mobile-nav-toggle"></i>
-      </div>
-    </header>
+@include('player.nav_bar')
   <div class="plan">
     <section class="bg">
       <style>
         .bg{
           height: 40vh;
-          background-image: url(/assets/img/bodybuilding.jpg);
+          background-image: url(//assets/img/bodybuilding.jpg);
           background-size: cover;
           margin-bottom: 50px;
         }
       </style>
     </section>
+      {{--      nassssssssser--}}
     <div class="exersize row p-5 m-5">
       <h1 class="text-center pb-3">your exersize</h1>
       <div class="exercise-images-grid">
-        <a href="https://www.youtube.com/watch?v=C6aXGfIilEE">
-        <video playsinline="" preload="metadata" muted="" autoplay="" loop="" class="workout-img" src="/media/uploads/videos/branded/male-barbell-deadlift-front.mp4#t=0.1">
-        </video></a>
-        <a href="https://www.youtube.com/watch?v=C6aXGfIilEE">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/6tnIdLJCgQM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen ></iframe>
-          <!-- <video playsinline="" preload="metadata" muted="" autoplay="" loop="" class="workout-img" src="/media/uploads/videos/branded/male-barbell-deadlift-side.mp4#t=0.1">
-        </video> -->
-      </a>
-        </div>
-        <div class="step col-12 pt-5">
-            <ol>
-                <li><h3>sdlcsmalx</h3></li>
-                <li><h3>sdlcsmalx</h3></li>
-                <li><h3>sdlcsmalx</h3></li>
-                <li><h3>sdlcsmalx</h3></li>
-                <li><h3>sdlcsmalx</h3></li>
-            </ol>
-        </div>
+        @foreach($conts as $cont)
+              @if($cont->type = $type)
+                  <video playsinline="" preload="metadata" muted="" autoplay="" loop="" class="workout-img" src="{{$cont->link}}">
+                  </video>
+                  <div class="step col-12 pt-5">
+                      <ol>
+                      <li><h3>{{$cont->title}}</h3></li>
+                      <li><h3>{{$cont->description}}</h3></li>
+                        
+                      </ol>
+                  </div>
+              @endif
+        @endforeach
+      </div>
     </div>
+      {{--      nassssssssser--}}
+  </div>
     <script src="{{asset('/assets/js/main.js')}}"></script>
   </body>
   </html>

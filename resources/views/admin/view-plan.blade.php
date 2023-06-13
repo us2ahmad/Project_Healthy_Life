@@ -21,28 +21,45 @@
                 
                   <div class=" container-fluid page-body-warper">
                     <div class="container" >
+                    @if(count($plans)>0)
                     <table class="table">
                       <thead>
               <tr >
-                <td>Id</i></td>
-                <td>Name</td>
-             <td>Duration</td>
-             <td>Min Length</td><td>MaxLength</td>
-             <td>Min Whight</td><td>Max Whight</td>
-              <td>goal id</td>
-              <td></td>
-              </tr></thead><tbody>
+                <td>Id</td>
+                <td>Goal</td>
+                <td>Duration</td>
+                <td>Min Height</td>
+                <td>Max Height</td>
+                <td>Min Weight</td>
+                <td>Max Weight</td>
+                <td>id_coache</td>
+              </tr>
+            </thead>
+              <tbody>
+              @foreach ( $plans as $plan )
               <tr>
-                <td>6</td>
-                <td>goal</td>
-                  <td>5</td>
-                  <td>150</td><td>170</td>
-                  <td>54</td><td>65</td>
-                  <td>8</td>
-              </tr></tbody>
-                          </table>
-                    </div>	
-                    </div>
+              <td>{{$plan->id}}</td>
+              <td>{{$plan->goal}}</td>
+              <td>{{$plan->duration}}</td>
+              <td>{{$plan->min_high}}</td>
+              <td>{{$plan->max_high}}</td>
+              <td>{{$plan->min_weight}}</td>
+              <td>{{$plan->max_weight}}</td>
+              <td>{{$plan->id_coache}}</td>
+              </tr>
+              @endforeach
+            </tbody>
+                       
+          </table>
+          @else
+      <div style="text-align: center; margin-top: 50px;">
+          <h3 style="color: #555; font-size: 24px;">There Are No Plans</h3>
+        </div>
+          @endif
+                   
+        </div>	
+         
+      </div>
               
 
                   

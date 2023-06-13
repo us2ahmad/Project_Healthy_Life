@@ -26,6 +26,7 @@
         <td>Last Name</td>
         <td>Email</td>
         <td>Gender</td>
+        <td>Action</td>
       </tr>
     </thead>
     <tbody>

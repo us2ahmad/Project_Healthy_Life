@@ -45,7 +45,6 @@
           <li><a class="nav-link scrollto" href="#Self-Training">Self-Training</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a class="nav-link scrollto" href="#faq">FAQ</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         @if(auth()->check())
        
         <li>
@@ -91,7 +90,19 @@
     <div class="container position-relative">
       <h1>Welcome to Healthy Life</h1>
       <h2><i>- "Believe In Yourself Every Single Day And You WIill Be Unstoppable" -</i></h2>
-      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+    @if(auth()->check() )
+      <a href="{{route('get_plan')}}" class="btn-get-started scrollto">
+        <button style="border: none; background-color: transparent;color:#fff">
+          Get Plan
+        </button>
+      </a>
+      @else
+      <a href="{{route('register1')}}" class="btn-get-started scrollto">
+        <button style="border: none; background-color: transparent; color:#fff">
+          Get Plan
+        </button>
+      </a>
+   @endif
     </div>
   </section>
   <!-- End Home -->
@@ -343,52 +354,7 @@
     </section>
     <!-- End Frequently Asked Questions Section -->
 
-    <!-- ======= Contact Section ======= -->
-      <h1 style="text-align: center;">Contact</h1>
-      <div class="contact-a">
-      
-          <section id="contact" class="contact">
-            <div class="container">
-              <div class="col-lg-6">
-                <form action="forms/contact.html" method="post" role="form" class="php-email-form">
-                  <div class="form-group mt-3">
-                    <select name="subject" id="subject" class="form-control" title="Subject" style="border-radius:10px;">
-                    <option value="" hidden> Subject Of Message</option>
-                    <option value="Advice">Advice</option>
-                    <option value="Complaint">Complaint</option>
-                  </select>
-                  </div>
-                  <div class="form-group mt-3">
-                    <textarea class="form-control" name="message" rows="5" placeholder="Message" required style="border-radius:10px;"></textarea>
-                  </div>
-                  <div class="text-center"><button class="btn btn-success btn-fw" type="submit">Send Message</button></div>
-                </form>
-              </div>
-              </div>
-              
-          </section>
-      
-      
-          <section id="contact" class="contact">
-            <div class="container">
-              <div class="">
-                    <div class="">
-                      <div class="text-center info-box mt-4">
-                        <a href="#">
-                        <img src="{{asset('assets\images\bg-auth.jpg')}}" >
-                        <i class="bx bx-phone-call text-center"></i>
-                        <h3>Call Us</h3>
-                        </a>
-                      </div>
-                    </div>
-                </div>
-              </div>
-          </section>
-      
-        </div>
-      
-          <!-- End Contact Section -->
-      
+  
   </main>
   <!-- End #main -->
 
@@ -405,8 +371,8 @@
               Piazza Mozia Blok E7 No 9 <br>
               Tangerang, 15810<br>
              syria<br><br>
-              <strong>Phone:</strong> +62 8122222222<br>
-              <strong>Email:</strong> infoHealthy Life@gmail.com<br>
+              <strong>Phone:</strong> +9630119999999<br>
+              <strong>Email:</strong> infoHealthyLife@gmail.com<br>
             </p>
           </div>
 
@@ -418,7 +384,6 @@
               <li><i class="bx bx-chevron-right"></i> <a href="#offer">Offer</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#team">Team</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#faq">FAQ</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#contact">Contact</a></li>
             </ul>
           </div>
 

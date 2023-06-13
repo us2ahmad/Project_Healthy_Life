@@ -36,23 +36,37 @@
       <div class="step"></div>
       <div class="circle"></div>
       <div class="step"></div>
-      <div class="circle"></div>  
+      <div class="circle"></div>
       <div class="step"></div>
       <div class="circle"></div>
       <div class="step"></div>
       <div class="circle"></div>
     </div>
+    {{--      nassssssssser--}}
     <div class="row text-center m-5">
-      <a href="/player/fcation/plans/plan1/exsersize/exsersize.html" class="part col-lg-4 col-md-6 col-sm-12"><div><img src="{{asset('/assets/img/plan/صدر (1).png')}}" alt="" class="w-50 h-75" ><p>Chest</p></div></a>
-      <a href="/player/fcation/plans/plan1/exsersize/exsersize.html" class="part col-lg-4 col-md-6 col-sm-12"><div><img src="{{asset('/assets/img/plan/ظهر.png')}}" alt="" class="w-50 h-75" ><p>Back</p></div></a>
-      <a href="/player/fcation/plans/plan1/exsersize/exsersize.html" class="part col-lg-4 col-md-6 col-sm-12"><div><img src="{{asset('/assets/img/plan/رقبة.png')}}" alt="" class="w-50 h-75" ><h3>hand</h3><p>lkdjalkzx</p></div></a>
-      <a href="/player/fcation/plans/plan1/exsersize/exsersize.html" class="part col-lg-4 col-md-6 col-sm-12"><div><img src="{{asset('/assets/img/plan/ساق.png')}}" alt="" class="w-50 h-75" ><h3>hand</h3><p>lkdjalkzx</p></div></a>
-      <a href="/player/fcation/plans/plan1/exsersize/exsersize.html" class="part col-lg-4 col-md-6 col-sm-12"><div><img src="{{asset('/assets/img/plan/قدم.png')}}" alt="" class="w-50 h-75" ><h3>hand</h3><p>lkdjalkzx</p></div></a>
-      <a href="/player/fcation/plans/plan1/exsersize/exsersize.html" class="part col-lg-4 col-md-6 col-sm-12"><div><img src="{{asset('/assets/img/plan/يد.png')}}" alt="" class="w-50 h-75" ><h3>hand</h3><p>lkdjalkzx</p></div></a>
-      <a href="/player/fcation/plans/plan1/exsersize/exsersize.html" class="part col-lg-4 col-md-6 col-sm-12"><div><img src="{{asset('/assets/img/plan/ما بعرف شو.png')}}" alt="" class="w-50 h-75" ><h3>hand</h3><p>lkdjalkzx</p></div></a>
-      <a href="/player/fcation/plans/plan1/exsersize/exsersize.html" class="part col-lg-4 col-md-6 col-sm-12"><div><img src="{{asset('/assets/img/plan/رفع اثقال.png')}}" alt="" class="w-50 h-75" ><h3>hand</h3><p>lkdjalkzx</p></div></a>
-      <a href="/player/fcation/plans/plan1/exsersize/exsersize.html" class="part col-lg-4 col-md-6 col-sm-12"><div><img src="{{asset('/assets/img/plan/تنحيف.png')}}" alt="" class="w-50 h-75" ><h3>hand</h3><p>lkdjalkzx</p></div></a>
+      @foreach($contents as $cont)
+            <a href="{{route('ExsersizeType' , $cont->type )}}" class="part col-lg-4 col-md-6 col-sm-12">
+                <div>
+                    @if($cont->type = 'chest')
+                        <img src="{{asset('/assets/img/plan/chest.png')}}" alt="" class="w-50 h-75" >
+                    @elseif($cont->type = 'foot')
+                        <img src="{{asset('/assets/img/plan/foot.png')}}" alt="" class="w-50 h-75" >
+                    @elseif($cont->type = 'back')
+                        <img src="{{asset('/assets/img/plan/back.png')}}" alt="" class="w-50 h-75" >
+                    @elseif($cont->type = 'shoulder')
+                        <img src="{{asset('/assets/img/plan/shoulder.png')}}" alt="" class="w-50 h-75" >
+                    @elseif($cont->type = 'triceps')
+                        <img src="{{asset('/assets/img/plan/triceps.png')}}" alt="" class="w-50 h-75" >
+                    @elseif($cont->type = 'biceps')
+                        <img src="{{asset('/assets/img/plan/biceps.png')}}" alt="" class="w-50 h-75" >
+                    @endif
+                    <h3>{{$cont->type}}</h3>
+                    <p>{{$cont->description}}</p>
+                </div>
+            </a>
+      @endforeach
      </div>
+      {{--      nassssssssser--}}
   </div>
   <!-- Template Main JS File -->
   <script src="{{asset('/assets/js/main.js')}}"></script>

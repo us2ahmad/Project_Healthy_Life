@@ -30,7 +30,7 @@
                     <td>Weight</td>
                     <td>Level</td>
                     <td>Trainer Id</td>
-                    <td>Planning Id</td>
+                    <td></td>
                     <td>Action</td>
                   </tr>
                 </thead>

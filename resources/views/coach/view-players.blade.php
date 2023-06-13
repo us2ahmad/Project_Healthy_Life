@@ -12,52 +12,59 @@
        <!-- _navbar -->
 @include('coach.navbar')
      <!-- _navbar -->
-      
-      <!-- partial -->
+
+        <!-- partial -->
         <div class="main-panel">
-          <div class="content-wrapper">
-         
-            <div class="row">
-              <div class="col-xl-12 col-sm-12 grid-margin stretch-card">
-                <div class="card">
-                
-                  <div class=" container-fluid page-body-warper">
-                    <div class="container" >
-                    <table class="table">
-                      <thead>
-              <tr >
-                <td>Id</i></td>
-              <td>Goal</td>
-              <td>Duration</td>
-              <td>Gender</td>
-             <td>min Length Player </td>  <td>max Length Player </td> 
-             <td>min Weight Player</td> <td>max Weight Player</td>
-          <td><td></td></td><td></td>
-              </tr></thead><tbody>
-              <tr>
-                <td>6</td>
-<td>power</td>
-<td>30</td>
-<td>male</td>
-<td>165</td><td>175</td>
-<td>66</td><td>69</td>
-
-<td><a href="Tupdateplanning.html"><button class="btn btn-inverse-success">Update</button></a></td>   
-
-<td><a href="Tviewcontent.html"><button class="btn btn-inverse-warning ">View content</button></a></td>        
+  <div class="content-wrapper">
+    <div class="row">
+      <div class="col-xl-12 col-sm-12 grid-margin stretch-card">
+        <div class="card">
+          <div class="container-fluid page-body-warper">
+            <div class="container">
+            @if(count($players)>0)
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Id</th>
+                    <th>UserName</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Gender</th>
+                    <th>Length</th>
+                    <th>Weigth</th>
+                    <th>Level</th>
                   </tr>
-              </tbody>
-                          </table>
-                    </div>	
-                    </div>
-              
-
-                  
+                </thead>
+                <tbody>
+                  @foreach ( $players as $player )
+                  <tr>
+                    <td>{{ $player->id}}</td>
+                    <td>{{ $player->user->name}}</td>
+                    <td>{{ $player->user->first_name}}</td>
+                    <td>{{ $player->user->last_name}}</td>
+                    <td>{{ $player->user->email}}</td>
+                    <td>{{ $player->user->gender}}</td>
+                    <td>{{ $player->height}}</td>
+                    <td>{{ $player->weight}}</td>
+                    <td>{{ $player->level}}</td>
+                  </tr>
+                  @endforeach
+                </tbody>
+     
+              </table>
+              @else
+      <div style="text-align: center; margin-top: 50px;">
+          <h3 style="color: #555; font-size: 24px;">There Are No Players</h3>
+        </div>
+          @endif
+            </div>	
+          </div>
         </div>
       </div>
-        </div>
-      </div>
-       </div>
+    </div>
+  </div>
+</div>
     <!-- container-scroller -->
     <!-- plugins:js -->
     <script src="{{asset('coach/assets/vendors/js/vendor.bundle.base.js')}}"></script>

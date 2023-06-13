@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Payment;
+use App\Models\Player;
 use App\Traits\QueryTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -12,37 +13,34 @@ use Illuminate\Support\Facades\DB;
 class PaymentController extends Controller
 {
     use QueryTrait;
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index($approved)
     {
-
         $count = $this->getCountRequestCouach();
-       $payments=Payment::where('approved',$approved)->get();
-         return view('admin.payments',compact('payments','count'));
+        $payments=Payment::where('approved',$approved)->get();
+        return view('admin.payments',compact('payments','count'));
     }
-
     public function accept_payment($id,$id_player)
     {
         $payment=Payment::where('id',$id)->first();
         $payment->approved='accept';
         $payment->save();
-
-       $trid= $payment->id_training_plans;
-          
-       
-       
-       DB::table('player_training_plans')->insert([
-        'status' => 'active',
-        'id_player' => $id_player,
-        'id_training_plan' => $trid,
-        // 'created_at' => now(),
-        // 'updated_at' => now(),
-    ]);
-    // return response('Done');
+        $trid= $payment->id_training_plans;
+        $duration = DB::table('training_plans')->where('id', $trid)->value('duration');
+        $coachid = DB::table('training_plans')->where('id', $trid)->value('id_coache');
+        DB::table('player_training_plans')->insert([
+            'status' => 'active',
+            'id_player' => $id_player,
+            'id_training_plan' => $trid,
+            'sdate'=> now()->format('Y-m-d H:i:s'),
+            'edate'=>now()->addDays($duration),
+            'created_at' => now()->format('Y-m-d H:i:s'),
+            'updated_at' => now()->format('Y-m-d H:i:s'),
+        ]);
+        $player=Player::where('id',$id_player)->first();
+        $player->id_coache= $coachid;
+        $player->save();
         return redirect()->back()->with('success','Payment accepted');
-
     }
 
     public function add_payment(Request $request)
@@ -62,64 +60,19 @@ class PaymentController extends Controller
         'id_player' => auth()->user()->player->id,
         'id_training_plans' =>$request->trid,
         'phone_number' => $request->phone_number,
-        'created_at' => now(),
-        'updated_at' => now(),
+        'created_at' => now()->format('Y-m-d H:i:s'),
+        'updated_at' => now()->format('Y-m-d H:i:s'),
     ]);
 
+    $resp='We are now giving you the appropriate plan';
+    return view('player.response',compact('resp'));
     
-
     }
-  public function show(Request $request)
+  
+    public function show(Request $request)
     {
-
-        dd($request );
-        // return view('player.sendpyment',compact('request'));
+        return view('player.sendpyment',compact('request'));
 
     }
 
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
- 
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Payment $payment)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Payment $payment)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(Payment $payment)
-    {
-        //
-    }
 }

@@ -21,36 +21,39 @@
         <div class="card">
           <div class="container-fluid page-body-warper">
             <div class="container">
+            @if(count($plans)>0)
               <table class="table">
                 <thead>
                   <tr>
-                    <th>Id</th>
-                    <th>first name</th>
-                    <th>last name</th>
-                    <th>phone</th>
-                    <th>email</th>
-                    <th>gender</th>
-                    <th>planning id</th>
-                    <th>length</th>
-                    <th>weigth</th>
-                    <th>level id</th>
+                  <td>Id</td>
+                <td>Goal</td>
+                <td>Duration</td>
+                <td>Min Height</td>
+                <td>Max Height</td>
+                <td>Min Weight</td>
+                <td>Max Weight</td>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td>6</td>
-                    <td>ali</td>
-                    <td>shami</td>
-                    <td>0985245628</td>
-                    <td>ahmad2tabash@gmail.com</td>
-                    <td>male</td>
-                    <td>12</td>
-                    <td>170</td>
-                    <td>75</td>
-                    <td>3</td>
-                  </tr>
+                @foreach ( $plans as $plan )
+              <tr>
+              <td>{{$plan->id}}</td>
+              <td>{{$plan->goal}}</td>
+              <td>{{$plan->duration}}</td>
+              <td>{{$plan->min_high}}</td>
+              <td>{{$plan->max_high}}</td>
+              <td>{{$plan->min_weight}}</td>
+              <td>{{$plan->max_weight}}</td>
+              </tr>
+              @endforeach
                 </tbody>
+     
               </table>
+              @else
+      <div style="text-align: center; margin-top: 50px;">
+          <h3 style="color: #555; font-size: 24px;">There Are No Plans</h3>
+        </div>
+          @endif
             </div>	
           </div>
         </div>

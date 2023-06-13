@@ -11,7 +11,7 @@
             <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item dropdown border-left">
                 <a class="nav-link count-indicator dropdown-toggle" id="messageDropdown" href="/chatify">
-                  <p class="text-success ms-2 mb-0 font-weight-medium">15</p>
+                  <p class="text-success ms-2 mb-0 font-weight-medium"></p>
                   <i class="mdi mdi-email"></i>
                
                 </a>
@@ -34,7 +34,7 @@
                 <a class="nav-link" id="profileDropdown" href="#" data-bs-toggle="dropdown">
                   <div class="navbar-profile">
                     <img class="img-xs rounded-circle" src="{{asset('admin/assets/images/photo.jpg')}}" alt="">
-                    <p class="mb-0 d-none d-sm-block navbar-profile-name">Henry Klein</p>
+                    <p class="mb-0 d-none d-sm-block navbar-profile-name">{{auth()->user()->name}}</p>
                     <i class="mdi mdi-menu-down d-none d-sm-block"></i>
                   </div>
                 </a>

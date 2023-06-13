@@ -75,7 +75,7 @@
             </a>
           </li>
           <li class="nav-item menu-items">
-            <a class="nav-link" href="viewplannings">
+            <a class="nav-link" href="{{route('admin.view.plan')}}">
               <span class="menu-icon">
                 <i class="mdi mdi-dumbbell"></i>
               </span>

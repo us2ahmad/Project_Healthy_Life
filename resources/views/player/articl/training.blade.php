@@ -60,13 +60,7 @@
  <!-- End Main Content -->
 
       <div class="sidebars">
-        <div class="section search">
-          <h2 class="section-title">Search</h2>
-          <form action="" method="post">
-            <input type="text" name="keyword" class="text-input" placeholder="Search..." autocomplete="off"><br>
-            
-          </form>
-        </div>
+      
         <div class="section topics">
         <h2 class="section-title">Topics</h2>
         <ul>

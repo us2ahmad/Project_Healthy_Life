@@ -50,7 +50,6 @@
                 <td><img src="{{asset('/imgs/'.$looke->certificate)}}" alt="not found"></td>
                 <td>{{ $looke->experience }}</td>
                 <td>{{ $looke->created_at }}</td>
-                {{-- <td><form action="{{route('admin.act.coach', $looke->id)}}" method="POST">@csrf<button type="submit" class="btn btn-primary">Accept</button></form></td>              --}}
                 <td><form action="{{route('admin.accoa.coach', $looke->id)}}" method="POST">@csrf<button type="submit" class="btn btn-primary">Accept</button></form></td>             
                 <td><form action="{{route('admin.dis.act.coach', $looke->id)}}" method="POST">@csrf<button type="submit" class="btn btn-primary">Un Accept</button></form></td>             
               </tr>

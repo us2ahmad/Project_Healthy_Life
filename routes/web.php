@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Mail;
 Route::controller(PlayerController::class)->group(function () {
     Route::get('/','index')->name('player.index');
     Route::get('player/plans', 'plans')->name('player.plans');
-    Route::get('team/{type}', 'team')->name('team');
+    Route::get('team/{type}', 'team')->name('team')->middleware('ChaeckBan');
     Route::get('player/exsersize', 'exsersize')->name('player.exsersize');//->middleware('check.player');
     Route::get('Mselftraining', function (){
         return view('player.tutorial.Mselftraining');
@@ -48,6 +48,7 @@ Route::get('/dashboard', function () {
 ///////////////////////////////////////////////////////////////////////////////
 
 Route::get('/register', [RegController::class, 'showRegistrationForm'])->name('register1');
+// ->middleware('ChaeckBan')
 
 Route::post('/register', [RegController::class, 'store']);
 
@@ -69,8 +70,14 @@ Route::controller(ArticleController::class)->group(function () {
 
 // Route::post('addtr',[PlayerTrainingPlanController::class,'add_tr'])->name('player.add.tr');
 
-
+Route::middleware('auth')->group(function(){
 Route::post('player/info',[PlayerTrainingPlanController::class,'add_tr'])->name('player.info');
-
 Route::get('player/payment',[PaymentController::class,'show'])->name('player.pay');
-Route::post('player/confarm/payment',[PaymentController::class,'add_payment'])->name('player.confarm.pay');
+
+
+
+Route::get('player/plans',[\App\Http\Controllers\PlayerTrainingPlanController::class,'ShowType'])->name('Types');
+Route::get('player/exsersize/{type}',[\App\Http\Controllers\PlayerTrainingPlanController::class,'Showexsersize'])->name('ExsersizeType');
+});
+
+Route::get('/player/plans',[PlayerTrainingPlanController::class,'get_plan'])->name('get_plan');

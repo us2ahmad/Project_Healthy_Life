@@ -8,10 +8,12 @@ use App\Models\User;
 use App\Models\Coach;
 use App\Models\Advice;
 use App\Models\Article;
+use App\Models\Payment;
 use App\Models\Player;
 use App\Traits\QueryTrait;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 
 class MangerController extends Controller
@@ -23,8 +25,18 @@ class MangerController extends Controller
     public function index()
     {
 
+        $player=Player::get();
+        $payment=Payment::where('approved','accept')->get();
         $count = $this->getCountRequestCouach();
-        return view('admin.index', compact('count'));
+        return view('admin.index', compact('count','player','payment'));
+    }
+
+    public function view_plan()
+    {
+        $count = $this->getCountRequestCouach();
+        $plans = DB::table('training_plans')->get();
+        return view('admin.view-plan',compact('plans','count'));
+
     }
 
     public function peagadvice()
@@ -65,36 +77,14 @@ class MangerController extends Controller
         return view('admin.addtrainer', compact('count'));
     }
 
-
-   
-    public function calc()
-    {
-        $count = $this->getCountRequestCouach();
-        return view('admin.calc', compact('count'));
-    }
-
-    public function imports()
-    {
-        $count = $this->getCountRequestCouach();
-        return view('admin.imports', compact('count'));
-    }
-
       public function payments()
     {
         $count = $this->getCountRequestCouach();
         return view('admin.payments', compact('count'));
     }
 
-    public function replycomplaint()
-    {
-        $count = $this->getCountRequestCouach();
-        return view('admin.replycomplaint', compact('count'));
-    }
 
-    public function updateplayer()
-    {
-        return view('admin.updateplayer');
-    }
+
        public function accept_coach()
     {
 
@@ -107,7 +97,6 @@ class MangerController extends Controller
 
       public function acc_coach($id)
     {
-        // dd('acc_coach');
         $look = Coach::where('id', $id)->first();
         $user = User::where('id', $look->user_id)->first();
         $look->approved = 'unlook';
@@ -134,12 +123,9 @@ class MangerController extends Controller
 
     public function dis_acc_coach($id)
     {
-        // dd('dis_acc_coach');
         $look = Coach::where('id', $id)->first();
         $user = User::where('id', $look->user_id)->first();
         $user->delete();
-        // $look->approved = 'un_accept';
-        // $look->save();
         Mail::to($user->email)->send(new WelcomeMail($user->name, 'coach', 'You Reject ?? We Un Accept on your Request ??Sorry Try Again'));
 
         return redirect()->back()->with('success', 'Done');
