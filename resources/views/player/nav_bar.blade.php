@@ -17,6 +17,7 @@
             <button type="button" class="btn btn-outline-warning" style="color: white;">Profile</button>
           </a>
         </li>
+        
         <li>
         <form id="logout-form" action="{{ route('logout') }}" method="POST">
     @csrf

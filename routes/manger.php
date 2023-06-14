@@ -1,34 +1,20 @@
 <?php
-
 use App\Http\Controllers\AdviceController;
 use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MangerController;
 use App\Http\Controllers\PaymentController;
-
-
 Route::prefix('manger')->middleware('check.manger','auth')->name('admin.')->controller(MangerController::class)->group(function () {
-
 Route::get('index', 'index')->name('index');
-
 Route::get('addadvice', 'peagadvice')->name('peag.advice');
-
 Route::post('addadvice', 'addadvice')->name('add.advice');
-
 Route::get('showAdvices', 'showAdvices')->name('show.advices');
-
 Route::get('showarticle', 'showarticle')->name('show.article');
-
 Route::get('addarticle','addarticle');
-
 Route::get('accoach','accept_coach')->name('accept.coach');
 Route::get('viewplan','view_plan')->name('view.plan');
-
-// Route::post('accoach/{id}','acc_coach')->name('coach');
 Route::post('accoa/{id}', 'acc_coach')->name('accoa.coach');
-//////////////////////////////////////////////////////////////////////////////
 Route::post('accoach/dis/{id}', 'dis_acc_coach')->name('dis.act.coach');
-//////////////////////////////////////////////////////////////////////////////
 Route::get('payments','payments')->name('payments');
 Route::get('viewplayerban','view_player_ban')->name('view.player.ban');   
 Route::post('playerban/{id}','player_ban')->name('ban.player');

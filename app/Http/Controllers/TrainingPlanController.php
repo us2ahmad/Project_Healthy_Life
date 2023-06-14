@@ -19,25 +19,6 @@ class TrainingPlanController extends Controller
     }
     public function addplan(Request $request)
     {
-    //  $tp =new Training_Plan();
-    //     $tp->goal=$request->goal;
-    //     $tp->duration=$request->duration;
-    //     $tp->min_high=$request->min_high;
-    //     $tp->max_high=$request->max_high;
-    //     $tp->min_weight=$request->min_weight;
-    //     $tp->max_weight=$request->max_weight;
-    //     $tp->id_coache= auth()->user()->coach->id;
-    //     $tp->save();
-
-    // $request->validate([
-    //     'goal' =>'required|string',
-    //     'duration' => 'required|numeric|min:1',
-    //     'min_high' => 'required|numeric|max:3|min:1',
-    //     'max_high' => 'required|numeric|max:3|min:1',
-    //     'min_weight' => 'required|numeric|max:3|min:1',
-    //     'max_weight' => 'required|numeric|max:3|min:1',
-    // ]);
-    // dd($request);
     $plan  = DB::table('training_plans')->insertGetId([
            'goal' => $request->goal,
             'duration' => $request->duration,
@@ -59,12 +40,6 @@ class TrainingPlanController extends Controller
         $content=Content::where('id_coache',$coachid )->get();
 
         return view('coach.addcontent-to-plan',compact('content','plan'));
-        
-        // dd( $content);
-        // $coach=auth()->user()->coach->id;
-        // $cont=Content::where('id_coache', $coach)->get();
-        // dd($cont);
-       
     }
 
     public function saveplan($planid ,Request $request)

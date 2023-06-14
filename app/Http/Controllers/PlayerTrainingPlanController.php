@@ -133,10 +133,8 @@ use QueryTrait;
 // }
 /////nassssssssser//////
 
-///////nassssssssser//////
 public function ShowType()
 {
-    // dd( arr_type() );
     $contents =$this->arr_type();
 
     if($contents != null){
@@ -151,24 +149,16 @@ public function ShowType()
 }
 public function Showexsersize($type)
 {
-          
-      
-           
-    // dd($type , auth()->user()->player->id);
-    
      $plan_id =   DB::table('player_training_plans')
         ->where('id_player' ,auth()->user()->player->id )
         ->where('status' ,'active' )
         ->pluck('id_training_plan');
-
         $contents_id = DB::table('contents_training_plans')
         ->whereIn('id_training_plan', $plan_id )
         ->pluck('id_content');  
         $contents = DB::table('contents')
         ->where('type', $type )
         ->get(); 
-        
-        dd($contents);
     return view('player.fcation.plans.plan1.exsersize.exsersize',compact('conts','type'));
 }
 public function get_plan()
@@ -190,10 +180,8 @@ public function get_plan()
     else
     {
         return redirect()->route('login');
-    
     }
 }
 }
-///////nassssssssser//////
 
 

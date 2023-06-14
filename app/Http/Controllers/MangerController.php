@@ -24,67 +24,55 @@ class MangerController extends Controller
      */
     public function index()
     {
-
         $player=Player::get();
+         $coache=Coach::where('ban','unbanned')
+         ->where('approved','unlook')
+         ->get();
         $payment=Payment::where('approved','accept')->get();
         $count = $this->getCountRequestCouach();
-        return view('admin.index', compact('count','player','payment'));
+        return view('admin.index', compact('count','player','payment','coache'));
     }
-
     public function view_plan()
     {
         $count = $this->getCountRequestCouach();
         $plans = DB::table('training_plans')->get();
         return view('admin.view-plan',compact('plans','count'));
-
     }
-
     public function peagadvice()
     {
         $count = $this->getCountRequestCouach();
         return view('admin.addadvice', compact('count'));
     }
-
     public function addadvice(Request $request)
     {
         $adv = new Advice();
         $adv->desc = $request->desc;
-       // $adv->photo = $request->file('photo')->getClientOriginalName();
         $adv->photo = $request->file('photo')->store('advice','ahmad');
         $adv->save();
         return redirect()->back()->with('success','Done Add');
     }
-
-
     public function showAdvices()
     {
         $advices = Advice::all();
         $count = $this->getCountRequestCouach();
         return view('admin.view-advices', compact('advices', 'count'));
     }
-
     public function showarticle()
     {
         $articles = Article::all();
         $count = $this->getCountRequestCouach();
         return view('admin.view-article', compact('articles', 'count'));
     }
-
-
     public function addcoach()
     {
         $count = $this->getCountRequestCouach();
         return view('admin.addtrainer', compact('count'));
     }
-
       public function payments()
     {
         $count = $this->getCountRequestCouach();
         return view('admin.payments', compact('count'));
     }
-
-
-
        public function accept_coach()
     {
 

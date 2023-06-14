@@ -1,27 +1,25 @@
 <?php
-
 use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CoachController;
 use App\Http\Controllers\ContentController;
 use App\Http\Controllers\TrainingPlanController;
-
-Route::middleware(['auth','check.coach'])->group(function () {
+Route::middleware(['auth','check.coach','verified'])->group(function () {
 Route::prefix('coach')->name('coach.')->controller(CoachController::class)->group(function () {
-Route::get('home','index')->name('home');      //Dashboard
-Route::get('article', 'pagearticle')->name('page.article');      //Add Articles
+Route::get('home','index')->name('home');      
+Route::get('article', 'pagearticle')->name('page.article');     
 Route::post('addarticle', 'addarticle')->name('add.article');
 Route::get('viewarticle','view_article')->name('view.article');
 Route::get('viewplayers','view_players')->name('view.players'); 
 Route::get('viewplan','view_plan')->name('view.plan');
 });
 });
-Route::controller(ArticleController::class)->middleware('auth','check.coach')->name('coach.')->group(function(){
+Route::controller(ArticleController::class)->middleware('auth','check.coach','verified')->name('coach.')->group(function(){
     Route::post('delete/{id}','destroy')->name('destroy.articel');
     Route::post('editarticel/{id}','edit')->name('edit.articel');
     Route::post('update/{id}','update')->name('update.article');
 });
-Route::middleware('auth','check.coach')->group(function(){
+Route::middleware('auth','check.coach','verified')->group(function(){
 Route::view('addconten','coach.contents')->name('coach.add.cont');
 Route::post('addconten',[ContentController::class,'addcontent'])->name('coach.add.content');
 Route::get('viewcontent',[ContentController::class,'view_content'])->name('coach.view.content');
