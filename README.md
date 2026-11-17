@@ -1,29 +1,35 @@
 # 🌿 Healthy Life
 
-\<p align="center">   \<a href="[https://gitdiagram.com/us2ahmad/project_healthy_life/video](https://gitdiagram.com/us2ahmad/project_healthy_life/video)">     \<img src="[https://gitdiagram.com/api/video/file?username=us2ahmad&repo=project_healthy_life&format=poster](https://gitdiagram.com/api/video/file?username=us2ahmad\&repo=project_healthy_life\&format=poster)" alt="Healthy Life - One Minute Video Overview" width="800">   \</a> \</p>
+<p align="center">  
+    <a href="[https://gitdiagram.com/us2ahmad/project_healthy_life/video](https://gitdiagram.com/us2ahmad/project_healthy_life/video)">     
+    <img src="[https://gitdiagram.com/api/video/file?username=us2ahmad&repo=project_healthy_life&format=poster](https://gitdiagram.com/api/video/file?username=us2ahmad &repo=project_healthy_life &format=poster)"                 alt="Healthy Life - One Minute Video Overview" width="800">   
+    </a> 
+</p>
 
-\<p align="center">   \<strong>A healthier lifestyle starts with better choices.\</strong> \</p>
+<p align="center">  
+    <strong>A healthier lifestyle starts with better choices.</strong> 
+</p>
 
-\<p align="center">
-&#x20; \<a href="[https://gitdiagram.com/us2ahmad/project_healthy_life/video](https://gitdiagram.com/us2ahmad/project_healthy_life/video)">
-&#x20;   \<img src="[https://gitdiagram.com/video-badge.svg](https://gitdiagram.com/video-badge.svg)" alt="Watch a one-minute video tour">
-&#x20; \</a>
-\</p>
+<p align="center">
+&#x20; <a href="[https://gitdiagram.com/us2ahmad/project_healthy_life/video](https://gitdiagram.com/us2ahmad/project_healthy_life/video)">
+&#x20;   <img src="[https://gitdiagram.com/video-badge.svg](https://gitdiagram.com/video-badge.svg)" alt="Watch a one-minute video tour">
+&#x20; </a>
+</p>
 
-\<p align="center">
-&#x20; \<a href="[https://github.com/us2ahmad/project_healthy_life/stargazers](https://github.com/us2ahmad/project_healthy_life/stargazers)">
-&#x20;   \<img src="[https://img.shields.io/github/stars/us2ahmad/project_healthy_life?style=for-the-badge&logo=github](https://img.shields.io/github/stars/us2ahmad/project_healthy_life?style=for-the-badge\&logo=github)" alt="GitHub Stars">
-&#x20; \</a>
-&#x20; \<a href="[https://github.com/us2ahmad/project_healthy_life/network/members](https://github.com/us2ahmad/project_healthy_life/network/members)">
-&#x20;   \<img src="[https://img.shields.io/github/forks/us2ahmad/project_healthy_life?style=for-the-badge&logo=github](https://img.shields.io/github/forks/us2ahmad/project_healthy_life?style=for-the-badge\&logo=github)" alt="GitHub Forks">
-&#x20; \</a>
-&#x20; \<a href="[https://github.com/us2ahmad/project_healthy_life/issues](https://github.com/us2ahmad/project_healthy_life/issues)">
-&#x20;   \<img src="[https://img.shields.io/github/issues/us2ahmad/project_healthy_life?style=for-the-badge](https://img.shields.io/github/issues/us2ahmad/project_healthy_life?style=for-the-badge)" alt="GitHub Issues">
-&#x20; \</a>
-&#x20; \<a href="[https://github.com/us2ahmad/project_healthy_life](https://github.com/us2ahmad/project_healthy_life)">
-&#x20;   \<img src="[https://img.shields.io/github/last-commit/us2ahmad/project_healthy_life?style=for-the-badge](https://img.shields.io/github/last-commit/us2ahmad/project_healthy_life?style=for-the-badge)" alt="Last Commit">
-&#x20; \</a>
-\</p>
+<p align="center">
+&#x20; <a href="[https://github.com/us2ahmad/project_healthy_life/stargazers](https://github.com/us2ahmad/project_healthy_life/stargazers)">
+&#x20;   <img src="[https://img.shields.io/github/stars/us2ahmad/project_healthy_life?style=for-the-badge&logo=github](https://img.shields.io/github/stars/us2ahmad/project_healthy_life?style=for-the-badge &logo=github)" alt="GitHub Stars">
+&#x20;  </a>
+&#x20;  <a href="[https://github.com/us2ahmad/project_healthy_life/network/members](https://github.com/us2ahmad/project_healthy_life/network/members)">
+&#x20;    <img src="[https://img.shields.io/github/forks/us2ahmad/project_healthy_life?style=for-the-badge&logo=github](https://img.shields.io/github/forks/us2ahmad/project_healthy_life?style=for-the-badge &logo=github)" alt="GitHub Forks">
+&#x20;  </a>
+&#x20;  <a href="[https://github.com/us2ahmad/project_healthy_life/issues](https://github.com/us2ahmad/project_healthy_life/issues)">
+&#x20;    <img src="[https://img.shields.io/github/issues/us2ahmad/project_healthy_life?style=for-the-badge](https://img.shields.io/github/issues/us2ahmad/project_healthy_life?style=for-the-badge)" alt="GitHub Issues">
+&#x20;  </a>
+&#x20;  <a href="[https://github.com/us2ahmad/project_healthy_life](https://github.com/us2ahmad/project_healthy_life)">
+&#x20;    <img src="[https://img.shields.io/github/last-commit/us2ahmad/project_healthy_life?style=for-the-badge](https://img.shields.io/github/last-commit/us2ahmad/project_healthy_life?style=for-the-badge)" alt="Last Commit">
+&#x20;  </a>
+ </p>
 
 ---
 
@@ -41,17 +47,17 @@ Want to see Healthy Life in action?
 
 Watch the one-minute video to get a quick overview of the project and explore its structure.
 
-\<p align="center">
-&#x20; \<a href="[https://gitdiagram.com/us2ahmad/project_healthy_life/video](https://gitdiagram.com/us2ahmad/project_healthy_life/video)">
-&#x20;   \<img src="[https://gitdiagram.com/api/video/file?username=us2ahmad&repo=project_healthy_life&format=poster](https://gitdiagram.com/api/video/file?username=us2ahmad\&repo=project_healthy_life\&format=poster)" alt="Watch Healthy Life Demo" width="700">
-&#x20; \</a>
-\</p>
+ <p align="center">
+&#x20;  <a href="[https://gitdiagram.com/us2ahmad/project_healthy_life/video](https://gitdiagram.com/us2ahmad/project_healthy_life/video)">
+&#x20;    <img src="[https://gitdiagram.com/api/video/file?username=us2ahmad&repo=project_healthy_life&format=poster](https://gitdiagram.com/api/video/file?username=us2ahmad &repo=project_healthy_life &format=poster)" alt="Watch Healthy Life Demo" width="700">
+&#x20;  </a>
+ </p>
 
-\<p align="center">
-&#x20; \<a href="[https://gitdiagram.com/us2ahmad/project_healthy_life/video](https://gitdiagram.com/us2ahmad/project_healthy_life/video)">
+ <p align="center">
+&#x20;  <a href="[https://gitdiagram.com/us2ahmad/project_healthy_life/video](https://gitdiagram.com/us2ahmad/project_healthy_life/video)">
 &#x20;   ▶ Watch the One-Minute Video
-&#x20; \</a>
-\</p>
+&#x20;  </a>
+ </p>
 
 ## ✨ Features
 
@@ -241,6 +247,6 @@ If no license has been added yet, consider adding one before publishing the proj
 
 ---
 
-\<p align="center">
+ <p align="center">
 &#x20; Made with ❤️ using Laravel
-\</p>
+ </p>
